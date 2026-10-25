@@ -16,7 +16,11 @@
   let queued = false;
   let lastScrollY = scrollY, lastWidth = innerWidth, lastHeight = innerHeight, scrollDirection = 0;
 
+  const edgeMedia = element => element.matches('.cmatrix-card > .rain');
   function content(element) {
+    // The rain is a card surface, including when a tall card enters in parts.
+    // Keep its canvas and caption together, flush with the card's contour.
+    if (edgeMedia(element)) return [];
     if (element.matches('.section-head')) {
       return [...element.querySelectorAll('.section-kicker, h2, p:not(.section-kicker), .release-link')];
     }
@@ -46,7 +50,7 @@
     delete element.dataset.sectionRevealSelf;
     observer.unobserve(element);
     const keep = animation => { record.animations.push(animation); return animation; };
-    keep(element.animate([
+    if (!edgeMedia(element)) keep(element.animate([
       { transform: 'translate3d(0,24px,0)' }, { transform: 'translate3d(0,0,0)' }
     ], { duration: 700, easing: 'cubic-bezier(.16,.8,.22,1)' }));
     if (record.parts.length) keep(element.animate([{ opacity: 0 }, { opacity: 1 }], {
@@ -61,7 +65,7 @@
       keep(part.animate([{ opacity: 0 }, { opacity: 1 }], {
         duration: 520, delay, easing: 'cubic-bezier(.3,0,.6,1)', fill: 'backwards'
       }));
-      if (part !== element) keep(part.animate([
+      if (part !== element && !edgeMedia(part)) keep(part.animate([
         { transform: 'translate3d(0,8px,0)' }, { transform: 'translate3d(0,0,0)' }
       ], { duration: 620, delay, easing: 'cubic-bezier(.12,.9,.18,1)', fill: 'backwards' }));
     });

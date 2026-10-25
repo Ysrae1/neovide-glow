@@ -18,6 +18,13 @@ html [data-section-reveal-part="pending"] {
   transform: translate3d(0, 8px, 0);
 }
 
+/* The rain shares the card edge: fade it in without displacing that surface
+   or baking an entrance translation into the continuous-corner clip. */
+html .cmatrix-card > .rain[data-section-reveal-unit],
+html .cmatrix-card > .rain[data-section-reveal-part] {
+  transform: none;
+}
+
 html [data-section-reveal-self="pending"],
 html.reveal-ready [data-section-reveal-owner][data-reveal][data-section-reveal-self="pending"] {
   opacity: 0;

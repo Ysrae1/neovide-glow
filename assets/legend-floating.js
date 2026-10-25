@@ -114,6 +114,37 @@
   const paint = (element, property, value) => {
     if (element.style.getPropertyValue(property) !== value) element.style.setProperty(property, value);
   };
+  // The first story's anchor starts at its text-only midpoint. A completed
+  // image can extend above that original footprint when scrolling back.
+  // Reserve the full pair's overhang from the outset, independently of entry
+  // progress, so both visits retain the gallery's existing 96px content gap.
+  const firstFeature = section.querySelector('.wf-feature');
+  let clearanceRevision = -1;
+  let contentClearance = 0;
+  viewport.subscribe({
+    phase: 'paint',
+    measure(state) {
+      if (!firstFeature || clearanceRevision === state.layoutRevision) return null;
+      const layout = window.GlowFeatureStories?.layout;
+      const id = firstFeature.id.replace(/^feature-/, '');
+      const pairHeight = layout?.pairHeights[id];
+      const anchorOffset = parseFloat(firstFeature.style.getPropertyValue('--wf-anchor-offset'));
+      const center = Number(firstFeature.dataset.readingCenter);
+      if (!Number.isFinite(pairHeight) || !Number.isFinite(anchorOffset) || !Number.isFinite(center)) return null;
+      const finalTop = !state.reduced && layout.stacked ? layout.top - center : -pairHeight / 2;
+      return { revision: state.layoutRevision, clearance: Math.max(0, -(anchorOffset + finalTop)) };
+    },
+    commit(state, measured) {
+      if (!measured) return;
+      clearanceRevision = measured.revision;
+      if (Math.abs(contentClearance - measured.clearance) < .01) return;
+      contentClearance = measured.clearance;
+      paint(slot, '--legend-content-clearance', `${contentClearance}px`);
+      // One reflow integrates the fixed gap. Its own value depends only on
+      // dimensions, never on document positions, so invalidation converges.
+      viewport.invalidate('legend-content-clearance');
+    }
+  }, 10);
   function commit(state, geometry) {
     const layoutChanged = !lastGeometry || lastGeometry.width !== geometry.width || lastGeometry.height !== geometry.height || lastGeometry.diameter !== geometry.diameter;
     const shouldFloat = state.y + geometry.top >= geometry.documentTop;

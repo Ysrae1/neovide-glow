@@ -11,7 +11,7 @@
   z-index:19;
   pointer-events:none;
 }
-.wf-legend-slot { position:relative;pointer-events:none; }
+.wf-legend-slot { position:relative;margin-bottom:var(--legend-content-clearance,0px);pointer-events:none; }
 .wf-legend-anchor.is-viewport-floating {
   position:fixed;
   left:50%;
