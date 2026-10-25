@@ -78,7 +78,8 @@
     const languages=input.languages||['zh','en'],horizontalGap=input.horizontalGap,verticalGap=input.verticalGap;
     // The accepted 860px breakpoint uses the viewport, not the inset gallery.
     const stacked=positive(input.viewportWidth,width)<=860||width<350+horizontalGap+300;
-    const textWidth=stacked?Math.min(width,350):Math.min(350,width*.32);
+    // A stacked story owns the full content row, not the desktop side column.
+    const textWidth=stacked?width:Math.min(350,width*.32);
     const introWidth=Math.min(850,width),heights={},introHeights={},ratios={},contacts={};
     const clones=records.flatMap(record=>languages.map(language=>({record,language,...cloneStory(record,language)})));
     try{
@@ -88,7 +89,8 @@
       for(const mode of ['intro','side']){
         const targetHeights=mode==='intro'?introHeights:heights;
         for(const {record,language,shell,story} of clones){
-          shell.dataset.copyLayout=mode;
+          shell.classList.toggle('wf-stacked',stacked);
+          shell.dataset.copyLayout=stacked?'intro':mode;
           story.style.setProperty('width',`${mode==='intro'?introWidth:textWidth}px`,'important');
           for(const [index,phase] of record.phases.entries()){
             phaseCopy(story,record,phase,language,input.keysHTML,input.storyMeta);
@@ -102,7 +104,7 @@
           ratios[record.id]=record.data.desktopHeight/record.data.desktopWidth;
         }
       }
-      const preferredImageWidth=Math.min(input.preferredImageWidth,input.maxWidth-textWidth-horizontalGap);
+      const preferredImageWidth=Math.min(input.preferredImageWidth,stacked?input.maxWidth:input.maxWidth-textWidth-horizontalGap);
       const fitWidth=Math.min(...records.map(r=>(availableHeight-heights[r.id]-verticalGap)/ratios[r.id]));
       const imageWidth=stacked?Math.min(width,preferredImageWidth,Math.max(Math.min(300,width),fitWidth)):Math.max(0,Math.min(preferredImageWidth,width-textWidth-horizontalGap));
       const pairHeights=Object.fromEntries(records.map(r=>[r.id,stacked?heights[r.id]+verticalGap+imageWidth*ratios[r.id]:Math.max(heights[r.id],imageWidth*ratios[r.id])]));

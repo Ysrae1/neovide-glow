@@ -85,6 +85,13 @@ html { overflow-x:clip; }
 .quick-links .wf-keys { display:inline-flex;gap:5px; }
 
 .wf-story h3 span { display:inline-block;max-width:100%; }
+/* Full-row copy can wrap between characters instead of moving whole clauses. */
+.wf-feature[data-copy-layout=intro] .wf-story h3 span,
+.wf-feature.wf-stacked .wf-story h3 span { display:inline; }
+.wf-feature[data-copy-layout=intro] .wf-story h3,
+.wf-feature[data-copy-layout=intro] .wf-description,
+.wf-feature.wf-stacked .wf-story h3,
+.wf-feature.wf-stacked .wf-description { text-wrap:wrap; }
 
 .wf-story:not(.is-revealed) { visibility:hidden; }
 
