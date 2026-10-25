@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <meta name="robots" content="noindex">
+  <title>Glow · 色场预览</title>
+  <link rel="stylesheet" href="assets/brand-field.css?v=text-paint1">
+  <link rel="stylesheet" href="assets/continuous-corners.css?v=nav-icons1">
+  <link rel="stylesheet" href="assets/continuous-corners-fallback.css?v=20261024-scroll50">
+  <link rel="stylesheet" href="assets/typography.css?v=20261024-safari-font1">
+  <link rel="stylesheet" href="assets/field-preview.css?v=20261024-field15">
+  <script type="module" src="assets/glass-settings.js?v=20261024-glass6"></script>
+  <script type="module" src="assets/field-preview.js?v=20261025-overscan1"></script>
+  <script type="module" src="assets/palette-controls.js?v=20261024-field13"></script>
+  <script defer src="assets/continuous-corners.js?v=rebuild1"></script>
+</head>
+<body>
+  <canvas role="img" aria-label="Glow 品牌动态色场"></canvas>
+  <div class="field-glass-veil" aria-hidden="true"></div>
+  <section class="field-glass-samples" aria-labelledby="field-glass-samples-heading">
+    <h2 id="field-glass-samples-heading">玻璃效果预览</h2>
+    <div class="field-glass-sample-buttons">
+      <button class="glass-preview-hole glass-button" type="button" title="模拟按钮：透过玻璃显示流动色场">
+        <canvas aria-hidden="true"></canvas>
+        <span class="field-hole-grain" aria-hidden="true"></span>
+        <span class="field-hole-label">下载 Glow</span>
+      </button>
+      <button class="glass-preview-hole glass-button" type="button" title="模拟按钮：透过玻璃显示流动色场">
+        <canvas aria-hidden="true"></canvas>
+        <span class="field-hole-grain" aria-hidden="true"></span>
+        <span class="field-hole-label">查看手册</span>
+      </button>
+    </div>
+  </section>
+  <section id="palette-panel" class="palette-panel card" aria-labelledby="palette-heading">
+    <button id="palette-toggle" type="button" aria-label="收起调色面板" aria-expanded="true" aria-controls="palette-content">
+      <svg class="collapse-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg>
+      <svg class="expand-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/><circle cx="9" cy="7" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+    </button>
+    <div id="palette-content">
+    <header class="palette-header">
+      <div>
+        <p class="palette-eyebrow">GLOW / COLOR FIELD</p>
+        <h1 id="palette-heading">色场配色 <span id="palette-count">14 个颜色</span></h1>
+        <p class="palette-description">点按色块取色，拖动调整顺序。</p>
+      </div>
+      <div class="palette-actions">
+        <button id="palette-add" class="glass-button" type="button">添加颜色</button>
+        <button id="field-pause" class="glass-button" type="button" aria-pressed="false">暂停变幻</button>
+        <button id="palette-reset" class="glass-button" type="button">恢复配色</button>
+        <button id="palette-copy" class="glass-button" type="button">复制配色</button>
+      </div>
+    </header>
+    <div id="palette-colours" class="palette-colours"></div>
+    <label class="field-blur-control" for="field-blur">
+      <span>模糊范围</span>
+      <input id="field-blur" type="range" min="2" max="12" step="1" value="8">
+      <output id="field-blur-value" for="field-blur">8</output>
+    </label>
+    <label class="field-blur-control" for="field-speed">
+      <span>流动速度</span>
+      <input id="field-speed" type="range" min="0.25" max="6" step="0.05" value="2.5">
+      <output id="field-speed-value" for="field-speed">2.50×</output>
+    </label>
+    <label class="field-blur-control" for="field-grain">
+      <span>色场颗粒强度</span>
+      <input id="field-grain" type="range" min="0" max="0.5" step="0.01" value="0.45">
+      <output id="field-grain-value" for="field-grain">45%</output>
+    </label>
+    <label class="field-blur-control" for="field-grain-size">
+      <span>色场颗粒大小</span>
+      <input id="field-grain-size" type="range" min="0.5" max="2" step="0.05" value="1">
+      <output id="field-grain-size-value" for="field-grain-size">1.0×</output>
+    </label>
+    <div class="field-glass-controls">
+      <label class="field-blur-control field-glass-control" for="field-glass-transparency" title="值越大，流动色场越明显；此设置同步到主站玻璃。">
+        <span>玻璃透明度</span>
+        <input id="field-glass-transparency" type="range" min="0" max="100" step="0.5" value="20">
+        <output id="field-glass-transparency-value" for="field-glass-transparency">20%</output>
+      </label>
+      <button id="field-glass-theme" class="glass-button" type="button" aria-pressed="false">切换浅色玻璃</button>
+    </div>
+    <label class="field-blur-control" for="field-glass-grain" title="调整玻璃表面颗粒，不改变色场颗粒。">
+      <span>玻璃颗粒强度</span>
+      <input id="field-glass-grain" type="range" min="0" max="0.35" step="0.005" value="0.09">
+      <output id="field-glass-grain-value" for="field-glass-grain">9%</output>
+    </label>
+    <label class="field-blur-control" for="field-glass-grain-size" title="调整玻璃表面颗粒大小，不改变色场颗粒。">
+      <span>玻璃颗粒大小</span>
+      <input id="field-glass-grain-size" type="range" min="0.5" max="2" step="0.05" value="1">
+      <output id="field-glass-grain-size-value" for="field-glass-grain-size">1.00×</output>
+    </label>
+    <label class="field-blur-control" for="field-glass-grain-brightness" title="0%保留较暗的对比颗粒，100%增加亮颗粒；与强度、大小分开调整，整页统一生效。">
+      <span>玻璃颗粒亮度</span>
+      <input id="field-glass-grain-brightness" type="range" min="0" max="1" step="0.01" value="0.5">
+      <output id="field-glass-grain-brightness-value" for="field-glass-grain-brightness">50%</output>
+    </label>
+    <footer class="palette-footer">
+      <span id="active-pair">当前主色 01 + 02</span>
+      <span id="palette-status" role="status">调整自动保存在此浏览器</span>
+    </footer>
+    </div>
+  </section>
+</body>
+</html>

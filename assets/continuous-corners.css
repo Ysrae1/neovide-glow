@@ -1,0 +1,112 @@
+/* Shared Apple-style geometry for the product page and the handbook.
+   Fixed corners and capsule ends are curvature-continuous; circles stay circular.
+   Shape, border, background clip and shadow are rendered by the same CSS box.
+   Calibration: SwiftUI RoundedRectangle(.continuous), macOS 27.2, r26.
+   K1.44 and radius*1.283: sampled contour max error 0.109 CSS px at r26.
+   This is a calibrated mathematical reproduction, not the private native renderer.
+   Reference geometry: tools/continuous-corners-reference.json.
+   References: developer.apple.com/videos/play/wwdc2025/356/
+               w3.org/TR/css-borders-4/#corner-shaping */
+:root {
+  --corner-continuity:1.44;
+  --corner-radius-scale:1.283;
+  --radius-card:calc(26px * var(--corner-radius-scale));
+  --radius-window:calc(18px * var(--corner-radius-scale));
+  --radius-control:calc(14px * var(--corner-radius-scale));
+  --radius-icon:calc(10px * var(--corner-radius-scale));
+  --radius-chip:calc(8px * var(--corner-radius-scale));
+  --radius-field:calc(14px * var(--corner-radius-scale));
+  --radius-keycap:calc(7px * var(--corner-radius-scale));
+  --radius-segment:calc(16px * var(--corner-radius-scale));
+  --segment-inset:4px;
+  --radius-segment-item:calc((16px - var(--segment-inset)) * var(--corner-radius-scale));
+  --radius-filter-group:calc(14px * var(--corner-radius-scale));
+  --filter-group-inset:3px;
+  --radius-filter-item:calc((14px - var(--filter-group-inset)) * var(--corner-radius-scale));
+  --radius-menu-item:calc((14px - 5px) * var(--corner-radius-scale));
+}
+
+/* One contour also controls borders, overflow and box shadows. Unrounded
+   elements are unaffected. This includes states created by the handbook. */
+*,*::before,*::after { corner-shape:superellipse(var(--corner-continuity)); }
+
+.card,.manual-shell,.manual-loading { border-radius:var(--radius-card); }
+.window,.mini-notebook { border-radius:var(--radius-window); }
+.wf-feature[data-scope=desktop] .wf-native-window { border-radius:var(--radius-window); }
+.capability-icon { border-radius:var(--radius-icon); }
+.install,.ai-illustration>code,.ai-illustration>div { border-radius:var(--radius-control); }
+.manual-search,.filter-trigger { border-radius:var(--radius-field); }
+.filter-trigger[aria-expanded=true] { border-radius:var(--radius-field) var(--radius-field) 0 0; }
+.filter-menu { border-radius:0 0 var(--radius-field) var(--radius-field); }
+.filter-option { border-radius:var(--radius-menu-item); }
+
+/* Concentric segmented controls: inner radius = outer radius - inset. */
+.wf-phases,.segmented,.wf-frame-switch,.wf-view-switch {
+  padding:var(--segment-inset);
+  border-radius:var(--radius-segment);
+}
+.wf-phases button,.segment,.wf-frame-switch button,.wf-view-switch button {
+  border-radius:var(--radius-segment-item);
+}
+.platform-filters { padding:var(--filter-group-inset);border-radius:var(--radius-filter-group); }
+.platform-filters button { border-radius:var(--radius-filter-item); }
+.wf-keys kbd,.shortcut-keys kbd { border-radius:var(--radius-keycap); }
+.manual-intro kbd { border-radius:calc(5px * var(--corner-radius-scale)); }
+.shortcut-row mark { border-radius:calc(3px * var(--corner-radius-scale)); }
+
+/* User-defined continuous capsules: the endcap meets the straight edge with
+   continuous curvature. A round semicircle + straight join is not sufficient. */
+.nav,.wf-legend.is-floating,
+.nav-links a,.mobile-manual,.icon-button,.key,.key.small,.glass-button,
+.motion-toggle,.manual-more button,.skip,.chip,.manual-version,.eyebrow,
+.tags li,.rain-caption,.flow-pills span,.wf-view-label {
+  border-radius:999px;
+  corner-shape:superellipse(var(--corner-continuity));
+}
+/* Closed shortcut entry is explicitly a geometric circle. */
+.wf-legend.is-floating:not([data-open]) { corner-shape:round; }
+.wf-legend-toggle { corner-shape:round; }
+.band,.band::after,.halo { corner-shape:round; }
+
+@media(max-width:860px) {
+  :root { --radius-card:calc(22px * var(--corner-radius-scale));--radius-window:calc(14px * var(--corner-radius-scale));--radius-icon:calc(9px * var(--corner-radius-scale)); }
+}
+
+/* Earlier engines keep the same hierarchy and a usable rounded baseline. */
+@supports not (corner-shape:superellipse(1.44)) {
+  :root { --corner-radius-scale:1; }
+}
+
+/* One material contour. Inner bevels must not create a second rim. */
+:root { --glass-shadow:0 16px 40px -26px rgba(0,0,0,.66); }
+:root[data-theme=light] { --glass-shadow:0 16px 38px -26px rgba(36,55,82,.28); }
+.nav,.nav.is-scrolled,.wf-legend.is-floating,.card,.manual-shell,.manual-search,.filter-menu {
+  box-shadow:var(--glass-shadow);
+}
+.key,.key:hover,.key:active {
+  box-shadow:0 9px 24px -16px var(--key-glow,rgba(0,0,0,.32));
+}
+.icon-button,.platform-filters,.wf-phases,.segmented { box-shadow:none; }
+.nav a,.nav button { white-space:nowrap;flex-shrink:0; }
+.mobile-manual { align-items:center;justify-content:center;gap:5px; }
+.mobile-manual svg { display:none;width:17px;height:17px; }
+.nav .nav-adaptive-icon { display:none;width:18px;height:18px;flex:none; }
+@media(max-width:600px) {
+  .nav .nav-adaptive-label { display:none; }
+  .nav .nav-adaptive-icon { display:block; }
+  .nav .language-toggle,.nav .nav-download.key.small { width:38px;min-width:38px;height:38px;min-height:38px;padding:0; }
+  body:not([data-manual-page]) .nav .brand span { display:none; }
+  .mobile-manual { width:32px;height:36px;padding-inline:0; }
+  .mobile-manual svg { display:block; }
+  .mobile-manual-label { display:none; }
+}
+@media(max-width:420px) {
+  .nav .icon-button { width:32px; }
+  .nav .language-toggle { width:auto;min-width:32px; }
+  .nav .language-toggle,.nav .nav-download.key.small { width:32px;min-width:32px;padding:0; }
+  .mobile-manual { width:28px;height:36px;padding-inline:0; }
+  .mobile-manual svg { display:block; }
+  .mobile-manual-label { display:none; }
+}
+
+.glass-button,.filter-trigger,.motion-toggle,.wf-frame-switch,.wf-view-switch,.wf-demo-switch,.wf-keys kbd,.shortcut-keys kbd,.manual-intro kbd { box-shadow:none; }

@@ -1,0 +1,131 @@
+/* Shared rhythm: a short entrance, a readable stop, then a natural scroll exit. */
+.wf-section { --wf-section-lead:24px;--wf-outro-lead:60px;padding-top:var(--wf-section-lead); }
+.wf-gallery { overflow:visible;overflow-anchor:none; }
+.wf-gallery-intro { display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0 0 14px; }
+.wf-gallery-intro h2 { font-size:clamp(25px,3vw,36px);letter-spacing:-.03em;margin:0; }
+.wf-gallery-options { display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px; }
+.wf-view-switch { display:flex;padding:3px;gap:3px;border-radius:10px;background:var(--glass);border:1px solid var(--hairline); }
+.wf-view-switch button { border:0;padding:7px 13px;min-height:32px;color:var(--muted);background:transparent;border-radius:7px;font:12px var(--sans);cursor:pointer; }
+.wf-view-switch button[aria-pressed=true] { background:var(--selected);color:white; }
+.wf-view-label { padding:9px 13px;border-radius:9px;background:var(--selected);color:white;font:12px var(--sans); }
+/* The sticky border box is exactly 0 × 0. Real content is its overflow,
+   while this independent track bounds the native hold at both ends. */
+.wf-feature { position:relative;height:var(--wf-article-height,600px);padding:0;margin:0;scroll-margin-top:132px; }
+.wf-feature+.wf-feature { margin-top:96px; }
+/* A composited, stationary ancestor keeps WebKit from clipping the sticky
+   overflow to its unobscured viewport. Native sticky still owns all motion. */
+.wf-track { position:absolute;top:var(--wf-anchor-offset,0px);left:50%;width:0;height:var(--wf-runway,0px);transform:translateZ(0); }
+.wf-sticky { position:sticky;top:var(--wf-sticky-top,50vh);width:0;height:0;padding:0;margin:0;overflow:visible; }
+.wf-stage { position:relative;width:var(--wf-stage-width,1160px);height:0;left:calc(var(--wf-stage-width,1160px) / -2); }
+.wf-story { --wf-body-size:16px;position:absolute;width:var(--wf-text-width,350px);height:var(--wf-copy-height,0px);transform:translateY(-50%);z-index:2; }
+.wf-story-content { display:flow-root;flex:none;width:100%; }
+/* Center the actual copy, not its reserved maximum-height footprint. */
+.wf-feature:not(.wf-stacked) .wf-story { display:flex;flex-direction:column;justify-content:center; }
+.wf-index { display:block;color:var(--muted);font-size:11px;letter-spacing:.04em; }
+.wf-story h3 { margin:14px 0 0;font-size:40px;font-weight:650;line-height:1.22;letter-spacing:-.035em;text-wrap:balance; }
+.wf-description,.wf-state-label { font-size:var(--wf-body-size);font-weight:400;line-height:1.8;color:var(--muted); }
+.wf-description { margin:16px 0 0;text-wrap:pretty; }
+.wf-phases { display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:4px;width:fit-content;max-width:100%;margin-top:24px;padding:4px;border:1px solid var(--hairline);border-radius:13px;background:var(--glass); }
+.wf-phases button { flex-shrink:0;white-space:nowrap;border:0;border-radius:9px;background:transparent;padding:9px 12px;font:13px var(--sans);color:var(--muted);cursor:pointer; }
+.wf-phases button[aria-pressed=true] { color:#fff;background:var(--selected); }
+.wf-action { display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:18px; }
+.wf-action[hidden] { display:none; }
+.wf-keys { display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px; }
+.wf-keys kbd { display:inline-flex;align-items:center;justify-content:center;min-width:29px;min-height:31px;padding:3px 7px;border-radius:7px;font:14px var(--mono);color:var(--text);background:var(--hairline);box-shadow:inset 0 -1px 0 var(--hairline); }
+.wf-manual-link { display:inline-block;margin-top:16px;font-size:12px;color:var(--ink-ice); }
+.wf-manual-link:hover,.wf-source a:hover { text-decoration:underline;text-underline-offset:4px; }
+.wf-source { margin:16px 0 0;font-size:11px;line-height:1.8;color:var(--muted); }
+.wf-visual.viewer { position:absolute;width:var(--wf-image-width,600px);margin:0;isolation:isolate;opacity:0;transform-origin:50% 50%; }
+
+
+.wf-visual .halo { inset:2% -4% -12%;opacity:.26; }
+.wf-native-window.window { position:relative;display:block;width:100%;transform:none!important;border-radius:0;overflow:visible;background:transparent;box-shadow:none; }
+.wf-native-window img { position:absolute;inset:0;width:100%;height:100%;object-fit:contain; }
+.wf-native-window .wf-state-frame { visibility:hidden;opacity:0; }
+.wf-native-window .wf-display-frame { opacity:1;transition:none; }
+.wf-feature[data-scope=desktop] .wf-native-window { border-radius:var(--radius-window);overflow:hidden; }
+.wf-gallery button:focus-visible,.wf-gallery a:focus-visible { outline:2px solid var(--ink-ice);outline-offset:4px; }
+.wf-legend { margin-top:10px;color:var(--muted);font-size:12px;max-width:740px; }
+.wf-legend .wf-legend-toggle { cursor:pointer;width:fit-content; }
+.wf-legend p { line-height:1.9; }
+.wf-legend kbd { color:var(--text); }
+.section { padding-top:60px; }
+.quick-guide { padding-top:36px; }
+.quick-links { display:grid;grid-template-columns:repeat(3,1fr);gap:18px; }
+.quick-links a { display:block;padding:22px 0;border-top:1px solid var(--hairline); }
+.quick-links strong { display:block;font-size:18px;font-weight:550; }
+.quick-links span { display:block;margin-top:8px;color:var(--muted);font-size:14px;line-height:1.7; }
+.quick-guide .section-head { margin-bottom:24px; }
+.cmatrix-card { display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr); }
+.cmatrix-card h2 { margin:0;font-size:clamp(24px,2.7vw,32px);font-weight:600;letter-spacing:-.025em; }
+@media(max-width:860px) { .cmatrix-card { grid-template-columns:1fr; }.cmatrix-card .rain { border-left:0;border-top:1px solid var(--hairline); } }
+.language-toggle { width:auto;min-width:46px;padding:0 8px;font-size:11px;font-weight:600; }
+#motion-toggle .motion-reduced { display:none; }
+#motion-toggle[aria-pressed=true] .motion-on { display:none; }
+#motion-toggle[aria-pressed=true] .motion-reduced { display:block; }
+#motion-toggle:disabled { opacity:.5;cursor:default; }
+/* Reduced motion keeps the same real-size content in ordinary flow. */
+.wf-flow .wf-sticky { position:relative;top:0; }
+.wf-gallery { padding:calc(96px - var(--wf-section-lead)) 0 calc(96px - var(--wf-outro-lead)); }
+@media(max-width:860px) {
+ .wf-section { --wf-section-lead:28px;--wf-outro-lead:44px; }
+ .wf-gallery-intro { flex-direction:column;align-items:flex-start;gap:18px; }
+ .wf-gallery-options { justify-content:flex-start; }
+
+ .section { padding-top:44px; }
+ .quick-links { grid-template-columns:1fr;gap:0; }
+ .wf-visual .halo { filter:blur(28px);opacity:.15; }
+}
+@media(max-width:420px) {
+ .nav-actions { gap:5px; }.nav-actions .key.small { padding-inline:10px;font-size:12px; }
+ .mobile-manual { padding-inline:5px;font-size:11px; }.language-toggle { min-width:32px;padding:0 5px;font-size:10px; }.nav { gap:8px; }
+}
+
+html { overflow-x:clip; }
+.quick-links .wf-keys { display:inline-flex;gap:5px; }
+
+.wf-story h3 span { display:inline-block;max-width:100%; }
+
+.wf-story:not(.is-revealed) { visibility:hidden; }
+
+/* Align the text column toward the adjacent media; center the text-only entrance. */
+.wf-story { text-align:right; }
+.wf-phases { margin-inline:auto 0;justify-content:flex-end; }
+.wf-action { justify-content:flex-end; }
+.wf-feature[data-side=left] .wf-story { text-align:left; }
+.wf-feature[data-side=left] .wf-phases { margin-inline:0 auto;justify-content:flex-start; }
+.wf-feature[data-side=left] .wf-action { justify-content:flex-start; }
+.wf-feature[data-copy-layout=intro] .wf-story { text-align:center; }
+.wf-feature[data-copy-layout=intro] .wf-phases { margin-inline:auto;justify-content:center; }
+.wf-feature[data-copy-layout=intro] .wf-action { justify-content:center; }
+.wf-feature.wf-stacked .wf-story { text-align:center; }
+.wf-feature.wf-stacked .wf-phases { margin-inline:auto;justify-content:center; }
+.wf-feature.wf-stacked .wf-action { justify-content:center; }
+/* Inline relative offsets preserve native wrapping, selection, and link nodes. */
+.wf-alignment-run,.wf-action > * { position:relative; }
+.wf-story h3 .wf-alignment-run { display:inline;max-width:none; }
+
+/* Platform marks: current official Apple/Windows silhouettes, attributed Tux. */
+.platform-symbol.platform-logo { width:36px;height:36px;object-fit:contain; }
+.platform-logo-macos,.platform-logo-windows,.platform-logo-linux { background:currentColor;-webkit-mask:var(--platform-logo) center/contain no-repeat;mask:var(--platform-logo) center/contain no-repeat; }
+.platform-logo-macos { --platform-logo:url("platform-logos/macos.svg"); }
+.platform-logo-windows { --platform-logo:url("platform-logos/windows.svg"); }
+.platform-logo-linux { --platform-logo:url("platform-logos/linux-mask.svg");mask-mode:alpha; }
+
+/* Intro stages are labels; their surfaces arrive with the real media. */
+.wf-phases,.wf-phases button { position:relative;isolation:isolate; }
+.wf-phases button:disabled { cursor:default;opacity:1; }
+.wf-phases button[aria-pressed=true] {
+  color:color-mix(in srgb,var(--muted) calc((1 - var(--wf-stage-emphasis,0)) * 100%),var(--brand-field-ink) calc(var(--wf-stage-emphasis,0) * 100%))!important;
+}
+html:not(.cc-fallback) .wf-phases,
+html:not(.cc-fallback) .wf-phases button { background:none!important;border-color:transparent;box-shadow:none; }
+html:not(.cc-fallback) .wf-phases::before,
+html:not(.cc-fallback) .wf-phases button[aria-pressed=true]::before {
+  content:"";position:absolute;inset:-1px;z-index:-1;pointer-events:none;
+  border-radius:inherit;corner-shape:inherit;opacity:var(--wf-stage-emphasis,0);
+}
+html:not(.cc-fallback) .wf-phases::before { background:var(--glass);border:1px solid var(--hairline); }
+html:not(.cc-fallback) .wf-phases button[aria-pressed=true]::before {
+  inset:0;background:var(--brand-field-image);background-size:var(--brand-field-size);background-position:0 0;background-attachment:fixed;
+}

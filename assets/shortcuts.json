@@ -1,0 +1,6687 @@
+[
+  {
+    "id": "search-files",
+    "category": "文件与搜索",
+    "scene": "打开项目",
+    "title": "快速查找文件",
+    "keys": "Space t f",
+    "mode": "普通模式",
+    "prerequisite": "配套配置与 FFF 已加载",
+    "action": "在当前工作目录打开 FFF 文件搜索。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:86"
+    ],
+    "tags": [
+      "搜索",
+      "FFF",
+      "文件"
+    ]
+  },
+  {
+    "id": "search-grep",
+    "category": "文件与搜索",
+    "scene": "寻找内容",
+    "title": "搜索项目文本",
+    "keys": "Space t g",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应搜索器可用",
+    "action": "打开 Telescope live_grep，随输入检索项目文本。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:63"
+    ],
+    "tags": [
+      "搜索",
+      "Telescope"
+    ]
+  },
+  {
+    "id": "search-buffers",
+    "category": "文件与搜索",
+    "scene": "寻找内容",
+    "title": "查找已打开缓冲区",
+    "keys": "Space t b",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应搜索器可用",
+    "action": "打开 Telescope 缓冲区列表。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:66"
+    ],
+    "tags": [
+      "搜索",
+      "Telescope"
+    ]
+  },
+  {
+    "id": "search-help",
+    "category": "文件与搜索",
+    "scene": "寻找内容",
+    "title": "查询帮助标签",
+    "keys": "Space t ?",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应搜索器可用",
+    "action": "打开 Telescope 帮助标签搜索。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:69"
+    ],
+    "tags": [
+      "搜索",
+      "Telescope"
+    ]
+  },
+  {
+    "id": "search-marks",
+    "category": "文件与搜索",
+    "scene": "寻找内容",
+    "title": "查找标记",
+    "keys": "Space t m",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应搜索器可用",
+    "action": "打开 Telescope marks。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:72"
+    ],
+    "tags": [
+      "搜索",
+      "Telescope"
+    ]
+  },
+  {
+    "id": "search-recent",
+    "category": "文件与搜索",
+    "scene": "寻找内容",
+    "title": "查找最近文件",
+    "keys": "Space t r",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应搜索器可用",
+    "action": "打开 Telescope oldfiles。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:75"
+    ],
+    "tags": [
+      "搜索",
+      "Telescope"
+    ]
+  },
+  {
+    "id": "search-buffer-text",
+    "category": "文件与搜索",
+    "scene": "寻找内容",
+    "title": "搜索当前文件",
+    "keys": "Space t z",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应搜索器可用",
+    "action": "在当前缓冲区内模糊查找文本。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:78"
+    ],
+    "tags": [
+      "搜索",
+      "Telescope"
+    ]
+  },
+  {
+    "id": "search-themes",
+    "category": "文件与搜索",
+    "scene": "寻找内容",
+    "title": "选择主题",
+    "keys": "Space t h",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应搜索器可用",
+    "action": "打开 NvChad 主题选择器；用户配置保留各平台自己的配色。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:82"
+    ],
+    "tags": [
+      "搜索",
+      "Telescope"
+    ]
+  },
+  {
+    "id": "search-all-files",
+    "category": "文件与搜索",
+    "scene": "寻找内容",
+    "title": "查找隐藏和忽略文件",
+    "keys": "Space t a",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应搜索器可用",
+    "action": "打开 Telescope find_files，包含隐藏文件、忽略文件并跟随链接。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:89"
+    ],
+    "tags": [
+      "搜索",
+      "Telescope"
+    ]
+  },
+  {
+    "id": "tree-reveal",
+    "category": "文件与搜索",
+    "scene": "浏览项目",
+    "title": "在文件树定位当前文件",
+    "keys": "Space \\",
+    "mode": "普通模式",
+    "prerequisite": "Neo-tree 已加载",
+    "action": "打开文件树并定位当前文件；另保留 Space 后连续两个反斜杠的别名。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:45"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "new-file",
+    "category": "编辑",
+    "scene": "开始写作",
+    "title": "新建空文件",
+    "keys": "Space f n",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 基础映射已加载",
+    "action": "新建空缓冲区；随后自行保存路径。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:95",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "文件",
+      "新建"
+    ]
+  },
+  {
+    "id": "save-file",
+    "category": "编辑",
+    "scene": "保存编辑",
+    "title": "保存当前文件",
+    "keys": "Ctrl+S",
+    "mode": "普通 / 插入 / 可视 / 选择模式",
+    "prerequisite": "当前缓冲区可写；面板内局部映射优先",
+    "action": "保存当前文件。Avante 输入框的 Ctrl+S 为提交；Windows 原生保存适配保留已有用户映射。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:78",
+      "config/lua/config/platform/macos_keymaps.lua:42",
+      "config/lua/config/platform/windows_edit_keymaps.lua:75"
+    ],
+    "tags": [
+      "保存",
+      "写入"
+    ],
+    "macKeys": "Cmd+S（普通 / 插入）；Ctrl+S",
+    "windowsKeys": "Ctrl+S"
+  },
+  {
+    "id": "clipboard-copy",
+    "category": "编辑",
+    "scene": "复制文本",
+    "title": "复制选区到系统剪贴板",
+    "keys": "系统复制快捷键",
+    "mode": "可视 / 选择模式",
+    "prerequisite": "先选择文本；Windows 原生绑定仅在 Neovide GUI 中按空闲键位安装",
+    "action": "复制选区；Windows 普通 / 插入 / 终端里的 Ctrl+C 仍保留取消或中断含义。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:46",
+      "config/lua/config/platform/windows_edit_keymaps.lua:78"
+    ],
+    "tags": [
+      "剪贴板",
+      "复制"
+    ],
+    "macKeys": "Cmd+C",
+    "windowsKeys": "Ctrl+C / Ctrl+Insert"
+  },
+  {
+    "id": "clipboard-cut",
+    "category": "编辑",
+    "scene": "剪切文本",
+    "title": "剪切选区到系统剪贴板",
+    "keys": "Ctrl+X",
+    "mode": "可视 / 选择模式",
+    "prerequisite": "Windows Neovide；已有用户映射优先",
+    "action": "剪切所选文本到系统剪贴板。",
+    "platforms": [
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/windows_edit_keymaps.lua:84"
+    ],
+    "tags": [
+      "剪贴板",
+      "剪切"
+    ]
+  },
+  {
+    "id": "clipboard-paste",
+    "category": "编辑",
+    "scene": "粘贴文本",
+    "title": "从系统剪贴板粘贴",
+    "keys": "系统粘贴快捷键",
+    "mode": "普通 / 插入 / 可视 / 命令行；终端见动作说明",
+    "prerequisite": "系统剪贴板包含文本；Windows 原生绑定保留已有用户映射",
+    "action": "将剪贴板文本粘贴到当前位置。Windows 命令行仅插入首行而不提交，终端使用 Ctrl+Shift+V 或 Shift+Insert。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:67",
+      "config/lua/config/platform/windows_edit_keymaps.lua:86"
+    ],
+    "tags": [
+      "剪贴板",
+      "粘贴"
+    ],
+    "macKeys": "Cmd+V",
+    "windowsKeys": "Ctrl+V / Ctrl+Shift+V / Shift+Insert；终端 Ctrl+Shift+V / Shift+Insert"
+  },
+  {
+    "id": "edit-undo",
+    "category": "编辑",
+    "scene": "日常编辑",
+    "title": "撤销文本编辑",
+    "keys": "系统撤销快捷键",
+    "mode": "普通 / 插入 / 可视 / 选择模式",
+    "prerequisite": "Neovide；Windows 原生适配保留已有用户映射",
+    "action": "撤销文本修改；多光标撤销添加点请用 Ctrl+P。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/windows_edit_keymaps.lua:94",
+      "config/lua/config/platform/macos_keymaps.lua:122"
+    ],
+    "tags": [
+      "编辑"
+    ],
+    "macKeys": "Cmd+Z",
+    "windowsKeys": "Ctrl+Z"
+  },
+  {
+    "id": "edit-redo",
+    "category": "编辑",
+    "scene": "日常编辑",
+    "title": "重做文本编辑",
+    "keys": "系统重做快捷键",
+    "mode": "普通 / 插入 / 可视 / 选择模式",
+    "prerequisite": "Neovide；Windows 原生适配保留已有用户映射",
+    "action": "重做已撤销的文本修改；局部补全映射优先。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:141",
+      "config/lua/config/platform/windows_edit_keymaps.lua:94"
+    ],
+    "tags": [
+      "编辑"
+    ],
+    "macKeys": "Cmd+Shift+Z",
+    "windowsKeys": "Ctrl+Shift+Z / Ctrl+Y"
+  },
+  {
+    "id": "edit-select-all",
+    "category": "编辑",
+    "scene": "日常编辑",
+    "title": "全选文本",
+    "keys": "系统全选快捷键",
+    "mode": "普通 / 插入 / 可视 / 选择模式",
+    "prerequisite": "Neovide；Windows 原生适配保留已有用户映射",
+    "action": "选择当前缓冲区的全部文本。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:162",
+      "config/lua/config/platform/windows_edit_keymaps.lua:101"
+    ],
+    "tags": [
+      "编辑"
+    ],
+    "macKeys": "Cmd+A",
+    "windowsKeys": "Ctrl+A"
+  },
+  {
+    "id": "block-selection-windows",
+    "category": "编辑",
+    "scene": "选择代码",
+    "title": "矩形块选择",
+    "keys": "Ctrl+Q",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "Windows Neovide；Ctrl+V 已用于粘贴",
+    "action": "进入矩形块选择；保持块选择在原生粘贴键适配后仍可达。",
+    "platforms": [
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/windows_edit_keymaps.lua:91"
+    ],
+    "tags": [
+      "选择",
+      "矩形"
+    ]
+  },
+  {
+    "id": "delete-selection-windows",
+    "category": "编辑",
+    "scene": "删除选区",
+    "title": "删除所选文本并保留剪贴板",
+    "keys": "Backspace / Delete",
+    "mode": "可视 / 选择模式",
+    "prerequisite": "Windows Neovide；先选择文本",
+    "action": "通过黑洞寄存器删除选区，不覆盖系统剪贴板。",
+    "platforms": [
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/windows_edit_keymaps.lua:105"
+    ],
+    "tags": [
+      "删除",
+      "选择"
+    ]
+  },
+  {
+    "id": "comment-native",
+    "category": "编辑",
+    "scene": "注释代码",
+    "title": "切换行或选区注释",
+    "keys": "系统注释快捷键",
+    "mode": "普通 / 插入 / 可视模式",
+    "prerequisite": "Comment.nvim；文件类型有注释格式",
+    "action": "切换当前行或已选范围的行注释。Windows Ctrl+/ 保留终端开关。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:107",
+      "config/lua/config/platform/windows_edit_keymaps.lua:110"
+    ],
+    "tags": [
+      "注释"
+    ],
+    "macKeys": "Cmd+/",
+    "windowsKeys": "Ctrl+Shift+C"
+  },
+  {
+    "id": "comment-line",
+    "category": "编辑",
+    "scene": "注释代码",
+    "title": "切换当前行注释",
+    "keys": "g c c",
+    "mode": "普通模式",
+    "prerequisite": "Comment.nvim 已按配置 setup；文件类型有注释格式",
+    "action": "切换当前行的行注释。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/comment.lua:5",
+      "runtime/lazy/Comment.nvim/lua/Comment/config.lua:90"
+    ],
+    "tags": [
+      "注释"
+    ]
+  },
+  {
+    "id": "comment-block",
+    "category": "编辑",
+    "scene": "注释代码",
+    "title": "切换块注释",
+    "keys": "g b c",
+    "mode": "普通模式",
+    "prerequisite": "Comment.nvim 已按配置 setup；文件类型有注释格式",
+    "action": "切换当前行的块注释。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/comment.lua:5",
+      "runtime/lazy/Comment.nvim/lua/Comment/config.lua:90"
+    ],
+    "tags": [
+      "注释"
+    ]
+  },
+  {
+    "id": "comment-motion",
+    "category": "编辑",
+    "scene": "注释代码",
+    "title": "按范围切换行注释",
+    "keys": "g c + 移动范围",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "Comment.nvim 已按配置 setup；文件类型有注释格式",
+    "action": "普通模式接 motion 指定范围；可视模式使用 g c 处理选区。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/comment.lua:5",
+      "runtime/lazy/Comment.nvim/lua/Comment/config.lua:66"
+    ],
+    "tags": [
+      "注释"
+    ]
+  },
+  {
+    "id": "comment-above",
+    "category": "编辑",
+    "scene": "注释代码",
+    "title": "在上方插入注释",
+    "keys": "g c O",
+    "mode": "普通模式",
+    "prerequisite": "Comment.nvim 已按配置 setup；文件类型有注释格式",
+    "action": "在上方新建注释行并进入插入。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/comment.lua:5",
+      "runtime/lazy/Comment.nvim/lua/Comment/config.lua:71"
+    ],
+    "tags": [
+      "注释"
+    ]
+  },
+  {
+    "id": "comment-below",
+    "category": "编辑",
+    "scene": "注释代码",
+    "title": "在下方插入注释",
+    "keys": "g c o",
+    "mode": "普通模式",
+    "prerequisite": "Comment.nvim 已按配置 setup；文件类型有注释格式",
+    "action": "在下方新建注释行并进入插入。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/comment.lua:5",
+      "runtime/lazy/Comment.nvim/lua/Comment/config.lua:71"
+    ],
+    "tags": [
+      "注释"
+    ]
+  },
+  {
+    "id": "comment-eol",
+    "category": "编辑",
+    "scene": "注释代码",
+    "title": "在行尾添加注释",
+    "keys": "g c A",
+    "mode": "普通模式",
+    "prerequisite": "Comment.nvim 已按配置 setup；文件类型有注释格式",
+    "action": "在当前行尾添加注释并进入插入。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/comment.lua:5",
+      "runtime/lazy/Comment.nvim/lua/Comment/config.lua:71"
+    ],
+    "tags": [
+      "注释"
+    ]
+  },
+  {
+    "id": "surround-add",
+    "category": "编辑",
+    "scene": "编辑结构",
+    "title": "添加包围符",
+    "keys": "y s + 范围 + 符号",
+    "mode": "普通模式；添加也支持可视模式",
+    "prerequisite": "mini.surround 已加载；TeX 或其他缓冲区局部映射优先",
+    "action": "给指定范围或选区添加括号、引号等包围符。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/mini_surround.lua:24"
+    ],
+    "tags": [
+      "括号",
+      "引号",
+      "surround"
+    ]
+  },
+  {
+    "id": "surround-delete",
+    "category": "编辑",
+    "scene": "编辑结构",
+    "title": "删除包围符",
+    "keys": "d s + 符号",
+    "mode": "普通模式；添加也支持可视模式",
+    "prerequisite": "mini.surround 已加载；TeX 或其他缓冲区局部映射优先",
+    "action": "删除指定类型的外围包围符。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/mini_surround.lua:25"
+    ],
+    "tags": [
+      "括号",
+      "引号",
+      "surround"
+    ]
+  },
+  {
+    "id": "surround-replace",
+    "category": "编辑",
+    "scene": "编辑结构",
+    "title": "替换包围符",
+    "keys": "c s + 旧符号 + 新符号",
+    "mode": "普通模式；添加也支持可视模式",
+    "prerequisite": "mini.surround 已加载；TeX 或其他缓冲区局部映射优先",
+    "action": "替换指定的外围包围符。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/mini_surround.lua:29"
+    ],
+    "tags": [
+      "括号",
+      "引号",
+      "surround"
+    ]
+  },
+  {
+    "id": "surround-find",
+    "category": "编辑",
+    "scene": "编辑结构",
+    "title": "跳到右侧包围符",
+    "keys": "f s + 符号",
+    "mode": "普通模式；添加也支持可视模式",
+    "prerequisite": "mini.surround 已加载；TeX 或其他缓冲区局部映射优先",
+    "action": "查找右侧指定包围符。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/mini_surround.lua:26"
+    ],
+    "tags": [
+      "括号",
+      "引号",
+      "surround"
+    ]
+  },
+  {
+    "id": "surround-find-left",
+    "category": "编辑",
+    "scene": "编辑结构",
+    "title": "跳到左侧包围符",
+    "keys": "F s + 符号",
+    "mode": "普通模式；添加也支持可视模式",
+    "prerequisite": "mini.surround 已加载；TeX 或其他缓冲区局部映射优先",
+    "action": "查找左侧指定包围符。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/mini_surround.lua:27"
+    ],
+    "tags": [
+      "括号",
+      "引号",
+      "surround"
+    ]
+  },
+  {
+    "id": "surround-highlight",
+    "category": "编辑",
+    "scene": "编辑结构",
+    "title": "高亮包围符",
+    "keys": "h s + 符号",
+    "mode": "普通模式；添加也支持可视模式",
+    "prerequisite": "mini.surround 已加载；TeX 或其他缓冲区局部映射优先",
+    "action": "临时高亮指定包围符。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/mini_surround.lua:28"
+    ],
+    "tags": [
+      "括号",
+      "引号",
+      "surround"
+    ]
+  },
+  {
+    "id": "surround-lines",
+    "category": "编辑",
+    "scene": "编辑结构",
+    "title": "设置包围符搜索行数",
+    "keys": "n s",
+    "mode": "普通模式；添加也支持可视模式",
+    "prerequisite": "mini.surround 已加载；TeX 或其他缓冲区局部映射优先",
+    "action": "调整 mini.surround 搜索范围的行数。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/mini_surround.lua:30"
+    ],
+    "tags": [
+      "括号",
+      "引号",
+      "surround"
+    ]
+  },
+  {
+    "id": "indent-right",
+    "category": "编辑",
+    "scene": "整理代码",
+    "title": "增加缩进",
+    "keys": "Tab",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "普通编辑缓冲区；图片、预览等局部 Tab 映射优先",
+    "action": "当前行右缩进；可视模式右缩进并保持选择。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:326"
+    ],
+    "tags": [
+      "缩进"
+    ]
+  },
+  {
+    "id": "indent-left",
+    "category": "编辑",
+    "scene": "整理代码",
+    "title": "减少缩进",
+    "keys": "Shift+Tab",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "普通编辑缓冲区；局部映射优先",
+    "action": "当前行左缩进；可视模式左缩进并保持选择。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:327"
+    ],
+    "tags": [
+      "缩进"
+    ]
+  },
+  {
+    "id": "reindent-code",
+    "category": "编辑",
+    "scene": "整理代码",
+    "title": "按语法重新缩进",
+    "keys": "Space c = + 范围",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "缓冲区已设置 indentexpr 或 equalprg",
+    "action": "触发原生 = 缩进操作符；普通模式继续指定范围，可视模式处理选区。它与代码格式化入口独立。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/navigation/reindent_keymaps.lua:36"
+    ],
+    "tags": [
+      "缩进",
+      "整理"
+    ]
+  },
+  {
+    "id": "move-lines-down",
+    "category": "编辑",
+    "scene": "整理代码",
+    "title": "下移行或选区",
+    "keys": "Alt+J",
+    "mode": "普通 / 插入 / 可视模式",
+    "prerequisite": "LazyVim 已加载；系统能传递 Alt 组合键",
+    "action": "将当前行或已选行下移，并重新缩进。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:26",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "移动行"
+    ]
+  },
+  {
+    "id": "move-lines-up",
+    "category": "编辑",
+    "scene": "整理代码",
+    "title": "上移行或选区",
+    "keys": "Alt+K",
+    "mode": "普通 / 插入 / 可视模式",
+    "prerequisite": "LazyVim 已加载；系统能传递 Alt 组合键",
+    "action": "将当前行或已选行上移，并重新缩进。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:27",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "移动行"
+    ]
+  },
+  {
+    "id": "multicursor-start",
+    "category": "多光标",
+    "scene": "批量修改",
+    "title": "添加编辑点 / 用选区开始多光标",
+    "keys": "Space m",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "可修改的普通文本缓冲区",
+    "action": "普通模式在当前光标添加独立编辑点，重复按键继续添加；可视模式以所选文本开始。j/k 只移动真光标，不自动添加点。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/multicursors.lua:40"
+    ],
+    "tags": [
+      "多光标",
+      "批量"
+    ]
+  },
+  {
+    "id": "multicursor-mouse",
+    "category": "多光标",
+    "scene": "批量选择",
+    "title": "拖动添加独立选区",
+    "keys": "修饰键 + 鼠标拖动",
+    "mode": "普通 / 可视 / 多光标模式",
+    "prerequisite": "Neovide 可编辑文本缓冲区；Windows 需原生键位适配",
+    "action": "按住修饰键拖动添加独立文本选区；相邻独立编辑点保留，实际重叠范围合并。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/plugins/editor/multicursors.lua:43",
+      "config/lua/config/platform/windows_edit_keymaps.lua:115"
+    ],
+    "tags": [
+      "多光标",
+      "鼠标"
+    ],
+    "macKeys": "Cmd+拖动",
+    "windowsKeys": "Alt+拖动"
+  },
+  {
+    "id": "multicursor-undo-point",
+    "category": "多光标",
+    "scene": "调整编辑点",
+    "title": "撤销最近添加的编辑点",
+    "keys": "Ctrl+P",
+    "mode": "多光标普通 / 扩选模式",
+    "prerequisite": "已进入多光标编辑层",
+    "action": "撤销最近一次新增编辑点；与文本撤销区分。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/multicursors.lua:17"
+    ],
+    "tags": [
+      "多光标",
+      "撤销"
+    ]
+  },
+  {
+    "id": "multicursor-upper",
+    "category": "多光标",
+    "scene": "批量修改",
+    "title": "选区转大写",
+    "keys": "g U",
+    "mode": "多光标普通模式",
+    "prerequisite": "已进入多光标编辑层；匹配相关动作需已建立匹配模式",
+    "action": "把所有编辑选区转换为大写。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/multicursors.lua:18",
+      "config/lua/plugins/editor/multicursors.lua:35"
+    ],
+    "tags": [
+      "多光标"
+    ]
+  },
+  {
+    "id": "multicursor-lower",
+    "category": "多光标",
+    "scene": "批量修改",
+    "title": "选区转小写",
+    "keys": "g u",
+    "mode": "多光标普通模式",
+    "prerequisite": "已进入多光标编辑层；匹配相关动作需已建立匹配模式",
+    "action": "把所有编辑选区转换为小写。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/multicursors.lua:19",
+      "config/lua/plugins/editor/multicursors.lua:35"
+    ],
+    "tags": [
+      "多光标"
+    ]
+  },
+  {
+    "id": "multicursor-find-next",
+    "category": "多光标",
+    "scene": "批量修改",
+    "title": "添加下一个匹配",
+    "keys": "n",
+    "mode": "多光标普通模式",
+    "prerequisite": "已进入多光标编辑层；匹配相关动作需已建立匹配模式",
+    "action": "按当前匹配模式寻找并添加下一个匹配。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/multicursors.nvim/lua/multicursors/config.lua:31",
+      "config/lua/plugins/editor/multicursors.lua:35"
+    ],
+    "tags": [
+      "多光标"
+    ]
+  },
+  {
+    "id": "multicursor-find-prev",
+    "category": "多光标",
+    "scene": "批量修改",
+    "title": "添加上一个匹配",
+    "keys": "N",
+    "mode": "多光标普通模式",
+    "prerequisite": "已进入多光标编辑层；匹配相关动作需已建立匹配模式",
+    "action": "按当前匹配模式寻找并添加上一个匹配。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/multicursors.nvim/lua/multicursors/config.lua:34",
+      "config/lua/plugins/editor/multicursors.lua:35"
+    ],
+    "tags": [
+      "多光标"
+    ]
+  },
+  {
+    "id": "multicursor-skip-next",
+    "category": "多光标",
+    "scene": "批量修改",
+    "title": "跳过下一个匹配",
+    "keys": "q",
+    "mode": "多光标普通模式",
+    "prerequisite": "已进入多光标编辑层；匹配相关动作需已建立匹配模式",
+    "action": "跳过下一个匹配并继续查找。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/multicursors.nvim/lua/multicursors/config.lua:32",
+      "config/lua/plugins/editor/multicursors.lua:35"
+    ],
+    "tags": [
+      "多光标"
+    ]
+  },
+  {
+    "id": "multicursor-find-all",
+    "category": "多光标",
+    "scene": "批量修改",
+    "title": "选择全部匹配",
+    "keys": "Ctrl+A",
+    "mode": "多光标普通模式",
+    "prerequisite": "已进入多光标编辑层；匹配相关动作需已建立匹配模式",
+    "action": "添加当前模式的全部匹配；此多光标局部行为优先于 Windows 全选文本。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/multicursors.nvim/lua/multicursors/config.lua:35",
+      "config/lua/plugins/editor/multicursors.lua:35"
+    ],
+    "tags": [
+      "多光标"
+    ]
+  },
+  {
+    "id": "multicursor-clear-others",
+    "category": "多光标",
+    "scene": "批量修改",
+    "title": "只保留主选区",
+    "keys": ",",
+    "mode": "多光标普通模式",
+    "prerequisite": "已进入多光标编辑层；匹配相关动作需已建立匹配模式",
+    "action": "移除其他编辑点，只保留主选区。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/multicursors.nvim/lua/multicursors/config.lua:20",
+      "config/lua/plugins/editor/multicursors.lua:35"
+    ],
+    "tags": [
+      "多光标"
+    ]
+  },
+  {
+    "id": "multicursor-align",
+    "category": "多光标",
+    "scene": "批量修改",
+    "title": "对齐选区",
+    "keys": "z / Z",
+    "mode": "多光标普通模式",
+    "prerequisite": "已进入多光标编辑层；匹配相关动作需已建立匹配模式",
+    "action": "分别按选区之前的位置或起点对齐。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/multicursors.nvim/lua/multicursors/config.lua:12",
+      "config/lua/plugins/editor/multicursors.lua:35"
+    ],
+    "tags": [
+      "多光标"
+    ]
+  },
+  {
+    "id": "multicursor-edit",
+    "category": "多光标",
+    "scene": "批量输入",
+    "title": "进入同步插入 / 追加 / 改写 / 扩选",
+    "keys": "i / a / c / e",
+    "mode": "多光标普通模式",
+    "prerequisite": "已有多个编辑点或选区",
+    "action": "分别在所有编辑点插入、追加、改写，或进入扩选层。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/multicursors.nvim/lua/multicursors/config.lua:135",
+      "config/lua/plugins/editor/multicursors.lua:35"
+    ],
+    "tags": [
+      "多光标",
+      "输入"
+    ]
+  },
+  {
+    "id": "lsp-definition",
+    "category": "代码与语言",
+    "scene": "理解代码",
+    "title": "跳转定义",
+    "keys": "g d",
+    "mode": "普通模式；代码操作也支持可视模式",
+    "prerequisite": "相应 LSP 已附着且服务支持该方法；文件类型局部映射优先",
+    "action": "跳到光标符号定义。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:80",
+      "config/lua/plugins/languages/nvim_lspconfig.lua:4"
+    ],
+    "tags": [
+      "LSP",
+      "代码"
+    ]
+  },
+  {
+    "id": "lsp-references",
+    "category": "代码与语言",
+    "scene": "理解代码",
+    "title": "查找引用",
+    "keys": "g r",
+    "mode": "普通模式；代码操作也支持可视模式",
+    "prerequisite": "相应 LSP 已附着且服务支持该方法；文件类型局部映射优先",
+    "action": "列出光标符号的引用。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:81",
+      "config/lua/plugins/languages/nvim_lspconfig.lua:4"
+    ],
+    "tags": [
+      "LSP",
+      "代码"
+    ]
+  },
+  {
+    "id": "lsp-implementation",
+    "category": "代码与语言",
+    "scene": "理解代码",
+    "title": "跳转实现",
+    "keys": "g I",
+    "mode": "普通模式；代码操作也支持可视模式",
+    "prerequisite": "相应 LSP 已附着且服务支持该方法；文件类型局部映射优先",
+    "action": "跳到光标符号实现。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:82",
+      "config/lua/plugins/languages/nvim_lspconfig.lua:4"
+    ],
+    "tags": [
+      "LSP",
+      "代码"
+    ]
+  },
+  {
+    "id": "lsp-type",
+    "category": "代码与语言",
+    "scene": "理解代码",
+    "title": "跳转类型定义",
+    "keys": "g y",
+    "mode": "普通模式；代码操作也支持可视模式",
+    "prerequisite": "相应 LSP 已附着且服务支持该方法；文件类型局部映射优先",
+    "action": "跳到光标符号的类型定义。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:83",
+      "config/lua/plugins/languages/nvim_lspconfig.lua:4"
+    ],
+    "tags": [
+      "LSP",
+      "代码"
+    ]
+  },
+  {
+    "id": "lsp-declaration",
+    "category": "代码与语言",
+    "scene": "理解代码",
+    "title": "跳转声明",
+    "keys": "g D",
+    "mode": "普通模式；代码操作也支持可视模式",
+    "prerequisite": "相应 LSP 已附着且服务支持该方法；文件类型局部映射优先",
+    "action": "跳到光标符号声明。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:84",
+      "config/lua/plugins/languages/nvim_lspconfig.lua:4"
+    ],
+    "tags": [
+      "LSP",
+      "代码"
+    ]
+  },
+  {
+    "id": "lsp-hover",
+    "category": "代码与语言",
+    "scene": "理解代码",
+    "title": "查看符号文档",
+    "keys": "K",
+    "mode": "普通模式；代码操作也支持可视模式",
+    "prerequisite": "相应 LSP 已附着且服务支持该方法；文件类型局部映射优先",
+    "action": "显示光标处符号的悬停文档。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:85",
+      "config/lua/plugins/languages/nvim_lspconfig.lua:4"
+    ],
+    "tags": [
+      "LSP",
+      "代码"
+    ]
+  },
+  {
+    "id": "lsp-signature",
+    "category": "代码与语言",
+    "scene": "理解代码",
+    "title": "查看函数签名",
+    "keys": "g K",
+    "mode": "普通模式；代码操作也支持可视模式",
+    "prerequisite": "相应 LSP 已附着且服务支持该方法；文件类型局部映射优先",
+    "action": "显示函数签名帮助。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:86",
+      "config/lua/plugins/languages/nvim_lspconfig.lua:4"
+    ],
+    "tags": [
+      "LSP",
+      "代码"
+    ]
+  },
+  {
+    "id": "lsp-rename",
+    "category": "代码与语言",
+    "scene": "理解代码",
+    "title": "重命名符号",
+    "keys": "Space c r / Space r n",
+    "mode": "普通模式；代码操作也支持可视模式",
+    "prerequisite": "相应 LSP 已附着且服务支持该方法；文件类型局部映射优先",
+    "action": "调用语言服务重命名，并按服务返回结果更新引用。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:92",
+      "config/lua/plugins/languages/nvim_lspconfig.lua:4"
+    ],
+    "tags": [
+      "LSP",
+      "代码"
+    ]
+  },
+  {
+    "id": "lsp-action",
+    "category": "代码与语言",
+    "scene": "理解代码",
+    "title": "选择代码操作",
+    "keys": "Space c a",
+    "mode": "普通模式；代码操作也支持可视模式",
+    "prerequisite": "相应 LSP 已附着且服务支持该方法；文件类型局部映射优先",
+    "action": "打开当前符号或选区的语言服务代码操作。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:88",
+      "config/lua/plugins/languages/nvim_lspconfig.lua:4"
+    ],
+    "tags": [
+      "LSP",
+      "代码"
+    ]
+  },
+  {
+    "id": "lsp-info",
+    "category": "代码与语言",
+    "scene": "理解代码",
+    "title": "查看语言服务信息",
+    "keys": "Space c l",
+    "mode": "普通模式；代码操作也支持可视模式",
+    "prerequisite": "相应 LSP 已附着且服务支持该方法；文件类型局部映射优先",
+    "action": "打开语言服务配置与状态选择器。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:79",
+      "config/lua/plugins/languages/nvim_lspconfig.lua:4"
+    ],
+    "tags": [
+      "LSP",
+      "代码"
+    ]
+  },
+  {
+    "id": "lsp-signature-insert",
+    "category": "代码与语言",
+    "scene": "输入函数调用",
+    "title": "插入时查看函数签名",
+    "keys": "Ctrl+K",
+    "mode": "插入模式",
+    "prerequisite": "相应 LSP 支持 signatureHelp；补全局部映射优先",
+    "action": "显示函数签名帮助。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua:87",
+      "config/lua/plugins/languages/nvim_lspconfig.lua:4"
+    ],
+    "tags": [
+      "LSP",
+      "补全"
+    ]
+  },
+  {
+    "id": "code-format",
+    "category": "代码与语言",
+    "scene": "整理代码",
+    "title": "格式化文件或选区",
+    "keys": "Space c f",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "当前文件已配置可用 formatter 或 LSP 格式化",
+    "action": "显式运行当前缓冲区或选择范围的格式化。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:116",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "格式化"
+    ]
+  },
+  {
+    "id": "diagnostic-line",
+    "category": "代码与语言",
+    "scene": "排查问题",
+    "title": "查看当前行诊断",
+    "keys": "Space c d",
+    "mode": "普通模式",
+    "prerequisite": "当前缓冲区存在诊断",
+    "action": "弹出当前行诊断详情。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:131",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "诊断"
+    ]
+  },
+  {
+    "id": "diagnostic-all",
+    "category": "代码与语言",
+    "scene": "排查问题",
+    "title": "浏览上一条 / 下一条诊断",
+    "keys": "[ d / ] d",
+    "mode": "普通模式",
+    "prerequisite": "诊断已由语言服务或工具生成",
+    "action": "跳到上一条或下一条诊断并显示浮窗。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:132",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "诊断",
+      "跳转"
+    ]
+  },
+  {
+    "id": "diagnostic-error",
+    "category": "代码与语言",
+    "scene": "排查问题",
+    "title": "浏览上一条 / 下一条错误",
+    "keys": "[ e / ] e",
+    "mode": "普通模式",
+    "prerequisite": "诊断已由语言服务或工具生成",
+    "action": "仅在 ERROR 严重度的诊断之间跳转。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:134",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "诊断",
+      "跳转"
+    ]
+  },
+  {
+    "id": "diagnostic-warning",
+    "category": "代码与语言",
+    "scene": "排查问题",
+    "title": "浏览上一条 / 下一条警告",
+    "keys": "[ w / ] w",
+    "mode": "普通模式",
+    "prerequisite": "诊断已由语言服务或工具生成",
+    "action": "仅在 WARN 严重度的诊断之间跳转。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:136",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "诊断",
+      "跳转"
+    ]
+  },
+  {
+    "id": "none-ls-toggle",
+    "category": "代码与语言",
+    "scene": "工具控制",
+    "title": "切换 none-ls 已注册工具",
+    "keys": "Space t n",
+    "mode": "普通模式",
+    "prerequisite": "none-ls 有已注册来源",
+    "action": "按当前启用状态统一禁用或启用已注册来源；没有来源时给出反馈。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:29"
+    ],
+    "tags": [
+      "格式化",
+      "none-ls"
+    ]
+  },
+  {
+    "id": "diagnostic-toggle",
+    "category": "代码与语言",
+    "scene": "工具控制",
+    "title": "切换诊断可见性",
+    "keys": "Space t d / Space u d",
+    "mode": "普通模式",
+    "prerequisite": "配套配置已加载",
+    "action": "切换 Neovim 诊断显示状态。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:37",
+      "config/lua/plugins/appearance/snacks.lua:201"
+    ],
+    "tags": [
+      "诊断",
+      "开关"
+    ]
+  },
+  {
+    "id": "venv-select",
+    "category": "代码与语言",
+    "scene": "Python 项目",
+    "title": "选择 Python 虚拟环境",
+    "keys": "Space v s",
+    "mode": "普通模式",
+    "prerequisite": "venv-selector 可用；已安装目标环境",
+    "action": "显式选择项目 Python 环境；不修改所有工具进程的 PATH，也不自动激活到终端。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/languages/venv_selector.lua:14"
+    ],
+    "tags": [
+      "Python",
+      "venv"
+    ]
+  },
+  {
+    "id": "venv-restore",
+    "category": "代码与语言",
+    "scene": "Python 项目",
+    "title": "恢复项目缓存的 Python 环境",
+    "keys": "Space v c",
+    "mode": "普通模式",
+    "prerequisite": "当前项目已有 venv-selector 缓存",
+    "action": "恢复该项目先前选择的 Python 虚拟环境。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/languages/venv_selector.lua:18"
+    ],
+    "tags": [
+      "Python",
+      "venv"
+    ]
+  },
+  {
+    "id": "completion-show",
+    "category": "代码与语言",
+    "scene": "输入代码",
+    "title": "显示补全和文档",
+    "keys": "Ctrl+Space",
+    "mode": "插入模式",
+    "prerequisite": "Blink 补全上下文；菜单按实际输入和来源出现",
+    "action": "打开补全菜单，再次触发显示或隐藏文档。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/blink.cmp/lua/blink/cmp/keymap/presets.lua:71",
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/extras/coding/blink.lua:103",
+      "config/lua/plugins/editor/blink_cmp.lua:28"
+    ],
+    "tags": [
+      "补全",
+      "Blink"
+    ]
+  },
+  {
+    "id": "completion-accept",
+    "category": "代码与语言",
+    "scene": "输入代码",
+    "title": "确认补全",
+    "keys": "Enter",
+    "mode": "插入模式",
+    "prerequisite": "Blink 补全上下文；菜单按实际输入和来源出现",
+    "action": "接受当前补全项；没有可接受项时回退正常 Enter。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/blink.cmp/lua/blink/cmp/keymap/presets.lua:73",
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/extras/coding/blink.lua:103",
+      "config/lua/plugins/editor/blink_cmp.lua:28"
+    ],
+    "tags": [
+      "补全",
+      "Blink"
+    ]
+  },
+  {
+    "id": "completion-cancel",
+    "category": "代码与语言",
+    "scene": "输入代码",
+    "title": "取消补全",
+    "keys": "Ctrl+E",
+    "mode": "插入模式",
+    "prerequisite": "Blink 补全上下文；菜单按实际输入和来源出现",
+    "action": "取消补全；没有菜单时回退原按键。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/blink.cmp/lua/blink/cmp/keymap/presets.lua:72",
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/extras/coding/blink.lua:103",
+      "config/lua/plugins/editor/blink_cmp.lua:28"
+    ],
+    "tags": [
+      "补全",
+      "Blink"
+    ]
+  },
+  {
+    "id": "completion-next",
+    "category": "代码与语言",
+    "scene": "输入代码",
+    "title": "选择下一个补全项",
+    "keys": "Ctrl+N / ↓",
+    "mode": "插入模式",
+    "prerequisite": "Blink 补全上下文；菜单按实际输入和来源出现",
+    "action": "选择下一个候选项。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/blink.cmp/lua/blink/cmp/keymap/presets.lua:79",
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/extras/coding/blink.lua:103",
+      "config/lua/plugins/editor/blink_cmp.lua:28"
+    ],
+    "tags": [
+      "补全",
+      "Blink"
+    ]
+  },
+  {
+    "id": "completion-prev",
+    "category": "代码与语言",
+    "scene": "输入代码",
+    "title": "选择上一个补全项",
+    "keys": "Ctrl+P / ↑",
+    "mode": "插入模式",
+    "prerequisite": "Blink 补全上下文；菜单按实际输入和来源出现",
+    "action": "选择上一个候选项。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/blink.cmp/lua/blink/cmp/keymap/presets.lua:78",
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/extras/coding/blink.lua:103",
+      "config/lua/plugins/editor/blink_cmp.lua:28"
+    ],
+    "tags": [
+      "补全",
+      "Blink"
+    ]
+  },
+  {
+    "id": "completion-doc",
+    "category": "代码与语言",
+    "scene": "输入代码",
+    "title": "滚动补全文档",
+    "keys": "Ctrl+B / Ctrl+F",
+    "mode": "插入模式",
+    "prerequisite": "Blink 补全上下文；菜单按实际输入和来源出现",
+    "action": "向上或向下滚动补全文档；未命中时回退。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/blink.cmp/lua/blink/cmp/keymap/presets.lua:83",
+      "runtime/lazy/LazyVim/lua/lazyvim/plugins/extras/coding/blink.lua:103",
+      "config/lua/plugins/editor/blink_cmp.lua:28"
+    ],
+    "tags": [
+      "补全",
+      "Blink"
+    ]
+  },
+  {
+    "id": "snippet-jump",
+    "category": "代码与语言",
+    "scene": "输入代码",
+    "title": "跳转代码片段占位符",
+    "keys": "Tab / Shift+Tab",
+    "mode": "插入模式",
+    "prerequisite": "LuaSnip 片段处于活动状态",
+    "action": "分别前进或后退到代码片段占位符；没有片段跳转时回退原按键。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/editor/blink_cmp.lua:34"
+    ],
+    "tags": [
+      "片段",
+      "补全"
+    ]
+  },
+  {
+    "id": "glow-toggle",
+    "category": "外观与界面",
+    "scene": "柔光阅读",
+    "title": "开关 Glow 柔光",
+    "keys": "Space u B",
+    "mode": "普通模式",
+    "prerequisite": "Neovide GUI；前端实现 neovide_bloom",
+    "action": "即时切换字符柔光；B 是大写，Space u G 仍为 Git Signs。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:211"
+    ],
+    "tags": [
+      "Glow",
+      "柔光",
+      "外观"
+    ]
+  },
+  {
+    "id": "zoom-in",
+    "category": "外观与界面",
+    "scene": "阅读缩放",
+    "title": "放大编辑器界面",
+    "keys": "放大组合键",
+    "mode": "普通 / 插入 / 可视 / 命令行 / 终端模式",
+    "prerequisite": "Neovide GUI；macOS 或 Windows；面板本地缩放键另计",
+    "action": "界面缩放增加 0.1，限 0.5–2.0。 退出时保存，加载会话时恢复。旧 Cmd+9 已退役。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/neovide_zoom.lua:74"
+    ],
+    "tags": [
+      "缩放",
+      "字号"
+    ],
+    "macKeys": "Cmd+= / Cmd++",
+    "windowsKeys": "Ctrl+= / Ctrl++"
+  },
+  {
+    "id": "zoom-out",
+    "category": "外观与界面",
+    "scene": "阅读缩放",
+    "title": "缩小编辑器界面",
+    "keys": "缩小组合键",
+    "mode": "普通 / 插入 / 可视 / 命令行 / 终端模式",
+    "prerequisite": "Neovide GUI；macOS 或 Windows；面板本地缩放键另计",
+    "action": "界面缩放减少 0.1，限 0.5–2.0。 退出时保存，加载会话时恢复。旧 Cmd+9 已退役。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/neovide_zoom.lua:74"
+    ],
+    "tags": [
+      "缩放",
+      "字号"
+    ],
+    "macKeys": "Cmd+-",
+    "windowsKeys": "Ctrl+-"
+  },
+  {
+    "id": "zoom-reset",
+    "category": "外观与界面",
+    "scene": "阅读缩放",
+    "title": "恢复编辑器 100% 缩放",
+    "keys": "恢复缩放组合键",
+    "mode": "普通 / 插入 / 可视 / 命令行 / 终端模式",
+    "prerequisite": "Neovide GUI；macOS 或 Windows；面板本地缩放键另计",
+    "action": "将编辑器界面缩放恢复为 1.0。 退出时保存，加载会话时恢复。旧 Cmd+9 已退役。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/platform/neovide_zoom.lua:74"
+    ],
+    "tags": [
+      "缩放",
+      "字号"
+    ],
+    "macKeys": "Cmd+0",
+    "windowsKeys": "Ctrl+0"
+  },
+  {
+    "id": "ui-theme-mode",
+    "category": "外观与界面",
+    "scene": "调整工作区",
+    "title": "切换浅色 / 深色背景",
+    "keys": "Space u b",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应功能已加载",
+    "action": "切换 light/dark 背景；读取本系统独立维护的主题。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:207"
+    ],
+    "tags": [
+      "外观",
+      "开关"
+    ]
+  },
+  {
+    "id": "ui-wrap",
+    "category": "外观与界面",
+    "scene": "调整工作区",
+    "title": "切换自动折行",
+    "keys": "Space u w",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应功能已加载",
+    "action": "切换当前自动折行选项。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:199"
+    ],
+    "tags": [
+      "外观",
+      "开关"
+    ]
+  },
+  {
+    "id": "ui-numbers",
+    "category": "外观与界面",
+    "scene": "调整工作区",
+    "title": "切换行号",
+    "keys": "Space u l",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应功能已加载",
+    "action": "切换行号显示。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:202"
+    ],
+    "tags": [
+      "外观",
+      "开关"
+    ]
+  },
+  {
+    "id": "ui-relative-numbers",
+    "category": "外观与界面",
+    "scene": "调整工作区",
+    "title": "切换相对行号",
+    "keys": "Space u L",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应功能已加载",
+    "action": "切换相对行号显示。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:200"
+    ],
+    "tags": [
+      "外观",
+      "开关"
+    ]
+  },
+  {
+    "id": "ui-spell",
+    "category": "外观与界面",
+    "scene": "调整工作区",
+    "title": "切换拼写检查",
+    "keys": "Space u s",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应功能已加载",
+    "action": "切换拼写检查选项。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:198"
+    ],
+    "tags": [
+      "外观",
+      "开关"
+    ]
+  },
+  {
+    "id": "ui-conceal",
+    "category": "外观与界面",
+    "scene": "调整工作区",
+    "title": "切换隐藏标记",
+    "keys": "Space u c",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应功能已加载",
+    "action": "在显示源码标记与 conceal 之间切换。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:203"
+    ],
+    "tags": [
+      "外观",
+      "开关"
+    ]
+  },
+  {
+    "id": "ui-syntax",
+    "category": "外观与界面",
+    "scene": "调整工作区",
+    "title": "切换 Treesitter 高亮",
+    "keys": "Space u T",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应功能已加载",
+    "action": "切换 Treesitter 高亮。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:206"
+    ],
+    "tags": [
+      "外观",
+      "开关"
+    ]
+  },
+  {
+    "id": "ui-inlay",
+    "category": "外观与界面",
+    "scene": "调整工作区",
+    "title": "切换内联提示",
+    "keys": "Space u h",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应功能已加载",
+    "action": "切换 LSP inlay hints；需要服务支持。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:208"
+    ],
+    "tags": [
+      "外观",
+      "开关"
+    ]
+  },
+  {
+    "id": "ui-indent-guides",
+    "category": "外观与界面",
+    "scene": "调整工作区",
+    "title": "切换缩进参考线",
+    "keys": "Space u g",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应功能已加载",
+    "action": "切换缩进参考线。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:209"
+    ],
+    "tags": [
+      "外观",
+      "开关"
+    ]
+  },
+  {
+    "id": "ui-dim",
+    "category": "外观与界面",
+    "scene": "调整工作区",
+    "title": "切换非活动区域淡化",
+    "keys": "Space u D",
+    "mode": "普通模式",
+    "prerequisite": "配套配置；对应功能已加载",
+    "action": "切换 Snacks Dim。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:210"
+    ],
+    "tags": [
+      "外观",
+      "开关"
+    ]
+  },
+  {
+    "id": "glass-toggle",
+    "category": "外观与界面",
+    "scene": "调整材质",
+    "title": "切换原生玻璃材质",
+    "keys": ":GlowGlass toggle",
+    "mode": "命令行（输入命令后 Enter）",
+    "prerequisite": "提供原生 macOS 材质能力的 Glow 构建；macOS 26+ 使用 Liquid Glass，早期系统回退材质",
+    "action": "切换原生 macOS 窗口材质。 系统玻璃模糊由 macOS 控制。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/platform/glass.lua:67"
+    ],
+    "tags": [
+      "命令",
+      "玻璃",
+      "透明度"
+    ]
+  },
+  {
+    "id": "glass-opacity",
+    "category": "外观与界面",
+    "scene": "调整材质",
+    "title": "调整普通背景不透明度",
+    "keys": ":GlowGlass opacity 0.85",
+    "mode": "命令行（输入命令后 Enter）",
+    "prerequisite": "提供原生 macOS 材质能力的 Glow 构建；macOS 26+ 使用 Liquid Glass，早期系统回退材质",
+    "action": "设置普通背景不透明度（0–1）；省略数值打开输入框。 系统玻璃模糊由 macOS 控制。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/platform/glass.lua:67"
+    ],
+    "tags": [
+      "命令",
+      "玻璃",
+      "透明度"
+    ]
+  },
+  {
+    "id": "glass-blur",
+    "category": "外观与界面",
+    "scene": "调整材质",
+    "title": "调整浮窗附加模糊",
+    "keys": ":GlowGlass blur 24",
+    "mode": "命令行（输入命令后 Enter）",
+    "prerequisite": "提供原生 macOS 材质能力的 Glow 构建；macOS 26+ 使用 Liquid Glass，早期系统回退材质",
+    "action": "设置 Neovide 浮窗附加模糊（0–100）；省略数值打开输入框。 系统玻璃模糊由 macOS 控制。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/platform/glass.lua:67"
+    ],
+    "tags": [
+      "命令",
+      "玻璃",
+      "透明度"
+    ]
+  },
+  {
+    "id": "glass-reset",
+    "category": "外观与界面",
+    "scene": "调整材质",
+    "title": "恢复原生材质默认值",
+    "keys": ":GlowGlass reset",
+    "mode": "命令行（输入命令后 Enter）",
+    "prerequisite": "提供原生 macOS 材质能力的 Glow 构建；macOS 26+ 使用 Liquid Glass，早期系统回退材质",
+    "action": "恢复当前配置的材质、背景透明度和浮窗附加模糊。 系统玻璃模糊由 macOS 控制。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/platform/glass.lua:67"
+    ],
+    "tags": [
+      "命令",
+      "玻璃",
+      "透明度"
+    ]
+  },
+  {
+    "id": "glass-status",
+    "category": "外观与界面",
+    "scene": "调整材质",
+    "title": "查看原生材质状态",
+    "keys": ":GlowGlass status",
+    "mode": "命令行（输入命令后 Enter）",
+    "prerequisite": "提供原生 macOS 材质能力的 Glow 构建；macOS 26+ 使用 Liquid Glass，早期系统回退材质",
+    "action": "显示材质开关、背景不透明度和浮窗模糊数值。 系统玻璃模糊由 macOS 控制。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/platform/glass.lua:67"
+    ],
+    "tags": [
+      "命令",
+      "玻璃",
+      "透明度"
+    ]
+  },
+  {
+    "id": "language-toggle",
+    "category": "外观与界面",
+    "scene": "中英文工作流",
+    "title": "切换中英文界面",
+    "keys": "Space Ctrl+L",
+    "mode": "普通模式",
+    "prerequisite": "配套语言模块已加载；先按 Space，再按 Ctrl+L",
+    "action": "切换界面语言并保存选择，刷新已接入的菜单、提示、选择器和 Notebook 文案。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/locale.lua:103"
+    ],
+    "tags": [
+      "语言",
+      "中文",
+      "English"
+    ]
+  },
+  {
+    "id": "language-command",
+    "category": "外观与界面",
+    "scene": "中英文工作流",
+    "title": "指定界面语言",
+    "keys": ":GlowLanguage zh / en / toggle",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "配套语言模块已加载",
+    "action": "显式选择中文、英文或切换当前语言。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/locale.lua:99"
+    ],
+    "tags": [
+      "命令",
+      "语言"
+    ]
+  },
+  {
+    "id": "notebook-open",
+    "category": "Notebook",
+    "scene": "打开研究记录",
+    "title": "打开可编辑 Notebook",
+    "keys": ":GlowNotebook [文件.ipynb]",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "已准备 Jupytext / Molten 运行时；目标为可读 nbformat 4 Notebook",
+    "action": "在真正的 Neovim Python 缓冲区编辑 Notebook，以 # %% 分隔单元格；文件树 Enter 同样会路由到可编辑入口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:952"
+    ],
+    "tags": [
+      "命令",
+      "Jupyter",
+      "打开"
+    ]
+  },
+  {
+    "id": "notebook-kernel",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "选择或切换 Python 内核",
+    "keys": "Space j k / \\ n k",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "打开真实 Python 内核选择器并显示解释器路径；取消不启动。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:776"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-run",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "运行当前单元格",
+    "keys": "Shift+Enter / Space j r / \\ n r",
+    "mode": "Notebook 普通模式；运行键另支持插入模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "运行当前代码单元格；Markdown 单元格只提交渲染而不启动内核。Shift+Enter 同时支持插入模式。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:770"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-run-all",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "运行所有代码单元格",
+    "keys": "Space j A / \\ n a",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "按 Notebook 单元格顺序运行全部代码单元格。A 为大写。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:773"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-output",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "展开当前单元格输出",
+    "keys": "Space j o / \\ n o",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "进入当前单元格的可滚动输出视图，便于查看长文本、表格或错误。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:774"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-interrupt",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "中断内核执行",
+    "keys": "Space j i / \\ n i",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "请求中断当前 Notebook 内核执行。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:775"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-restart",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "重启 Notebook 内核",
+    "keys": "Space j 0 0",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "通过 Notebook 内核重启入口重新启动内核。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:784"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-add-above",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "在上方插入代码格",
+    "keys": "Space j a",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "在当前单元格上方插入代码单元格。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:785"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-add-below",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "在下方插入代码格",
+    "keys": "Space j b / Space j c / \\ n c",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "在当前单元格下方插入代码单元格。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:786"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-add-markdown",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "在下方插入 Markdown 格",
+    "keys": "Space j M / \\ n m",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "在当前单元格下方插入 Markdown 单元格；M 为大写。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:788"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-to-markdown",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "把当前格转换为 Markdown",
+    "keys": "Space j m",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "把当前单元格转换为 Markdown 单元格。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:789"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-to-code",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "把当前格转换为代码",
+    "keys": "Space j y",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "把当前单元格转换为代码单元格。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:790"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-delete-cell",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "删除当前单元格",
+    "keys": "Space j d d",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "删除当前 Notebook 单元格；普通 dd 仍保留原生行删除。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:791"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-next-cell",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "跳到下一个单元格",
+    "keys": "] c",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "跳到下一个 Notebook 单元格；此缓冲区映射优先于 Git 改动导航等同名映射。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:792"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-prev-cell",
+    "category": "Notebook",
+    "scene": "编写与运行单元格",
+    "title": "跳到上一个单元格",
+    "keys": "[ c",
+    "mode": "Notebook 普通模式",
+    "prerequisite": "已用 :GlowNotebook 或文件树打开可编辑 .ipynb；已准备 Notebook 运行时",
+    "action": "跳到上一个 Notebook 单元格；此缓冲区映射优先于 Git 改动导航等同名映射。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_edit.lua:793"
+    ],
+    "tags": [
+      "Notebook",
+      "Jupyter",
+      "单元格"
+    ]
+  },
+  {
+    "id": "notebook-output-pan",
+    "category": "Notebook",
+    "scene": "阅读长输出",
+    "title": "横向查看输出",
+    "keys": "h / ← / l / →",
+    "mode": "输出窗口普通模式",
+    "prerequisite": "已通过 Space j o 进入可滚动输出",
+    "action": "左右滚动输出；j/k、Ctrl+D/U、Ctrl+F/B 和纵向滚轮保留 Neovim 滚动行为。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_output.lua:187"
+    ],
+    "tags": [
+      "Notebook",
+      "输出",
+      "滚动"
+    ]
+  },
+  {
+    "id": "notebook-output-copy",
+    "category": "Notebook",
+    "scene": "复用结果",
+    "title": "复制输出到系统剪贴板",
+    "keys": "Space y",
+    "mode": "输出窗口普通 / 可视模式",
+    "prerequisite": "已进入可滚动输出；复制选区前先进入可视模式",
+    "action": "普通模式复制当前输出行，可视模式复制所选输出。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_output.lua:192"
+    ],
+    "tags": [
+      "Notebook",
+      "输出",
+      "复制"
+    ]
+  },
+  {
+    "id": "notebook-output-close",
+    "category": "Notebook",
+    "scene": "返回代码",
+    "title": "收起输出并返回 Notebook",
+    "keys": "q / Esc",
+    "mode": "输出窗口普通模式",
+    "prerequisite": "已进入可滚动输出",
+    "action": "关闭展开输出并返回源 Notebook；内核、单元格和行内输出继续保留。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_output.lua:202"
+    ],
+    "tags": [
+      "Notebook",
+      "输出",
+      "关闭"
+    ]
+  },
+  {
+    "id": "notebook-metadata",
+    "category": "Notebook",
+    "scene": "查看元数据",
+    "title": "切换 Notebook 元数据显示",
+    "keys": ":GlowNotebookMetadata",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "当前缓冲区是可编辑 Notebook",
+    "action": "切换顶部序列化 Notebook 元数据的显示。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/notebook_ui.lua:771"
+    ],
+    "tags": [
+      "Notebook",
+      "命令",
+      "元数据"
+    ]
+  },
+  {
+    "id": "notebook-static",
+    "category": "Notebook",
+    "scene": "阅读已保存内容",
+    "title": "静态预览 Notebook",
+    "keys": ":GlowNotebookPreview [文件.ipynb]",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "前端有 web 原生预览能力（当前已验入口为 macOS）；目标 nbformat 4，文件和单元格数在限制内",
+    "action": "离线渲染已保存的 Markdown、公式、表格与静态输出；此入口不执行内核。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/media/notebook.lua:203"
+    ],
+    "tags": [
+      "Notebook",
+      "命令",
+      "预览"
+    ]
+  },
+  {
+    "id": "image-open",
+    "category": "图片与媒体",
+    "scene": "浏览资源",
+    "title": "打开原生图片预览",
+    "keys": ":GlowImage [文件]",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "具备原生图片 RPC 的 Glow；支持 PNG/JPEG/GIF 首帧/WebP/BMP/TIFF/ICO",
+    "action": "打开图片预览；也可在文件树直接打开支持的图片。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/image.lua:394"
+    ],
+    "tags": [
+      "图片",
+      "命令"
+    ]
+  },
+  {
+    "id": "image-zoom-in",
+    "category": "图片与媒体",
+    "scene": "查看图片",
+    "title": "放大图片",
+    "keys": "+ / =",
+    "mode": "图片预览普通模式",
+    "prerequisite": "图片已在原生 Glow 图片面板打开；快捷键仅作用于图片缓冲区",
+    "action": "图片缩放乘 1.25。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/image.lua:296"
+    ],
+    "tags": [
+      "图片",
+      "预览"
+    ]
+  },
+  {
+    "id": "image-zoom-out",
+    "category": "图片与媒体",
+    "scene": "查看图片",
+    "title": "缩小图片",
+    "keys": "-",
+    "mode": "图片预览普通模式",
+    "prerequisite": "图片已在原生 Glow 图片面板打开；快捷键仅作用于图片缓冲区",
+    "action": "图片缩放乘 0.8。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/image.lua:298"
+    ],
+    "tags": [
+      "图片",
+      "预览"
+    ]
+  },
+  {
+    "id": "image-fit",
+    "category": "图片与媒体",
+    "scene": "查看图片",
+    "title": "图片适应窗口",
+    "keys": "0 / f",
+    "mode": "图片预览普通模式",
+    "prerequisite": "图片已在原生 Glow 图片面板打开；快捷键仅作用于图片缓冲区",
+    "action": "按当前图片面板尺寸适应显示。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/image.lua:299"
+    ],
+    "tags": [
+      "图片",
+      "预览"
+    ]
+  },
+  {
+    "id": "image-pan",
+    "category": "图片与媒体",
+    "scene": "查看图片",
+    "title": "平移图片",
+    "keys": "h / j / k / l",
+    "mode": "图片预览普通模式",
+    "prerequisite": "图片已在原生 Glow 图片面板打开；快捷键仅作用于图片缓冲区",
+    "action": "分别向左 / 下 / 上 / 右平移图片。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/image.lua:301"
+    ],
+    "tags": [
+      "图片",
+      "预览"
+    ]
+  },
+  {
+    "id": "image-reload",
+    "category": "图片与媒体",
+    "scene": "查看图片",
+    "title": "重新加载图片",
+    "keys": "r",
+    "mode": "图片预览普通模式",
+    "prerequisite": "图片已在原生 Glow 图片面板打开；快捷键仅作用于图片缓冲区",
+    "action": "重试解码并加载当前图片。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/image.lua:305"
+    ],
+    "tags": [
+      "图片",
+      "预览"
+    ]
+  },
+  {
+    "id": "image-close",
+    "category": "图片与媒体",
+    "scene": "查看图片",
+    "title": "关闭图片预览",
+    "keys": "q / Esc",
+    "mode": "图片预览普通模式",
+    "prerequisite": "图片已在原生 Glow 图片面板打开；快捷键仅作用于图片缓冲区",
+    "action": "关闭当前图片预览并释放所属资源。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/image.lua:306"
+    ],
+    "tags": [
+      "图片",
+      "预览"
+    ]
+  },
+  {
+    "id": "image-tabs",
+    "category": "图片与媒体",
+    "scene": "查看图片",
+    "title": "在图片预览中切换 Tab",
+    "keys": "Tab / Shift+Tab",
+    "mode": "图片预览普通模式",
+    "prerequisite": "图片已在原生 Glow 图片面板打开；快捷键仅作用于图片缓冲区",
+    "action": "切换到下一个 / 上一个 Neovim Tab。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/image.lua:308"
+    ],
+    "tags": [
+      "图片",
+      "预览"
+    ]
+  },
+  {
+    "id": "preview-open-pdf",
+    "category": "图片与媒体",
+    "scene": "边写边看",
+    "title": "打开内嵌 PDF",
+    "keys": ":GlowPDF [文件.pdf]",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "当前 Glow 构建须声明对应原生预览 kind；当前 Windows 仅 PDF；Linux X11 条件后端尚未完成原生 GUI 验收",
+    "action": "在编辑器分屏中打开或复用 PDF 面板。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:371"
+    ],
+    "tags": [
+      "预览",
+      "命令"
+    ]
+  },
+  {
+    "id": "preview-open-web",
+    "category": "图片与媒体",
+    "scene": "边写边看",
+    "title": "打开网页或本地 HTML",
+    "keys": ":GlowWeb [文件或 URL]",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "当前 Glow 构建须声明对应原生预览 kind；当前 Windows 仅 PDF；Linux X11 条件后端尚未完成原生 GUI 验收",
+    "action": "在编辑器分屏中打开网页；本地 HTML/CSS/JS 保存后自动刷新相关预览。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:370"
+    ],
+    "tags": [
+      "预览",
+      "命令"
+    ]
+  },
+  {
+    "id": "preview-open-media",
+    "category": "图片与媒体",
+    "scene": "边写边看",
+    "title": "打开音视频",
+    "keys": ":GlowMedia [文件]",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "当前 Glow 构建须声明对应原生预览 kind；当前 Windows 仅 PDF；Linux X11 条件后端尚未完成原生 GUI 验收",
+    "action": "在编辑器分屏中打开支持的音频或视频；具体编解码器依系统。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:369"
+    ],
+    "tags": [
+      "预览",
+      "命令"
+    ]
+  },
+  {
+    "id": "preview-next-page",
+    "category": "图片与媒体",
+    "scene": "阅读 PDF 与网页",
+    "title": "PDF 下一页",
+    "keys": "] p / PageDown",
+    "mode": "预览缓冲区普通模式",
+    "prerequisite": "PDF / web 面板已打开且焦点在 Neovim 侧；翻页只适用于 PDF",
+    "action": "切换到下一页 PDF。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:307"
+    ],
+    "tags": [
+      "PDF",
+      "网页",
+      "预览"
+    ]
+  },
+  {
+    "id": "preview-prev-page",
+    "category": "图片与媒体",
+    "scene": "阅读 PDF 与网页",
+    "title": "PDF 上一页",
+    "keys": "[ p / PageUp",
+    "mode": "预览缓冲区普通模式",
+    "prerequisite": "PDF / web 面板已打开且焦点在 Neovim 侧；翻页只适用于 PDF",
+    "action": "切换到上一页 PDF。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:307"
+    ],
+    "tags": [
+      "PDF",
+      "网页",
+      "预览"
+    ]
+  },
+  {
+    "id": "preview-zoom-in",
+    "category": "图片与媒体",
+    "scene": "阅读 PDF 与网页",
+    "title": "放大 PDF 或网页",
+    "keys": "+ / =",
+    "mode": "预览缓冲区普通模式",
+    "prerequisite": "PDF / web 面板已打开且焦点在 Neovim 侧；翻页只适用于 PDF",
+    "action": "预览缩放乘 1.1；这是面板内容缩放。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:310"
+    ],
+    "tags": [
+      "PDF",
+      "网页",
+      "预览"
+    ]
+  },
+  {
+    "id": "preview-zoom-out",
+    "category": "图片与媒体",
+    "scene": "阅读 PDF 与网页",
+    "title": "缩小 PDF 或网页",
+    "keys": "-",
+    "mode": "预览缓冲区普通模式",
+    "prerequisite": "PDF / web 面板已打开且焦点在 Neovim 侧；翻页只适用于 PDF",
+    "action": "预览缩放乘 1/1.1。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:310"
+    ],
+    "tags": [
+      "PDF",
+      "网页",
+      "预览"
+    ]
+  },
+  {
+    "id": "preview-fit",
+    "category": "图片与媒体",
+    "scene": "阅读 PDF 与网页",
+    "title": "适应 PDF / 重置网页缩放",
+    "keys": "0",
+    "mode": "预览缓冲区普通模式",
+    "prerequisite": "PDF / web 面板已打开且焦点在 Neovim 侧；翻页只适用于 PDF",
+    "action": "PDF 适应当前面板；网页恢复 100% 缩放。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:311"
+    ],
+    "tags": [
+      "PDF",
+      "网页",
+      "预览"
+    ]
+  },
+  {
+    "id": "preview-focus",
+    "category": "图片与媒体",
+    "scene": "控制原生预览",
+    "title": "进入原生面板",
+    "keys": "i / Enter",
+    "mode": "预览缓冲区普通模式",
+    "prerequisite": "前端提供对应原生预览且面板已打开；焦点在 Neovim 侧",
+    "action": "将焦点交给原生 PDF、网页或媒体控件，进行文本选择等操作。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:303"
+    ],
+    "tags": [
+      "预览",
+      "焦点"
+    ]
+  },
+  {
+    "id": "preview-reload",
+    "category": "图片与媒体",
+    "scene": "控制原生预览",
+    "title": "刷新原生预览",
+    "keys": "r",
+    "mode": "预览缓冲区普通模式",
+    "prerequisite": "前端提供对应原生预览且面板已打开；焦点在 Neovim 侧",
+    "action": "重新加载当前原生面板。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:299"
+    ],
+    "tags": [
+      "预览",
+      "焦点"
+    ]
+  },
+  {
+    "id": "preview-close",
+    "category": "图片与媒体",
+    "scene": "控制原生预览",
+    "title": "关闭原生预览",
+    "keys": "q / Esc",
+    "mode": "预览缓冲区普通模式",
+    "prerequisite": "前端提供对应原生预览且面板已打开；焦点在 Neovim 侧",
+    "action": "关闭当前原生面板并释放所属资源。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:299"
+    ],
+    "tags": [
+      "预览",
+      "焦点"
+    ]
+  },
+  {
+    "id": "preview-info",
+    "category": "图片与媒体",
+    "scene": "控制原生预览",
+    "title": "查询预览来源与文件访问范围",
+    "keys": "g ?",
+    "mode": "预览缓冲区普通模式",
+    "prerequisite": "前端提供对应原生预览且面板已打开；焦点在 Neovim 侧",
+    "action": "显示预览的真实来源和文件访问范围信息。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:304"
+    ],
+    "tags": [
+      "预览",
+      "焦点"
+    ]
+  },
+  {
+    "id": "preview-tabs",
+    "category": "图片与媒体",
+    "scene": "控制原生预览",
+    "title": "在原生预览中切换 Tab",
+    "keys": "Tab / Shift+Tab / Ctrl+Tab / Ctrl+Shift+Tab",
+    "mode": "预览缓冲区普通模式",
+    "prerequisite": "前端提供对应原生预览且面板已打开；焦点在 Neovim 侧",
+    "action": "切换到下一个或上一个 Neovim Tab；Mac 另有 Cmd+{ / Cmd+}。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:300"
+    ],
+    "tags": [
+      "预览",
+      "焦点"
+    ]
+  },
+  {
+    "id": "media-play",
+    "category": "图片与媒体",
+    "scene": "查看音视频",
+    "title": "播放 / 暂停",
+    "keys": "Space",
+    "mode": "媒体预览缓冲区普通模式",
+    "prerequisite": "macOS 原生音视频后端；已打开支持的文件；焦点在 Neovim 侧",
+    "action": "切换当前音频或视频的播放状态。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:315"
+    ],
+    "tags": [
+      "音频",
+      "视频",
+      "播放"
+    ]
+  },
+  {
+    "id": "media-seek-back",
+    "category": "图片与媒体",
+    "scene": "查看音视频",
+    "title": "后退 5 秒",
+    "keys": "h",
+    "mode": "媒体预览缓冲区普通模式",
+    "prerequisite": "macOS 原生音视频后端；已打开支持的文件；焦点在 Neovim 侧",
+    "action": "播放位置后退 5 秒。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:316"
+    ],
+    "tags": [
+      "音频",
+      "视频",
+      "播放"
+    ]
+  },
+  {
+    "id": "media-seek-forward",
+    "category": "图片与媒体",
+    "scene": "查看音视频",
+    "title": "前进 5 秒",
+    "keys": "l",
+    "mode": "媒体预览缓冲区普通模式",
+    "prerequisite": "macOS 原生音视频后端；已打开支持的文件；焦点在 Neovim 侧",
+    "action": "播放位置前进 5 秒。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:316"
+    ],
+    "tags": [
+      "音频",
+      "视频",
+      "播放"
+    ]
+  },
+  {
+    "id": "media-volume-up",
+    "category": "图片与媒体",
+    "scene": "查看音视频",
+    "title": "增加音量",
+    "keys": "+ / =",
+    "mode": "媒体预览缓冲区普通模式",
+    "prerequisite": "macOS 原生音视频后端；已打开支持的文件；焦点在 Neovim 侧",
+    "action": "音量增加 0.1。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:317"
+    ],
+    "tags": [
+      "音频",
+      "视频",
+      "播放"
+    ]
+  },
+  {
+    "id": "media-volume-down",
+    "category": "图片与媒体",
+    "scene": "查看音视频",
+    "title": "降低音量",
+    "keys": "-",
+    "mode": "媒体预览缓冲区普通模式",
+    "prerequisite": "macOS 原生音视频后端；已打开支持的文件；焦点在 Neovim 侧",
+    "action": "音量减少 0.1。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:317"
+    ],
+    "tags": [
+      "音频",
+      "视频",
+      "播放"
+    ]
+  },
+  {
+    "id": "media-start",
+    "category": "图片与媒体",
+    "scene": "查看音视频",
+    "title": "回到媒体开头",
+    "keys": "0",
+    "mode": "媒体预览缓冲区普通模式",
+    "prerequisite": "macOS 原生音视频后端；已打开支持的文件；焦点在 Neovim 侧",
+    "action": "将播放位置跳到 0 秒。",
+    "platforms": [
+      "macOS"
+    ],
+    "source": [
+      "config/lua/config/media/preview.lua:318"
+    ],
+    "tags": [
+      "音频",
+      "视频",
+      "播放"
+    ]
+  },
+  {
+    "id": "tex-compile",
+    "category": "LaTeX 与出版",
+    "scene": "撰写论文",
+    "title": "启动 / 停止持续编译",
+    "keys": "\\ l l",
+    "mode": "TeX 普通模式",
+    "prerequisite": "VimTeX 已加载；编译需 latexmk、XeLaTeX 和项目依赖，查看需已生成 PDF",
+    "action": "通过 latexmk 切换持续编译，配置默认 XeLaTeX 并生成 SyncTeX。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/vimtex/autoload/vimtex.vim:197",
+      "runtime/lazy/vimtex/autoload/vimtex/options.vim:299",
+      "config/lua/plugins/languages/vimtex.lua:10"
+    ],
+    "tags": [
+      "LaTeX",
+      "VimTeX",
+      "论文"
+    ]
+  },
+  {
+    "id": "tex-once",
+    "category": "LaTeX 与出版",
+    "scene": "撰写论文",
+    "title": "单次编译",
+    "keys": "\\ l S",
+    "mode": "TeX 普通模式",
+    "prerequisite": "VimTeX 已加载；编译需 latexmk、XeLaTeX 和项目依赖，查看需已生成 PDF",
+    "action": "调用 VimTeX 单次编译。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/vimtex/autoload/vimtex.vim:198",
+      "runtime/lazy/vimtex/autoload/vimtex/options.vim:299",
+      "config/lua/plugins/languages/vimtex.lua:10"
+    ],
+    "tags": [
+      "LaTeX",
+      "VimTeX",
+      "论文"
+    ]
+  },
+  {
+    "id": "tex-log",
+    "category": "LaTeX 与出版",
+    "scene": "撰写论文",
+    "title": "查看编译输出",
+    "keys": "\\ l o",
+    "mode": "TeX 普通模式",
+    "prerequisite": "VimTeX 已加载；编译需 latexmk、XeLaTeX 和项目依赖，查看需已生成 PDF",
+    "action": "打开 VimTeX 编译输出。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/vimtex/autoload/vimtex.vim:199",
+      "runtime/lazy/vimtex/autoload/vimtex/options.vim:299",
+      "config/lua/plugins/languages/vimtex.lua:10"
+    ],
+    "tags": [
+      "LaTeX",
+      "VimTeX",
+      "论文"
+    ]
+  },
+  {
+    "id": "tex-stop",
+    "category": "LaTeX 与出版",
+    "scene": "撰写论文",
+    "title": "停止当前项目编译",
+    "keys": "\\ l k",
+    "mode": "TeX 普通模式",
+    "prerequisite": "VimTeX 已加载；编译需 latexmk、XeLaTeX 和项目依赖，查看需已生成 PDF",
+    "action": "停止当前项目编译器。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/vimtex/autoload/vimtex.vim:202",
+      "runtime/lazy/vimtex/autoload/vimtex/options.vim:299",
+      "config/lua/plugins/languages/vimtex.lua:10"
+    ],
+    "tags": [
+      "LaTeX",
+      "VimTeX",
+      "论文"
+    ]
+  },
+  {
+    "id": "tex-errors",
+    "category": "LaTeX 与出版",
+    "scene": "撰写论文",
+    "title": "查看 LaTeX 错误",
+    "keys": "\\ l e",
+    "mode": "TeX 普通模式",
+    "prerequisite": "VimTeX 已加载；编译需 latexmk、XeLaTeX 和项目依赖，查看需已生成 PDF",
+    "action": "显示当前项目的编译错误列表。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/vimtex/autoload/vimtex.vim:204",
+      "runtime/lazy/vimtex/autoload/vimtex/options.vim:299",
+      "config/lua/plugins/languages/vimtex.lua:10"
+    ],
+    "tags": [
+      "LaTeX",
+      "VimTeX",
+      "论文"
+    ]
+  },
+  {
+    "id": "tex-clean",
+    "category": "LaTeX 与出版",
+    "scene": "撰写论文",
+    "title": "清理 LaTeX 辅助文件",
+    "keys": "\\ l c",
+    "mode": "TeX 普通模式",
+    "prerequisite": "VimTeX 已加载；编译需 latexmk、XeLaTeX 和项目依赖，查看需已生成 PDF",
+    "action": "调用 VimTeX 常规清理入口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/vimtex/autoload/vimtex.vim:205",
+      "runtime/lazy/vimtex/autoload/vimtex/options.vim:299",
+      "config/lua/plugins/languages/vimtex.lua:10"
+    ],
+    "tags": [
+      "LaTeX",
+      "VimTeX",
+      "论文"
+    ]
+  },
+  {
+    "id": "tex-status",
+    "category": "LaTeX 与出版",
+    "scene": "撰写论文",
+    "title": "查看编译状态",
+    "keys": "\\ l g",
+    "mode": "TeX 普通模式",
+    "prerequisite": "VimTeX 已加载；编译需 latexmk、XeLaTeX 和项目依赖，查看需已生成 PDF",
+    "action": "显示当前项目编译器状态。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/vimtex/autoload/vimtex.vim:207",
+      "runtime/lazy/vimtex/autoload/vimtex/options.vim:299",
+      "config/lua/plugins/languages/vimtex.lua:10"
+    ],
+    "tags": [
+      "LaTeX",
+      "VimTeX",
+      "论文"
+    ]
+  },
+  {
+    "id": "tex-toc",
+    "category": "LaTeX 与出版",
+    "scene": "撰写论文",
+    "title": "打开文档目录",
+    "keys": "\\ l t / \\ l T",
+    "mode": "TeX 普通模式",
+    "prerequisite": "VimTeX 已加载；编译需 latexmk、XeLaTeX 和项目依赖，查看需已生成 PDF",
+    "action": "分别打开或切换 VimTeX 目录。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/vimtex/autoload/vimtex.vim:329",
+      "runtime/lazy/vimtex/autoload/vimtex/options.vim:299",
+      "config/lua/plugins/languages/vimtex.lua:10"
+    ],
+    "tags": [
+      "LaTeX",
+      "VimTeX",
+      "论文"
+    ]
+  },
+  {
+    "id": "tex-view",
+    "category": "LaTeX 与出版",
+    "scene": "撰写论文",
+    "title": "从 TeX 查看并定位 PDF",
+    "keys": "\\ l v",
+    "mode": "TeX 普通模式",
+    "prerequisite": "VimTeX 已加载；编译需 latexmk、XeLaTeX 和项目依赖，查看需已生成 PDF",
+    "action": "调用 VimTeX 查看器及 SyncTeX；当前 macOS/Windows Glow 优先内嵌，显式配置可选 Skim/Sumatra 回退。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/vimtex/autoload/vimtex.vim:334",
+      "runtime/lazy/vimtex/autoload/vimtex/options.vim:299",
+      "config/lua/plugins/languages/vimtex.lua:10"
+    ],
+    "tags": [
+      "LaTeX",
+      "VimTeX",
+      "论文"
+    ]
+  },
+  {
+    "id": "tex-forward",
+    "category": "LaTeX 与出版",
+    "scene": "源码对照 PDF",
+    "title": "定位当前 TeX 光标到 PDF",
+    "keys": ":GlowTexForward [PDF 文件]",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "已有对应 PDF 与 SyncTeX 文件；Glow 前端支持原生坐标；回退查看器需另行准备",
+    "action": "异步定位当前源码位置并短暂标记；Windows 当前构建已提供内嵌 PDF 双向搜索，保留显式 Sumatra 回退。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "config/lua/config/media/synctex.lua:176"
+    ],
+    "tags": [
+      "LaTeX",
+      "SyncTeX",
+      "命令"
+    ]
+  },
+  {
+    "id": "tex-inverse",
+    "category": "LaTeX 与出版",
+    "scene": "PDF 返回源码",
+    "title": "从 PDF 定位回 TeX 源码",
+    "keys": "修饰键 + PDF 正文单击",
+    "mode": "原生 PDF 正文焦点",
+    "prerequisite": "已用带 SyncTeX 的 PDF 打开内嵌预览；需要当前原生坐标桥",
+    "action": "查询 PDF 位置对应源码并回到所属编辑器；Windows 已有桥接验收，实体鼠标仍待验。",
+    "platforms": [
+      "macOS",
+      "Windows"
+    ],
+    "source": [
+      "GLOW.md:97",
+      "src/bridge/setup.rs:108",
+      "config/lua/config/media/synctex.lua:132"
+    ],
+    "tags": [
+      "LaTeX",
+      "PDF",
+      "SyncTeX"
+    ],
+    "macKeys": "Cmd+单击",
+    "windowsKeys": "Ctrl+单击"
+  },
+  {
+    "id": "book-build",
+    "category": "LaTeX 与出版",
+    "scene": "整理研究成果",
+    "title": "构建并预览 Jupyter Book",
+    "keys": ":GlowBook [项目目录]",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "已安装兼容的 Jupyter Book；预览需当前前端 web 能力；Windows/Linux 构建流程未完整验收",
+    "action": "异步构建 Jupyter Book 1.x 的 HTML 站点；成功后打开或刷新预览。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/book.lua:200"
+    ],
+    "tags": [
+      "Book",
+      "命令",
+      "出版"
+    ]
+  },
+  {
+    "id": "book-log",
+    "category": "LaTeX 与出版",
+    "scene": "整理研究成果",
+    "title": "查看书籍构建日志",
+    "keys": ":GlowBookLog",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "已安装兼容的 Jupyter Book；预览需当前前端 web 能力；Windows/Linux 构建流程未完整验收",
+    "action": "打开最近一次构建日志。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/book.lua:202"
+    ],
+    "tags": [
+      "Book",
+      "命令",
+      "出版"
+    ]
+  },
+  {
+    "id": "book-cancel",
+    "category": "LaTeX 与出版",
+    "scene": "整理研究成果",
+    "title": "取消 Glow 发起的书籍构建",
+    "keys": ":GlowBookCancel",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "已安装兼容的 Jupyter Book；预览需当前前端 web 能力；Windows/Linux 构建流程未完整验收",
+    "action": "只取消由 GlowBook 发起的当前构建。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/media/book.lua:203"
+    ],
+    "tags": [
+      "Book",
+      "命令",
+      "出版"
+    ]
+  },
+  {
+    "id": "terminal-toggle",
+    "category": "终端与工具",
+    "scene": "随手运行命令",
+    "title": "打开 / 隐藏浮动终端",
+    "keys": "Ctrl+T",
+    "mode": "普通 / 插入 / 终端模式",
+    "prerequisite": "ToggleTerm 已加载；至少一个受支持的 shell 可执行",
+    "action": "第一次先选 shell，选择后打开终端；后续复用该终端。已运行进程保留原 shell。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/tools/toggleterm.lua:47"
+    ],
+    "tags": [
+      "终端",
+      "shell"
+    ]
+  },
+  {
+    "id": "terminal-root",
+    "category": "终端与工具",
+    "scene": "项目命令",
+    "title": "打开 / 隐藏项目根终端",
+    "keys": "Ctrl+/ / Ctrl+_ / Space f t",
+    "mode": "普通 / 终端模式；Space f t 仅普通模式",
+    "prerequisite": "Snacks terminal；已选择有效 shell",
+    "action": "在 LazyVim 项目根打开或复用终端；Ctrl+_ 为同一快捷键的终端传输别名。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/terminal_shell.lua:154"
+    ],
+    "tags": [
+      "终端",
+      "项目"
+    ]
+  },
+  {
+    "id": "terminal-cwd",
+    "category": "终端与工具",
+    "scene": "目录命令",
+    "title": "打开当前目录终端",
+    "keys": "Space f T",
+    "mode": "普通模式",
+    "prerequisite": "Snacks terminal；已选择有效 shell",
+    "action": "以当前工作目录打开或复用终端。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/terminal_shell.lua:160"
+    ],
+    "tags": [
+      "终端",
+      "目录"
+    ]
+  },
+  {
+    "id": "terminal-shell",
+    "category": "终端与工具",
+    "scene": "选择终端环境",
+    "title": "选择后续终端使用的 shell",
+    "keys": ":GlowTerminalShell",
+    "mode": "命令行（Enter 执行）",
+    "prerequisite": "本机已有受支持 shell",
+    "action": "显示当前平台真实可执行 shell 并保存选择；不改变已运行的终端进程。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/terminal_shell.lua:151"
+    ],
+    "tags": [
+      "终端",
+      "shell",
+      "命令"
+    ]
+  },
+  {
+    "id": "yazi-open",
+    "category": "终端与工具",
+    "scene": "浏览文件",
+    "title": "从当前文件打开 Yazi",
+    "keys": "Space f y",
+    "mode": "普通模式",
+    "prerequisite": "已安装 Yazi；私有覆盖层与桥可用",
+    "action": "在当前文件位置打开嵌入 Yazi；私有主题跟随编辑器，保持独立终端 Yazi 配置。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/yazi.lua:10"
+    ],
+    "tags": [
+      "Yazi",
+      "文件管理"
+    ]
+  },
+  {
+    "id": "yazi-resume",
+    "category": "终端与工具",
+    "scene": "继续文件任务",
+    "title": "恢复最近的 Yazi 会话",
+    "keys": "Ctrl+↑",
+    "mode": "普通模式",
+    "prerequisite": "Yazi 插件已加载且有可恢复会话",
+    "action": "恢复上次 Yazi 会话；该键由 Yazi 配置占用，不能同时按 LazyVim 的增高窗口描述。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/yazi.lua:17"
+    ],
+    "tags": [
+      "Yazi",
+      "恢复"
+    ]
+  },
+  {
+    "id": "yazi-help",
+    "category": "终端与工具",
+    "scene": "Yazi 文件任务",
+    "title": "查看 Yazi 集成帮助",
+    "keys": "F1",
+    "mode": "Yazi 终端缓冲区",
+    "prerequisite": "已在嵌入 Yazi 会话中；插件局部映射优先；相应辅助工具可用",
+    "action": "显示 Yazi 与 Neovim 集成的按键帮助。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/yazi.nvim/lua/yazi/config.lua:26",
+      "config/lua/plugins/navigation/yazi.lua:23"
+    ],
+    "tags": [
+      "Yazi",
+      "文件管理"
+    ]
+  },
+  {
+    "id": "yazi-vsplit",
+    "category": "终端与工具",
+    "scene": "Yazi 文件任务",
+    "title": "在右侧分屏打开文件",
+    "keys": "Ctrl+V",
+    "mode": "Yazi 终端缓冲区",
+    "prerequisite": "已在嵌入 Yazi 会话中；插件局部映射优先；相应辅助工具可用",
+    "action": "用垂直分屏打开当前选中文件。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/yazi.nvim/lua/yazi/config.lua:27",
+      "config/lua/plugins/navigation/yazi.lua:23"
+    ],
+    "tags": [
+      "Yazi",
+      "文件管理"
+    ]
+  },
+  {
+    "id": "yazi-split",
+    "category": "终端与工具",
+    "scene": "Yazi 文件任务",
+    "title": "在下方分屏打开文件",
+    "keys": "Ctrl+X",
+    "mode": "Yazi 终端缓冲区",
+    "prerequisite": "已在嵌入 Yazi 会话中；插件局部映射优先；相应辅助工具可用",
+    "action": "用水平分屏打开当前选中文件。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/yazi.nvim/lua/yazi/config.lua:28",
+      "config/lua/plugins/navigation/yazi.lua:23"
+    ],
+    "tags": [
+      "Yazi",
+      "文件管理"
+    ]
+  },
+  {
+    "id": "yazi-tab",
+    "category": "终端与工具",
+    "scene": "Yazi 文件任务",
+    "title": "在新 Tab 打开文件",
+    "keys": "Ctrl+T",
+    "mode": "Yazi 终端缓冲区",
+    "prerequisite": "已在嵌入 Yazi 会话中；插件局部映射优先；相应辅助工具可用",
+    "action": "在新 Neovim Tab 打开选中文件；Yazi 局部行为优先于终端切换。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/yazi.nvim/lua/yazi/config.lua:29",
+      "config/lua/plugins/navigation/yazi.lua:23"
+    ],
+    "tags": [
+      "Yazi",
+      "文件管理"
+    ]
+  },
+  {
+    "id": "yazi-grep",
+    "category": "终端与工具",
+    "scene": "Yazi 文件任务",
+    "title": "在所选目录搜索文本",
+    "keys": "Ctrl+S",
+    "mode": "Yazi 终端缓冲区",
+    "prerequisite": "已在嵌入 Yazi 会话中；插件局部映射优先；相应辅助工具可用",
+    "action": "关闭 Yazi 并调用配置的目录 grep 集成。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/yazi.nvim/lua/yazi/config.lua:30",
+      "config/lua/plugins/navigation/yazi.lua:23"
+    ],
+    "tags": [
+      "Yazi",
+      "文件管理"
+    ]
+  },
+  {
+    "id": "yazi-buffers",
+    "category": "终端与工具",
+    "scene": "Yazi 文件任务",
+    "title": "循环查看已开缓冲区",
+    "keys": "Tab",
+    "mode": "Yazi 终端缓冲区",
+    "prerequisite": "已在嵌入 Yazi 会话中；插件局部映射优先；相应辅助工具可用",
+    "action": "循环查看已打开的 Neovim 缓冲区。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/yazi.nvim/lua/yazi/config.lua:32",
+      "config/lua/plugins/navigation/yazi.lua:23"
+    ],
+    "tags": [
+      "Yazi",
+      "文件管理"
+    ]
+  },
+  {
+    "id": "yazi-copy",
+    "category": "终端与工具",
+    "scene": "Yazi 文件任务",
+    "title": "复制文件相对路径",
+    "keys": "Ctrl+Y",
+    "mode": "Yazi 终端缓冲区",
+    "prerequisite": "已在嵌入 Yazi 会话中；插件局部映射优先；相应辅助工具可用",
+    "action": "复制选中文件的相对路径。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/yazi.nvim/lua/yazi/config.lua:33",
+      "config/lua/plugins/navigation/yazi.lua:23"
+    ],
+    "tags": [
+      "Yazi",
+      "文件管理"
+    ]
+  },
+  {
+    "id": "yazi-quickfix",
+    "category": "终端与工具",
+    "scene": "Yazi 文件任务",
+    "title": "把选中文件发到 quickfix",
+    "keys": "Ctrl+Q",
+    "mode": "Yazi 终端缓冲区",
+    "prerequisite": "已在嵌入 Yazi 会话中；插件局部映射优先；相应辅助工具可用",
+    "action": "将选中文件发送到 quickfix 列表。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/yazi.nvim/lua/yazi/config.lua:34",
+      "config/lua/plugins/navigation/yazi.lua:23"
+    ],
+    "tags": [
+      "Yazi",
+      "文件管理"
+    ]
+  },
+  {
+    "id": "yazi-cwd",
+    "category": "终端与工具",
+    "scene": "Yazi 文件任务",
+    "title": "将工作目录改为当前位置",
+    "keys": "Ctrl+\\",
+    "mode": "Yazi 终端缓冲区",
+    "prerequisite": "已在嵌入 Yazi 会话中；插件局部映射优先；相应辅助工具可用",
+    "action": "将 Neovim 工作目录改为 Yazi 当前目录。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/yazi.nvim/lua/yazi/config.lua:35",
+      "config/lua/plugins/navigation/yazi.lua:23"
+    ],
+    "tags": [
+      "Yazi",
+      "文件管理"
+    ]
+  },
+  {
+    "id": "yazi-window",
+    "category": "终端与工具",
+    "scene": "Yazi 文件任务",
+    "title": "选窗口打开文件",
+    "keys": "Ctrl+O",
+    "mode": "Yazi 终端缓冲区",
+    "prerequisite": "已在嵌入 Yazi 会话中；插件局部映射优先；相应辅助工具可用",
+    "action": "选择目标编辑窗口后打开文件。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/yazi.nvim/lua/yazi/config.lua:36",
+      "config/lua/plugins/navigation/yazi.lua:23"
+    ],
+    "tags": [
+      "Yazi",
+      "文件管理"
+    ]
+  },
+  {
+    "id": "git-lazygit",
+    "category": "Git",
+    "scene": "查看与提交改动",
+    "title": "打开 LazyGit",
+    "keys": "Space g l",
+    "mode": "普通模式",
+    "prerequisite": "已安装 lazygit；处于 Git 工作目录",
+    "action": "打开 lazygit.nvim 浮动入口；本配置的 Space g l 覆盖 LazyVim 默认同名 Git Log。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/tools/lazygit.lua:19"
+    ],
+    "tags": [
+      "Git",
+      "LazyGit"
+    ]
+  },
+  {
+    "id": "git-browser",
+    "category": "Git",
+    "scene": "共享代码位置",
+    "title": "在浏览器打开代码位置",
+    "keys": "Space g B",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "Git remote 和代码浏览地址可识别",
+    "action": "打开仓库当前文件或选择范围的网页地址。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:174",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "Git",
+      "链接"
+    ]
+  },
+  {
+    "id": "git-copy-url",
+    "category": "Git",
+    "scene": "共享代码位置",
+    "title": "复制代码网页地址",
+    "keys": "Space g Y",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "Git remote 和代码浏览地址可识别",
+    "action": "生成当前文件或范围网页地址并复制到系统剪贴板。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:175",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "Git",
+      "链接",
+      "复制"
+    ]
+  },
+  {
+    "id": "window-focus-left",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "切到左侧窗口",
+    "keys": "Ctrl+H",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 已加载；缓冲区局部映射优先",
+    "action": "将焦点移到左侧窗口，包含辅助面板。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:14",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "窗口",
+      "分屏"
+    ]
+  },
+  {
+    "id": "window-focus-down",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "切到下方窗口",
+    "keys": "Ctrl+J",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 已加载；缓冲区局部映射优先",
+    "action": "将焦点移到下方窗口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:15",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "窗口",
+      "分屏"
+    ]
+  },
+  {
+    "id": "window-focus-up",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "切到上方窗口",
+    "keys": "Ctrl+K",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 已加载；缓冲区局部映射优先",
+    "action": "将焦点移到上方窗口；插入模式的同键可用于函数签名。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:16",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "窗口",
+      "分屏"
+    ]
+  },
+  {
+    "id": "window-focus-right",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "切到右侧窗口",
+    "keys": "Ctrl+L",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 已加载；缓冲区局部映射优先",
+    "action": "将焦点移到右侧窗口；Space 后 Ctrl+L 才切换语言。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:17",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "窗口",
+      "分屏"
+    ]
+  },
+  {
+    "id": "window-split-down",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "在下方分屏",
+    "keys": "Space -",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 已加载；缓冲区局部映射优先",
+    "action": "创建下方编辑分屏。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:196",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "窗口",
+      "分屏"
+    ]
+  },
+  {
+    "id": "window-split-right",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "在右侧分屏",
+    "keys": "Space |",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 已加载；缓冲区局部映射优先",
+    "action": "创建右侧编辑分屏。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:197",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "窗口",
+      "分屏"
+    ]
+  },
+  {
+    "id": "window-close",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "关闭当前窗口",
+    "keys": "Space w d",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 已加载；缓冲区局部映射优先",
+    "action": "关闭当前窗口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:198",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "窗口",
+      "分屏"
+    ]
+  },
+  {
+    "id": "window-narrow",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "缩窄当前窗口",
+    "keys": "Ctrl+←",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 已加载；缓冲区局部映射优先",
+    "action": "当前垂直分屏宽度减少 2 列。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:22",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "窗口",
+      "分屏"
+    ]
+  },
+  {
+    "id": "window-widen",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "加宽当前窗口",
+    "keys": "Ctrl+→",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 已加载；缓冲区局部映射优先",
+    "action": "当前垂直分屏宽度增加 2 列。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:23",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "窗口",
+      "分屏"
+    ]
+  },
+  {
+    "id": "window-shorten",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "降低当前窗口高度",
+    "keys": "Ctrl+↓",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 已加载；缓冲区局部映射优先",
+    "action": "当前分屏高度减少 2 行。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:21",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "窗口",
+      "分屏"
+    ]
+  },
+  {
+    "id": "window-editor-move",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "向边缘移动编辑分屏",
+    "keys": "Ctrl+Shift+方向键 / Ctrl+W H/J/K/L",
+    "mode": "普通模式；Ctrl+Shift+方向键也支持可视 / 插入 / 终端模式",
+    "prerequisite": "配套 editor_windows 模块；存在可操作编辑窗口",
+    "action": "按方向重排编辑分屏，排除文件树、AI 等辅助窗口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/navigation/editor_window_keymaps.lua:10"
+    ],
+    "tags": [
+      "窗口",
+      "布局"
+    ]
+  },
+  {
+    "id": "window-editor-swap",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "交换编辑窗口",
+    "keys": "Ctrl+W x / Ctrl+W Ctrl+X",
+    "mode": "普通模式",
+    "prerequisite": "配套 editor_windows 模块；存在可操作编辑窗口",
+    "action": "交换编辑区域内的窗口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/navigation/editor_window_keymaps.lua:22"
+    ],
+    "tags": [
+      "窗口",
+      "布局"
+    ]
+  },
+  {
+    "id": "window-editor-rotate",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "轮转编辑窗口",
+    "keys": "Ctrl+W r / Ctrl+W R",
+    "mode": "普通模式",
+    "prerequisite": "配套 editor_windows 模块；存在可操作编辑窗口",
+    "action": "正向或反向轮转编辑区域窗口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/navigation/editor_window_keymaps.lua:24"
+    ],
+    "tags": [
+      "窗口",
+      "布局"
+    ]
+  },
+  {
+    "id": "window-editor-equalize",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "均分编辑区域",
+    "keys": "Ctrl+W =",
+    "mode": "普通模式",
+    "prerequisite": "配套 editor_windows 模块；存在可操作编辑窗口",
+    "action": "平均分配编辑窗口尺寸，保留辅助面板。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/navigation/editor_window_keymaps.lua:27"
+    ],
+    "tags": [
+      "窗口",
+      "布局"
+    ]
+  },
+  {
+    "id": "window-editor-only",
+    "category": "窗口与导航",
+    "scene": "管理工作区",
+    "title": "只保留当前编辑窗口",
+    "keys": "Ctrl+W o / Space w o",
+    "mode": "普通模式",
+    "prerequisite": "配套 editor_windows 模块；存在可操作编辑窗口",
+    "action": "关闭其他编辑窗口，保留文件树、AI 等辅助面板。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/navigation/editor_window_keymaps.lua:28"
+    ],
+    "tags": [
+      "窗口",
+      "布局"
+    ]
+  },
+  {
+    "id": "buffer-prev",
+    "category": "窗口与导航",
+    "scene": "切换文件",
+    "title": "上一个缓冲区",
+    "keys": "Shift+H / [ b",
+    "mode": "普通模式",
+    "prerequisite": "已有多个缓冲区；文件树局部 H 为隐藏文件开关",
+    "action": "切到前一个缓冲区。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:333",
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:36"
+    ],
+    "tags": [
+      "缓冲区",
+      "导航"
+    ]
+  },
+  {
+    "id": "buffer-next",
+    "category": "窗口与导航",
+    "scene": "切换文件",
+    "title": "下一个缓冲区",
+    "keys": "Shift+L / ] b",
+    "mode": "普通模式",
+    "prerequisite": "已有多个缓冲区；局部映射优先",
+    "action": "切到后一个缓冲区。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:336",
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:37"
+    ],
+    "tags": [
+      "缓冲区",
+      "导航"
+    ]
+  },
+  {
+    "id": "buffer-other",
+    "category": "窗口与导航",
+    "scene": "切换文件",
+    "title": "切回上次缓冲区",
+    "keys": "Space b b / Space `",
+    "mode": "普通模式",
+    "prerequisite": "存在 alternate buffer",
+    "action": "在当前缓冲区与上次缓冲区之间切换。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:340"
+    ],
+    "tags": [
+      "缓冲区",
+      "导航"
+    ]
+  },
+  {
+    "id": "buffer-close",
+    "category": "窗口与导航",
+    "scene": "整理文件",
+    "title": "关闭当前缓冲区",
+    "keys": "Space b d",
+    "mode": "普通模式",
+    "prerequisite": "可关闭的缓冲区；未保存文件受编辑器保护",
+    "action": "关闭当前缓冲区，使用配置中的缓冲区关闭策略。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:343"
+    ],
+    "tags": [
+      "缓冲区",
+      "关闭"
+    ]
+  },
+  {
+    "id": "buffer-close-others",
+    "category": "窗口与导航",
+    "scene": "整理文件",
+    "title": "关闭其他缓冲区",
+    "keys": "Space b o",
+    "mode": "普通模式",
+    "prerequisite": "存在其他缓冲区；未保存文件受编辑器保护",
+    "action": "关闭其他缓冲区。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/platform/macos_keymaps.lua:346"
+    ],
+    "tags": [
+      "缓冲区",
+      "关闭"
+    ]
+  },
+  {
+    "id": "tab-new",
+    "category": "窗口与导航",
+    "scene": "组织多组工作区",
+    "title": "新建 Tab",
+    "keys": "Space Tab Tab",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 基础映射已加载；未保存文件受编辑器保护",
+    "action": "新建 Neovim Tab。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:206",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "Tab",
+      "工作区"
+    ]
+  },
+  {
+    "id": "tab-next",
+    "category": "窗口与导航",
+    "scene": "组织多组工作区",
+    "title": "下一个 Tab",
+    "keys": "Space Tab ]",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 基础映射已加载；未保存文件受编辑器保护",
+    "action": "切到下一个 Tab。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:207",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "Tab",
+      "工作区"
+    ]
+  },
+  {
+    "id": "tab-prev",
+    "category": "窗口与导航",
+    "scene": "组织多组工作区",
+    "title": "上一个 Tab",
+    "keys": "Space Tab [",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 基础映射已加载；未保存文件受编辑器保护",
+    "action": "切到上一个 Tab。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:209",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "Tab",
+      "工作区"
+    ]
+  },
+  {
+    "id": "tab-first",
+    "category": "窗口与导航",
+    "scene": "组织多组工作区",
+    "title": "第一个 Tab",
+    "keys": "Space Tab f",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 基础映射已加载；未保存文件受编辑器保护",
+    "action": "切到第一个 Tab。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:205",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "Tab",
+      "工作区"
+    ]
+  },
+  {
+    "id": "tab-last",
+    "category": "窗口与导航",
+    "scene": "组织多组工作区",
+    "title": "最后一个 Tab",
+    "keys": "Space Tab l",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 基础映射已加载；未保存文件受编辑器保护",
+    "action": "切到最后一个 Tab。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:203",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "Tab",
+      "工作区"
+    ]
+  },
+  {
+    "id": "tab-close",
+    "category": "窗口与导航",
+    "scene": "组织多组工作区",
+    "title": "关闭当前 Tab",
+    "keys": "Space Tab d",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 基础映射已加载；未保存文件受编辑器保护",
+    "action": "关闭当前 Tab。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:208",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "Tab",
+      "工作区"
+    ]
+  },
+  {
+    "id": "tab-only",
+    "category": "窗口与导航",
+    "scene": "组织多组工作区",
+    "title": "关闭其他 Tab",
+    "keys": "Space Tab o",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 基础映射已加载；未保存文件受编辑器保护",
+    "action": "只保留当前 Tab。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:204",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "Tab",
+      "工作区"
+    ]
+  },
+  {
+    "id": "tree-toggle",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "展开 / 折叠节点",
+    "keys": "Space",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "切换当前目录节点的展开状态。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:163"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-open",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "打开文件或目录",
+    "keys": "Enter / 双击",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "打开当前节点；支持的图片、Notebook、PDF、网页等会按能力路由到对应入口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:167"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-preview",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "开关浮动预览",
+    "keys": "P",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "切换当前节点的浮动预览。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:170"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-focus-preview",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "聚焦预览",
+    "keys": "l",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "将焦点切到当前 Neo-tree 预览。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:172"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-split",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "在下方分屏打开",
+    "keys": "S",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "用水平分屏打开当前文件。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:173"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-vsplit",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "在右侧分屏打开",
+    "keys": "s",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "用垂直分屏打开当前文件。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:174"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-tab",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "新 Tab 打开",
+    "keys": "t",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "在新 Neovim Tab 打开当前文件。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:177"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-pick-window",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "选择窗口打开",
+    "keys": "w",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "通过窗口选择器选择目标后打开。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:180"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-close-node",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "收起当前目录",
+    "keys": "C",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "收起当前目录节点。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:182"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-collapse-all",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "收起全部目录",
+    "keys": "z",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "收起全部展开节点。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:184"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-add-file",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "创建文件",
+    "keys": "a",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "输入名称并创建文件，支持配置所用的 brace expansion。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:186"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-add-dir",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "创建目录",
+    "keys": "A",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "输入名称并创建目录。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:194"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-delete",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "删除文件或目录",
+    "keys": "d",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "进入当前节点删除动作；按插件提示确认。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:195"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-rename",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "重命名文件或目录",
+    "keys": "r",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "重命名当前节点。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:196"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-rename-base",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "只修改基本文件名",
+    "keys": "b",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "重命名时保留扩展名。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:197"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-copy-queue",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "加入文件复制队列",
+    "keys": "y",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "将当前节点加入 Neo-tree 文件复制剪贴板。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:198"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-cut-queue",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "加入文件剪切队列",
+    "keys": "x",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "将当前节点加入 Neo-tree 文件剪切剪贴板。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:199"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-paste",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "粘贴文件队列",
+    "keys": "p",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "将 Neo-tree 队列内容复制或移动到当前目标。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:200"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-copy-path",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "复制到指定目标",
+    "keys": "c",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "输入目标路径并复制节点。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:201"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-move-path",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "移动到指定目标",
+    "keys": "m",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "输入目标路径并移动节点。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:208"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-close",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "关闭文件树",
+    "keys": "q",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "关闭 Neo-tree 窗口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:209"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-refresh",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "刷新文件树",
+    "keys": "R",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "刷新当前 Neo-tree 来源。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:210"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-help",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "查询文件树按键帮助",
+    "keys": "?",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "显示当前 Neo-tree 来源的实际按键帮助。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:211"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-sources",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "切换文件树来源",
+    "keys": "< / >",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "切换到上一个或下一个 Neo-tree 来源。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:212"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-details",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "查看文件详细信息",
+    "keys": "i",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "显示当前节点的文件详情。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:214"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-parent",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "进入上级目录",
+    "keys": "Backspace",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "导航到当前根的上级目录。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:261"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-root",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "将当前目录设为根",
+    "keys": ".",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "将所选目录设为文件树根。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:262"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-hidden",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "显示 / 隐藏隐藏文件",
+    "keys": "H",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "切换隐藏文件可见性。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:263"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-fuzzy",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "模糊查找文件树节点",
+    "keys": "/",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "在文件树中打开模糊查找。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:264"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-goto",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "输入路径快速导航",
+    "keys": "g /",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "打开路径输入框，按输入路径导航；支持目录和文件定位。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:265"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-dir-fuzzy",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "模糊查找目录",
+    "keys": "D",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "只查找目录节点。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:266"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-filter",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "提交文件树过滤条件",
+    "keys": "f",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "输入并提交文件树过滤条件。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:269"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-filter-clear",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "清除文件树过滤",
+    "keys": "Ctrl+X",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "清除当前文件树过滤条件。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:270"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-modified",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "浏览 Git 修改文件",
+    "keys": "[ g / ] g",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "跳到上一个或下一个 Git 修改节点。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:271"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-sort",
+    "category": "文件树",
+    "scene": "Neo-tree 文件任务",
+    "title": "选择文件树排序",
+    "keys": "o c / o d / o g / o m / o n / o s / o t",
+    "mode": "Neo-tree 普通模式",
+    "prerequisite": "焦点在 Neo-tree；路径、过滤和根操作位于 filesystem 来源；局部映射优先",
+    "action": "分别按创建时间、诊断、Git 状态、修改时间、名称、大小、类型排序；单独 o 打开排序帮助。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:273"
+    ],
+    "tags": [
+      "Neo-tree",
+      "文件树"
+    ]
+  },
+  {
+    "id": "tree-git-stage-all",
+    "category": "文件树",
+    "scene": "文件树 Git 任务",
+    "title": "暂存全部 Git 文件",
+    "keys": "A",
+    "mode": "Neo-tree git_status 来源普通模式",
+    "prerequisite": "焦点在文件树 git_status 来源；仓库和相关 Git 动作可用",
+    "action": "在 git_status 来源暂存全部文件。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:323"
+    ],
+    "tags": [
+      "Neo-tree",
+      "Git"
+    ]
+  },
+  {
+    "id": "tree-git-unstage",
+    "category": "文件树",
+    "scene": "文件树 Git 任务",
+    "title": "取消文件暂存",
+    "keys": "g u",
+    "mode": "Neo-tree git_status 来源普通模式",
+    "prerequisite": "焦点在文件树 git_status 来源；仓库和相关 Git 动作可用",
+    "action": "取消当前文件的 Git 暂存。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:324"
+    ],
+    "tags": [
+      "Neo-tree",
+      "Git"
+    ]
+  },
+  {
+    "id": "tree-git-stage",
+    "category": "文件树",
+    "scene": "文件树 Git 任务",
+    "title": "暂存当前文件",
+    "keys": "g a",
+    "mode": "Neo-tree git_status 来源普通模式",
+    "prerequisite": "焦点在文件树 git_status 来源；仓库和相关 Git 动作可用",
+    "action": "暂存当前文件。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:325"
+    ],
+    "tags": [
+      "Neo-tree",
+      "Git"
+    ]
+  },
+  {
+    "id": "tree-git-revert",
+    "category": "文件树",
+    "scene": "文件树 Git 任务",
+    "title": "还原当前文件",
+    "keys": "g r",
+    "mode": "Neo-tree git_status 来源普通模式",
+    "prerequisite": "焦点在文件树 git_status 来源；仓库和相关 Git 动作可用",
+    "action": "调用 Neo-tree Git 还原动作；按插件提示操作。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:326"
+    ],
+    "tags": [
+      "Neo-tree",
+      "Git"
+    ]
+  },
+  {
+    "id": "tree-git-commit",
+    "category": "文件树",
+    "scene": "文件树 Git 任务",
+    "title": "提交改动",
+    "keys": "g c",
+    "mode": "Neo-tree git_status 来源普通模式",
+    "prerequisite": "焦点在文件树 git_status 来源；仓库和相关 Git 动作可用",
+    "action": "调用 Neo-tree Git 提交入口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:327"
+    ],
+    "tags": [
+      "Neo-tree",
+      "Git"
+    ]
+  },
+  {
+    "id": "tree-git-push",
+    "category": "文件树",
+    "scene": "文件树 Git 任务",
+    "title": "推送 Git 改动",
+    "keys": "g p",
+    "mode": "Neo-tree git_status 来源普通模式",
+    "prerequisite": "焦点在文件树 git_status 来源；仓库和相关 Git 动作可用",
+    "action": "调用 Neo-tree Git 推送入口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/navigation/neo_tree.lua:328"
+    ],
+    "tags": [
+      "Neo-tree",
+      "Git"
+    ]
+  },
+  {
+    "id": "ai-ask",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "向 AI 提问",
+    "keys": "Space a a",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "打开提问侧栏，使用当前代码上下文；可视选区可作为提问上下文。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:625",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-new",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "新建 AI 对话",
+    "keys": "Space a n",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "打开新的 AI 对话。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:626",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-edit",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "请求修改选中代码",
+    "keys": "Space a e",
+    "mode": "可视模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "针对所选代码打开 AI 编辑请求。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:628",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-refresh",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "刷新 AI 上下文",
+    "keys": "Space a r",
+    "mode": "普通模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "刷新 Avante 上下文。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:629",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-focus",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "聚焦 AI 侧栏",
+    "keys": "Space a f",
+    "mode": "普通模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "将焦点切到 Avante 侧栏。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:630",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-stop",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "停止当前 AI 请求",
+    "keys": "Space a S",
+    "mode": "普通模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "请求停止当前 AI 生成。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:631",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-toggle",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "打开 / 收起 AI 侧栏",
+    "keys": "Space a t",
+    "mode": "普通模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "切换 Avante 侧栏显示。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:633",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-context",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "切换 AI 选区提示",
+    "keys": "Space a C",
+    "mode": "普通模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "切换 Avante 选区提示的显示。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:635",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-add-file",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "添加当前文件为上下文",
+    "keys": "Space a c",
+    "mode": "普通模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "将当前缓冲区文件添加到 AI 文件上下文列表。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:661",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-add-all",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "添加所有已开文件为上下文",
+    "keys": "Space a B",
+    "mode": "普通模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "将全部缓冲区文件添加到 AI 上下文列表。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:662",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-models",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "选择 AI 模型",
+    "keys": "Space a ?",
+    "mode": "普通模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "打开模型选择入口；可选范围由当前 provider 决定。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:664",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-history",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "选择历史 AI 对话",
+    "keys": "Space a h",
+    "mode": "普通模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "打开 Avante 对话历史选择器。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:665",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-zen",
+    "category": "AI 助手",
+    "scene": "理解与修改代码",
+    "title": "切换 AI 专注视图",
+    "keys": "Space a z",
+    "mode": "普通 / 可视模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方",
+    "action": "切换 Avante Zen 模式。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:627",
+      "config/lua/plugins/ai/avante.lua:25"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "Codex"
+    ]
+  },
+  {
+    "id": "ai-submit",
+    "category": "AI 助手",
+    "scene": "发送请求",
+    "title": "发送 AI 输入",
+    "keys": "Enter（普通）/ Ctrl+S（插入）",
+    "mode": "Avante 输入框普通 / 插入模式",
+    "prerequisite": "Avante 已加载；当前 provider 默认 Codex ACP，需完成适配器与账户登录；实际模式和模型取决于提供方；焦点在 AI 输入框",
+    "action": "提交当前输入；此局部 Ctrl+S 提交动作优先于全局文件保存。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:616",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "发送",
+      "上下文"
+    ]
+  },
+  {
+    "id": "ai-sidebar-apply-all",
+    "category": "AI 助手",
+    "scene": "审阅 AI 结果",
+    "title": "应用 AI 的全部代码修改",
+    "keys": "A",
+    "mode": "Avante 对应侧栏区域普通模式",
+    "prerequisite": "Avante 对应区域已打开；局部映射仅在该区域生效",
+    "action": "将当前回答中的全部可应用修改写入编辑缓冲区。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:643",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-sidebar-apply-current",
+    "category": "AI 助手",
+    "scene": "审阅 AI 结果",
+    "title": "应用光标处 AI 修改",
+    "keys": "a",
+    "mode": "Avante 对应侧栏区域普通模式",
+    "prerequisite": "Avante 对应区域已打开；局部映射仅在该区域生效",
+    "action": "应用光标处的代码修改。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:644",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-sidebar-retry",
+    "category": "AI 助手",
+    "scene": "审阅 AI 结果",
+    "title": "重试上一条请求",
+    "keys": "r",
+    "mode": "Avante 对应侧栏区域普通模式",
+    "prerequisite": "Avante 对应区域已打开；局部映射仅在该区域生效",
+    "action": "重新发起当前用户请求。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:645",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-sidebar-edit-request",
+    "category": "AI 助手",
+    "scene": "审阅 AI 结果",
+    "title": "编辑上一条请求",
+    "keys": "e",
+    "mode": "Avante 对应侧栏区域普通模式",
+    "prerequisite": "Avante 对应区域已打开；局部映射仅在该区域生效",
+    "action": "编辑当前用户请求后重新提交。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:646",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-sidebar-switch",
+    "category": "AI 助手",
+    "scene": "审阅 AI 结果",
+    "title": "切换 AI 侧栏内部窗口",
+    "keys": "Tab / Shift+Tab",
+    "mode": "Avante 对应侧栏区域普通模式",
+    "prerequisite": "Avante 对应区域已打开；局部映射仅在该区域生效",
+    "action": "在 AI 侧栏窗口间正向 / 反向切换；工具详情上下文也使用 Shift+Tab。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:647",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-sidebar-code",
+    "category": "AI 助手",
+    "scene": "审阅 AI 结果",
+    "title": "显示 / 隐藏代码窗口",
+    "keys": "x",
+    "mode": "Avante 对应侧栏区域普通模式",
+    "prerequisite": "Avante 对应区域已打开；局部映射仅在该区域生效",
+    "action": "切换 Avante 代码窗口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:649",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-sidebar-remove-file",
+    "category": "AI 助手",
+    "scene": "审阅 AI 结果",
+    "title": "移除 AI 上下文文件",
+    "keys": "d",
+    "mode": "Avante 对应侧栏区域普通模式",
+    "prerequisite": "Avante 对应区域已打开；局部映射仅在该区域生效",
+    "action": "从 AI 文件列表移除当前文件。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:650",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-sidebar-attach-file",
+    "category": "AI 助手",
+    "scene": "审阅 AI 结果",
+    "title": "添加 AI 上下文文件",
+    "keys": "@",
+    "mode": "Avante 对应侧栏区域普通模式",
+    "prerequisite": "Avante 对应区域已打开；局部映射仅在该区域生效",
+    "action": "打开文件添加入口。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:651",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-sidebar-close",
+    "category": "AI 助手",
+    "scene": "审阅 AI 结果",
+    "title": "关闭 AI 侧栏",
+    "keys": "q",
+    "mode": "Avante 对应侧栏区域普通模式",
+    "prerequisite": "Avante 对应区域已打开；局部映射仅在该区域生效",
+    "action": "关闭 Avante 侧栏。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:652",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-sidebar-prompts",
+    "category": "AI 助手",
+    "scene": "审阅 AI 结果",
+    "title": "浏览上下条 AI 提问",
+    "keys": "[ p / ] p",
+    "mode": "Avante 对应侧栏区域普通模式",
+    "prerequisite": "Avante 对应区域已打开；局部映射仅在该区域生效",
+    "action": "跳到上一条 / 下一条提问。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:641",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "Avante",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-diff-ours",
+    "category": "AI 助手",
+    "scene": "合并代码修改",
+    "title": "保留当前修改",
+    "keys": "c o",
+    "mode": "Avante diff 缓冲区普通模式",
+    "prerequisite": "存在 Avante 生成的可审阅 diff 冲突；局部映射优先",
+    "action": "在 Avante diff 冲突中选择当前版本。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:598",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "diff",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-diff-theirs",
+    "category": "AI 助手",
+    "scene": "合并代码修改",
+    "title": "接受传入修改",
+    "keys": "c t",
+    "mode": "Avante diff 缓冲区普通模式",
+    "prerequisite": "存在 Avante 生成的可审阅 diff 冲突；局部映射优先",
+    "action": "在 Avante diff 冲突中选择 AI 传入版本。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:599",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "diff",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-diff-all",
+    "category": "AI 助手",
+    "scene": "合并代码修改",
+    "title": "接受全部传入修改",
+    "keys": "c a",
+    "mode": "Avante diff 缓冲区普通模式",
+    "prerequisite": "存在 Avante 生成的可审阅 diff 冲突；局部映射优先",
+    "action": "在 Avante diff 中接受全部传入修改。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:600",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "diff",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-diff-both",
+    "category": "AI 助手",
+    "scene": "合并代码修改",
+    "title": "保留双方修改",
+    "keys": "c b",
+    "mode": "Avante diff 缓冲区普通模式",
+    "prerequisite": "存在 Avante 生成的可审阅 diff 冲突；局部映射优先",
+    "action": "在 Avante diff 冲突中保留双方。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:601",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "diff",
+      "审阅"
+    ]
+  },
+  {
+    "id": "ai-diff-navigate",
+    "category": "AI 助手",
+    "scene": "合并代码修改",
+    "title": "浏览修改冲突",
+    "keys": "[ x / ] x",
+    "mode": "Avante diff 缓冲区普通模式",
+    "prerequisite": "存在 Avante 生成的可审阅 diff 冲突；局部映射优先",
+    "action": "跳到上一处 / 下一处修改冲突。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/avante.nvim/lua/avante/config.lua:603",
+      "config/lua/plugins/ai/avante.lua:77"
+    ],
+    "tags": [
+      "AI",
+      "diff",
+      "审阅"
+    ]
+  },
+  {
+    "id": "dashboard",
+    "category": "工作区与帮助",
+    "scene": "回到起点",
+    "title": "打开 Dashboard",
+    "keys": "Space D",
+    "mode": "普通模式",
+    "prerequisite": "Snacks Dashboard 可用",
+    "action": "打开首页 Dashboard 并保持普通模式。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/config/keymaps.lua:51"
+    ],
+    "tags": [
+      "Dashboard",
+      "首页"
+    ]
+  },
+  {
+    "id": "dashboard-files",
+    "category": "工作区与帮助",
+    "scene": "首页快速开始",
+    "title": "从首页搜索文件",
+    "keys": "f",
+    "mode": "Dashboard 普通模式",
+    "prerequisite": "焦点在 Snacks Dashboard；对应依赖可用",
+    "action": "在当前工作目录打开 Telescope 文件搜索。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:40"
+    ],
+    "tags": [
+      "Dashboard",
+      "首页"
+    ]
+  },
+  {
+    "id": "dashboard-new",
+    "category": "工作区与帮助",
+    "scene": "首页快速开始",
+    "title": "从首页新建文件",
+    "keys": "n",
+    "mode": "Dashboard 普通模式",
+    "prerequisite": "焦点在 Snacks Dashboard；对应依赖可用",
+    "action": "新建文件并进入插入模式。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:48"
+    ],
+    "tags": [
+      "Dashboard",
+      "首页"
+    ]
+  },
+  {
+    "id": "dashboard-text",
+    "category": "工作区与帮助",
+    "scene": "首页快速开始",
+    "title": "从首页搜索文本",
+    "keys": "g",
+    "mode": "Dashboard 普通模式",
+    "prerequisite": "焦点在 Snacks Dashboard；对应依赖可用",
+    "action": "打开 Telescope 项目文本搜索。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:56"
+    ],
+    "tags": [
+      "Dashboard",
+      "首页"
+    ]
+  },
+  {
+    "id": "dashboard-recent",
+    "category": "工作区与帮助",
+    "scene": "首页快速开始",
+    "title": "从首页打开最近文件",
+    "keys": "r",
+    "mode": "Dashboard 普通模式",
+    "prerequisite": "焦点在 Snacks Dashboard；对应依赖可用",
+    "action": "打开 Telescope 最近文件列表。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:64"
+    ],
+    "tags": [
+      "Dashboard",
+      "首页"
+    ]
+  },
+  {
+    "id": "dashboard-config",
+    "category": "工作区与帮助",
+    "scene": "首页快速开始",
+    "title": "从首页查看配置",
+    "keys": "c",
+    "mode": "Dashboard 普通模式",
+    "prerequisite": "焦点在 Snacks Dashboard；对应依赖可用",
+    "action": "在配置目录打开 Telescope 文件搜索。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:76"
+    ],
+    "tags": [
+      "Dashboard",
+      "首页"
+    ]
+  },
+  {
+    "id": "dashboard-restore",
+    "category": "工作区与帮助",
+    "scene": "首页快速开始",
+    "title": "从首页恢复最近会话",
+    "keys": "s",
+    "mode": "Dashboard 普通模式",
+    "prerequisite": "焦点在 Snacks Dashboard；对应依赖可用",
+    "action": "调用 persistence 恢复最近一次会话。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:85"
+    ],
+    "tags": [
+      "Dashboard",
+      "首页"
+    ]
+  },
+  {
+    "id": "dashboard-lazy",
+    "category": "工作区与帮助",
+    "scene": "首页快速开始",
+    "title": "从首页管理插件",
+    "keys": "l",
+    "mode": "Dashboard 普通模式",
+    "prerequisite": "焦点在 Snacks Dashboard；对应依赖可用",
+    "action": "打开 Lazy 插件管理器。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:91"
+    ],
+    "tags": [
+      "Dashboard",
+      "首页"
+    ]
+  },
+  {
+    "id": "dashboard-yazi",
+    "category": "工作区与帮助",
+    "scene": "首页快速开始",
+    "title": "从首页打开 Yazi",
+    "keys": "y",
+    "mode": "Dashboard 普通模式",
+    "prerequisite": "焦点在 Snacks Dashboard；对应依赖可用",
+    "action": "打开嵌入式 Yazi 文件管理器。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:92"
+    ],
+    "tags": [
+      "Dashboard",
+      "首页"
+    ]
+  },
+  {
+    "id": "dashboard-quit",
+    "category": "工作区与帮助",
+    "scene": "首页快速开始",
+    "title": "从首页退出",
+    "keys": "q",
+    "mode": "Dashboard 普通模式",
+    "prerequisite": "焦点在 Snacks Dashboard；对应依赖可用",
+    "action": "执行 qa，遵守未保存缓冲区保护。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/snacks.lua:93"
+    ],
+    "tags": [
+      "Dashboard",
+      "首页"
+    ]
+  },
+  {
+    "id": "messages-last",
+    "category": "工作区与帮助",
+    "scene": "追溯提示与错误",
+    "title": "查看上一条消息",
+    "keys": "Space s n l",
+    "mode": "普通模式",
+    "prerequisite": "Noice 已加载",
+    "action": "打开 Noice 上一条消息。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/noice.lua:51"
+    ],
+    "tags": [
+      "消息",
+      "Noice"
+    ]
+  },
+  {
+    "id": "messages-history",
+    "category": "工作区与帮助",
+    "scene": "追溯提示与错误",
+    "title": "查看消息历史",
+    "keys": "Space s n h",
+    "mode": "普通模式",
+    "prerequisite": "Noice 已加载",
+    "action": "打开 Noice 消息历史。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/noice.lua:52"
+    ],
+    "tags": [
+      "消息",
+      "Noice"
+    ]
+  },
+  {
+    "id": "messages-all",
+    "category": "工作区与帮助",
+    "scene": "追溯提示与错误",
+    "title": "查看全部消息",
+    "keys": "Space s n a",
+    "mode": "普通模式",
+    "prerequisite": "Noice 已加载",
+    "action": "打开 Noice 全部消息。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/noice.lua:53"
+    ],
+    "tags": [
+      "消息",
+      "Noice"
+    ]
+  },
+  {
+    "id": "messages-dismiss",
+    "category": "工作区与帮助",
+    "scene": "追溯提示与错误",
+    "title": "清除当前通知",
+    "keys": "Space s n d",
+    "mode": "普通模式",
+    "prerequisite": "Noice 已加载",
+    "action": "关闭当前显示的 Noice 通知。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/noice.lua:54"
+    ],
+    "tags": [
+      "消息",
+      "Noice"
+    ]
+  },
+  {
+    "id": "messages-picker",
+    "category": "工作区与帮助",
+    "scene": "追溯提示与错误",
+    "title": "搜索消息",
+    "keys": "Space s n t",
+    "mode": "普通模式",
+    "prerequisite": "Noice 已加载",
+    "action": "通过 Noice 选择器检索消息。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/noice.lua:55"
+    ],
+    "tags": [
+      "消息",
+      "Noice"
+    ]
+  },
+  {
+    "id": "cmdline-redirect",
+    "category": "工作区与帮助",
+    "scene": "保存命令结果",
+    "title": "将命令结果重定向到消息视图",
+    "keys": "Shift+Enter",
+    "mode": "命令行模式",
+    "prerequisite": "正在输入命令；Noice 已加载",
+    "action": "重定向当前命令结果供查看；同键在 Notebook 编辑模式用于运行单元格。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "config/lua/plugins/appearance/noice.lua:50"
+    ],
+    "tags": [
+      "命令行",
+      "Noice"
+    ]
+  },
+  {
+    "id": "plugins-manager",
+    "category": "工作区与帮助",
+    "scene": "维护依赖",
+    "title": "打开插件管理器",
+    "keys": "Space l",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 基础映射已加载",
+    "action": "打开 Lazy 管理界面；升级或恢复插件应遵守安装包与本机修改保护。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:92",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "插件",
+      "Lazy"
+    ]
+  },
+  {
+    "id": "quickfix-toggle",
+    "category": "工作区与帮助",
+    "scene": "查看批量结果",
+    "title": "切换 quickfix 列表",
+    "keys": "Space x q",
+    "mode": "普通模式",
+    "prerequisite": "已存在 quickfix 列表；局部映射优先",
+    "action": "打开或关闭 quickfix 列表。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:106",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "quickfix",
+      "诊断"
+    ]
+  },
+  {
+    "id": "quickfix-navigate",
+    "category": "工作区与帮助",
+    "scene": "查看批量结果",
+    "title": "上一条 / 下一条 quickfix",
+    "keys": "[ q / ] q",
+    "mode": "普通模式",
+    "prerequisite": "quickfix 列表中有条目",
+    "action": "跳到上一条 / 下一条 quickfix 结果。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:113",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "quickfix",
+      "导航"
+    ]
+  },
+  {
+    "id": "quit-all",
+    "category": "工作区与帮助",
+    "scene": "结束编辑",
+    "title": "退出全部窗口",
+    "keys": "Space q q",
+    "mode": "普通模式",
+    "prerequisite": "LazyVim 基础映射已加载",
+    "action": "执行 qa；未保存内容按 Neovim 正常保护。",
+    "platforms": [
+      "macOS",
+      "Windows",
+      "Linux"
+    ],
+    "source": [
+      "runtime/lazy/LazyVim/lua/lazyvim/config/keymaps.lua:180",
+      "config/lua/config/lazy.lua:33"
+    ],
+    "tags": [
+      "退出"
+    ]
+  }
+]

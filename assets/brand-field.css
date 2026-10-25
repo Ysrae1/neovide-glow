@@ -1,0 +1,262 @@
+/* One shared document image beneath a near-opaque glass sheet. Openings use
+ * the same image + noise coordinates, with native text and continuous contours.
+ */
+/* Only the root canvas consumes these frame properties. Keeping them
+ * non-inherited avoids invalidating every text/shape sample at frame cadence. */
+@property --brand-edge-frame {
+  syntax:"<image>";inherits:false;
+  initial-value:linear-gradient(120deg,#ff6f9c,#9a72ff,#5f93ff);
+}
+@property --brand-edge-size { syntax:"*";inherits:false;initial-value:1px 1px; }
+@property --brand-edge-position { syntax:"*";inherits:false;initial-value:0px 0px; }
+@property --brand-edge-grain-position { syntax:"*";inherits:false;initial-value:0px 0px; }
+@property --brand-underpage-color { syntax:"<color>";inherits:false;initial-value:#07090d; }
+@property --brand-underpage-tint { syntax:"<color>";inherits:false;initial-value:transparent; }
+:root {
+  --brand-edge-frame:var(--brand-field-image);
+  --brand-edge-size:100vw 100vh;
+  --brand-edge-position:0px 0px;
+  --brand-edge-grain-position:0px 0px;
+  --brand-safe-top:env(safe-area-inset-top,0px);
+  --brand-safe-bottom:env(safe-area-inset-bottom,0px);
+  --brand-safe-left:env(safe-area-inset-left,0px);
+  --brand-safe-right:env(safe-area-inset-right,0px);
+  --brand-field-ink:#171828;
+  --brand-field-image:linear-gradient(120deg,#ff6f9c,#9a72ff,#5f93ff);
+  --brand-grain-image:none;
+  --brand-grain-size:180px;
+  --brand-field-text-veil:linear-gradient(transparent,transparent);
+  --brand-glass-veil:rgba(7,9,13,var(--brand-glass-opacity,.875));
+  --selected-shadow:rgba(0,0,0,.22);
+  --key-glow:rgba(255,255,255,.12);
+}
+:root[data-theme="light"] {
+  --brand-glass-veil:rgba(243,246,251,var(--brand-glass-opacity,.875));
+  --brand-field-text-veil:linear-gradient(#171828a6,#171828a6);
+  --selected-shadow:rgba(23,24,40,.15);
+  --key-glow:rgba(23,24,40,.12);
+}
+/* WebKit's large text-shadow can show tiled blur artifacts. Keep Chromium's
+ * existing paint path; this native canvas capability identifies the other path.
+ * CSS shadow blur radius = 2 × drop-shadow's Gaussian standard deviation. */
+@supports (background-image: -webkit-canvas(glow-shadow-capability)) {
+  .brand-field-integrated #hero-title {
+    text-shadow:none;
+    filter:drop-shadow(0 2px 17px rgba(0,0,0,.5));
+  }
+  :root.brand-field-integrated[data-theme="light"] #hero-title {
+    filter:drop-shadow(0 2px 15px rgba(255,255,255,.6));
+  }
+}
+/* One document-anchored material. Mirrored cells repeat through the entire
+ * document, so compositor scrolling never outruns a JavaScript paint window.
+ * The root's native fallback tint is already composited; its opaque field
+ * texture receives exactly one glass tint above it. */
+html.brand-field-integrated {
+  position:relative;isolation:isolate;
+  --brand-underpage-color:var(--bg,#07090d);
+  background-color:var(--brand-underpage-color);
+  background-image:linear-gradient(var(--brand-glass-veil),var(--brand-glass-veil)),var(--brand-grain-image),var(--brand-edge-frame);
+  background-size:100% 100%,var(--brand-grain-size) var(--brand-grain-size),var(--brand-edge-size);
+  background-position:0 0,0 0,0 0;
+  background-repeat:no-repeat,repeat,repeat-y;
+  background-attachment:scroll;
+  background-blend-mode:normal,overlay,normal;
+}
+html.brand-field-integrated body { background:transparent;isolation:isolate; }
+/* Content can pass behind system chrome; only controls and the final reading
+ * position respect the unsafe edges. Zero insets preserve the desktop layout. */
+html.brand-field-integrated .nav { top:calc(14px + var(--brand-safe-top)); }
+html.brand-field-integrated .nav-anchor { top:calc(14px + var(--brand-safe-top)); }
+html.brand-field-integrated .nav-anchor > .nav {
+  top:0;
+  max-width:calc(100vw - 2 * max(var(--brand-safe-left),var(--brand-safe-right)));
+}
+html.brand-field-integrated .nav,
+html.brand-field-integrated .wrap {
+  max-width:calc(100% - 2 * max(var(--brand-safe-left),var(--brand-safe-right)));
+}
+html.brand-field-integrated .footer { padding-bottom:max(50px,var(--brand-safe-bottom)); }
+html.brand-field-integrated .manual-footer { padding-bottom:max(48px,var(--brand-safe-bottom)); }
+#brand-field-source { display:none!important; }
+/* These are retained as frame diagnostics only; the root paints the one
+ * full-document material. No fixed/scroll-following duplicate veil exists. */
+#brand-field-backdrop,#brand-field-veil { display:none; }
+#brand-underpage-blend {
+  /* This small document-edge fade also covers the hero's separate light
+   * beams, which paint above the glass. It scrolls away with the document;
+   * it never covers content passing behind the status bar later on. */
+  position:absolute;top:0;left:0;width:100%;height:64px;
+  z-index:1;pointer-events:none;
+  background-image:linear-gradient(var(--brand-underpage-tint,transparent),transparent);
+}
+/* Glass owns its frosting, above its tint and below all cutout samples. */
+#brand-field-veil,.field-glass-veil {
+  isolation:isolate;
+  -webkit-backdrop-filter:blur(24px) saturate(105%);
+  backdrop-filter:blur(24px) saturate(105%);
+}
+html.brand-field-integrated::before,html.brand-field-integrated::after,
+#brand-field-veil::before,.field-glass-veil::before,
+#brand-field-veil::after,.field-glass-veil::after {
+  content:"";position:absolute;inset:0;pointer-events:none;
+  /* Overlay treats 50% sRGB gray as neutral: grain varies local contrast,
+   * instead of alpha-compositing a gray veil over the near-black glass. */
+  opacity:var(--glass-grain-opacity,.09);mix-blend-mode:overlay;
+  background-size:var(--glass-grain-size,180px) var(--glass-grain-size,180px);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g' x='0' y='0' width='100%25' height='100%25' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='2' intercept='-.5'/%3E%3CfeFuncG type='linear' slope='2' intercept='-.5'/%3E%3CfeFuncB type='linear' slope='2' intercept='-.5'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+/* A shared, aligned bright component gives the same grain an adjustable lift.
+ * Zero preserves the neutral contrast grain. No hero-only texture is added. */
+html.brand-field-integrated::before,
+#brand-field-veil::before,.field-glass-veil::before {
+  opacity:calc(var(--glass-grain-opacity,.09) * var(--glass-grain-brightness,.6));
+  mix-blend-mode:screen;
+}
+/* Native document painting also owns the two existing frosting-grain layers;
+ * neither is a second tint or a viewport-sized backdrop-filter surface. */
+html.brand-field-integrated::before,html.brand-field-integrated::after { z-index:-1; }
+.brand-field-fill,.brand-field-text,.brand-field-surface {
+  --brand-field-local-veil:linear-gradient(transparent,transparent);
+  --brand-field-layers:var(--brand-field-local-veil),var(--brand-grain-image),var(--brand-field-image);
+  --brand-field-sizes:100% 100%,var(--brand-sample-grain,var(--brand-grain-size) var(--brand-grain-size)),var(--brand-sample-size,100vw 100vh);
+  --brand-field-positions:0 0,var(--brand-sample-grain-position,0 0),var(--brand-sample-position,0 0);
+  background-image:var(--brand-field-layers)!important;
+  background-size:var(--brand-field-sizes)!important;
+  background-position:var(--brand-field-positions)!important;
+  background-repeat:no-repeat,repeat,repeat-y!important;
+  background-attachment:scroll!important;
+  background-origin:border-box!important;
+  background-blend-mode:normal,overlay,normal!important;
+}
+.brand-field-fill,.brand-field-fill:hover { background-color:#969af7!important;color:var(--brand-field-ink)!important; }
+.brand-field-fill > :not(.cc-paint) { color:inherit;-webkit-text-fill-color:currentColor; }
+.brand-field-text {
+  --brand-field-local-veil:var(--brand-field-text-veil);
+  background-color:transparent;
+  color:#b7b4ff;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:none;
+}
+/* WebKit paints inline text backgrounds without the block painter's isolated
+ * blend group. Keep textured prose links in that block path so their grain
+ * cannot change the blend operation used by later ordinary text. */
+a.link.brand-field-text,.wf-source a.brand-field-text {
+  display:inline-block;max-width:100%;vertical-align:baseline;overflow-wrap:anywhere;
+}
+:root[data-theme="light"] .brand-field-text { color:#4b4d79; }
+.brand-field-label { background-color:transparent; }
+.brand-field-integrated .hero-line {
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.22));
+}
+:root.brand-field-integrated[data-theme="light"] .hero-line {
+  filter:drop-shadow(0 2px 3px rgba(23,24,40,.14));
+}
+.hero-line .soft.brand-field-text {
+  --brand-field-local-veil:linear-gradient(transparent,transparent);
+  position:relative;isolation:isolate;
+  display:inline-block;padding-inline:.08em;margin-inline:-.08em;
+  vertical-align:baseline;overflow:visible;
+}
+/* Glow is the same glyph-shaped field sample, softened locally. It has no
+ * separate palette or animation clock, and never changes the text's layout. */
+.hero-line .soft.brand-field-text::before,
+.hero-line .soft.brand-field-text::after {
+  content:attr(data-brand-glow) / "";position:absolute;inset:0;z-index:-1;
+  padding:inherit;box-sizing:border-box;pointer-events:none;
+  --brand-field-local-veil:linear-gradient(transparent,transparent);
+  /* Inherited custom-property layer lists are already resolved on the parent:
+   * explicitly rebuild the glow without the light-theme text contrast veil. */
+  background-image:linear-gradient(transparent,transparent),var(--brand-grain-image),var(--brand-field-image);
+  background-size:var(--brand-field-sizes);
+  background-position:var(--brand-field-positions);
+  background-repeat:no-repeat,repeat,repeat-y;
+  background-origin:border-box;background-blend-mode:normal,overlay,normal;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+}
+.hero-line .soft.brand-field-text::before { filter:blur(7px);opacity:.85; }
+.hero-line .soft.brand-field-text::after { filter:blur(18px);opacity:.6; }
+.platform-symbol.platform-logo.brand-field-text {
+  -webkit-background-clip:border-box;background-clip:border-box;
+}
+/* Continuous-corner fallback receives the live shared layers, not a flattened
+ * computed frame. The host stays transparent so no second base is painted. */
+html.cc-fallback .brand-field-fill.cc-host { background:none!important; }
+html.cc-fallback .brand-field-fill.cc-host > .cc-paint > .cc-fill {
+  background-image:var(--brand-field-layers)!important;
+  background-size:var(--brand-field-sizes)!important;
+  background-position:var(--brand-field-positions)!important;
+  background-repeat:no-repeat,repeat,repeat-y!important;
+  background-origin:border-box!important;background-attachment:scroll!important;
+  background-blend-mode:normal,overlay,normal!important;
+}
+/* Phase buttons precompose the same field and grain in a small retina canvas.
+ * Keep their CSS paint on the normal path: a non-normal background group can
+ * mix the parent glass into the opaque field during WebKit compositing. */
+html.cc-fallback .wf-phases button.brand-field-fill.brand-field-flat.cc-host > .cc-paint > .cc-fill {
+  background-color:transparent!important;
+  background-image:none!important;
+  background-blend-mode:normal!important;
+}
+.brand-field-flat-canvas {
+  position:absolute;inset:0;display:block;width:100%;height:100%;
+  margin:0;padding:0;border:0;pointer-events:none;
+}
+.brand-field-phase-label-canvas {
+  position:absolute;inset:0;display:block;width:100%;height:100%;z-index:1;
+  margin:0;padding:0;border:0;pointer-events:none;
+}
+html.cc-fallback .wf-phases button.brand-field-phase-text > .wf-phase-label { opacity:0; }
+/* Keep the real label in layout and in the button's accessible name. Its
+ * visible glyphs share the completed bitmap with the field beneath them. */
+html.cc-fallback .wf-phases button.brand-field-flat-text > .wf-phase-label { opacity:0; }
+html.cc-fallback .wf-phases button.brand-field-flat-text > .cc-paint { opacity:1!important; }
+html.cc-fallback .wf-phases button.brand-field-flat-text > .cc-paint > .cc-vector { opacity:var(--wf-stage-emphasis,0); }
+/* Selection is live even while the corner layer awaits its geometry batch.
+ * A cached fill/canvas must not survive for one paint after losing selection. */
+html.cc-fallback .wf-phases button[aria-pressed="false"] > .cc-paint { visibility:hidden; }
+.brand-field-baseline {
+  display:inline-block;width:0;height:0;margin:0;padding:0;border:0;
+  font-size:0;line-height:0;vertical-align:baseline;pointer-events:none;
+}
+/* The native rounded phase surface arrives with its image; keep its existing
+ * opacity timeline while revealing the same field as every other opening. */
+html:not(.cc-fallback) .wf-phases button.brand-field-fill { background:none!important; }
+html:not(.cc-fallback) .wf-phases button.brand-field-fill::before {
+  background-image:var(--brand-field-layers)!important;
+  background-size:var(--brand-field-sizes)!important;
+  background-position:var(--brand-field-positions)!important;
+  background-repeat:no-repeat,repeat,repeat-y!important;
+  background-origin:border-box!important;background-attachment:scroll!important;
+  background-blend-mode:normal,overlay,normal!important;
+}
+/* Unmasked beam comparison: the full-page glass owns the material and grain.
+ * A hero-only noise sheet creates a hard texture step at the hero's edge. */
+.brand-field-integrated .glow .grain,
+.brand-field-integrated .glow .vignette { display:none; }
+/* Each beam already fades to transparent at its ends. Let those ends finish
+ * outside the hero instead of clipping all beams at one horizontal boundary. */
+.brand-field-integrated .glow {
+  overflow:visible;
+  -webkit-mask-image:none;
+  mask-image:none;
+}
+.brand-field-integrated .halo {
+  filter:none;
+  -webkit-mask-image:radial-gradient(ellipse closest-side,#0005,transparent);
+  mask-image:radial-gradient(ellipse closest-side,#0005,transparent);
+}
+.flow-pills > span:has(> .brand-field-label),.capability-icon { background:var(--hairline); }
+/* Focus is an accessibility boundary, with stable contrast on both themes. */
+:focus-visible { outline-color:var(--text)!important; }
+.manual-search:focus-within { border-color:var(--text);box-shadow:0 0 0 3px var(--hairline); }
+@media (forced-colors:active) {
+  html.brand-field-integrated { background:Canvas; }
+  #brand-field-backdrop,#brand-field-veil,html.brand-field-integrated::before,html.brand-field-integrated::after { display:none; }
+  html.brand-field-integrated body { background:Canvas; }
+  .brand-field-fill { background:Highlight!important;color:HighlightText!important; }
+  .brand-field-text { background:none!important;color:LinkText!important;-webkit-text-fill-color:currentColor; }
+}

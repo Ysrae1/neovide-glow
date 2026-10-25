@@ -1,0 +1,16 @@
+Original icon: Marc Oliver Orth (marc2o)
+Copyright (c) 2022 Marc Oliver Orth
+Source: https://github.com/marc2o/Neovide-macOS-Icon
+License: MIT; see Icon-LICENSE.txt / LICENSE.
+This derivative preserves the original artwork and adapts its material in Icon Composer for Liquid Glass.
+Liquid Glass adaptation and installer customization: Ysrae1.
+
+Upstream artwork contained in the icon:
+- Neovide logo by Chris Bouchard (https://github.com/chrisbouchard),
+  licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+- Its outer gear ring is a modified Rust logo, (c) Mozilla, licensed under
+  CC BY 4.0 and used according to the Rust media guide
+  (https://www.rust-lang.org/policies/media-guide).
+- Its "N" is a modified Neovim logo, (c) Jason Long, licensed under
+  CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/).
+See assets/README.md in the Neovide Glow repository for details.

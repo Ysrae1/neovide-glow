@@ -1,0 +1,44 @@
+/* These entrances own the lower sections, including their older data-reveal hooks. */
+html [data-section-reveal-owner],
+html.reveal-ready [data-section-reveal-owner][data-reveal] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: none;
+}
+
+html [data-section-reveal-unit="pending"],
+html.reveal-ready [data-section-reveal-owner][data-reveal][data-section-reveal-unit="pending"] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+}
+
+html [data-section-reveal-part="pending"] {
+  opacity: 0;
+  transform: translate3d(0, 8px, 0);
+}
+
+html [data-section-reveal-self="pending"],
+html.reveal-ready [data-section-reveal-owner][data-reveal][data-section-reveal-self="pending"] {
+  opacity: 0;
+}
+
+html[data-motion="reduce"] [data-section-reveal-owner],
+html[data-motion="reduce"] [data-section-reveal-unit],
+html[data-motion="reduce"] [data-section-reveal-part],
+html[data-motion="reduce"].reveal-ready [data-section-reveal-owner][data-reveal] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html [data-section-reveal-owner],
+  html [data-section-reveal-unit],
+  html [data-section-reveal-part],
+  html.reveal-ready [data-section-reveal-owner][data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,67 @@
+/* Fixed, self-hosted type for the product page and the complete handbook.
+   Source versions, licenses and glyph coverage: fonts/README.md. */
+@font-face {
+  font-family: "Glow Sans";
+  src: url("fonts/InterVariable-4.1.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Glow Mono";
+  src: url("fonts/FiraCode-VF-6.2.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+/* The same CJK outlines serve both text roles. Latin and keyboard symbols
+   retain their Inter / Fira Code shapes instead of using a system fallback. */
+@font-face {
+  font-family: "Glow Sans";
+  src: url("fonts/GlowNotoSansSC-Site-2.004.woff2?v=20261024-4") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE6F, U+FF00-FFEF, U+20000-3134F;
+}
+
+@font-face {
+  font-family: "Glow Mono";
+  src: url("fonts/GlowNotoSansSC-Site-2.004.woff2?v=20261024-4") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE6F, U+FF00-FFEF, U+20000-3134F;
+}
+
+:root {
+  --sans: "Glow Sans", sans-serif;
+  /* Keep Latin in Fira Code, but use the shared sans face for any missing CJK
+     glyph while fonts load. Windows' generic monospace can select SimSun. */
+  --mono: "Glow Mono", "Glow Sans", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+
+html,
+body {
+  font-family: var(--sans);
+  font-synthesis: none;
+}
+
+button,
+input,
+select,
+textarea,
+optgroup,
+option {
+  font-family: inherit;
+}
+
+.mono,
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--mono);
+}

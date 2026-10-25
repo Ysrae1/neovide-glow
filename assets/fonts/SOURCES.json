@@ -1,0 +1,32 @@
+{
+  "fonts": [
+    {
+      "file": "InterVariable-4.1.woff2",
+      "family": "Inter",
+      "version": "4.1",
+      "source": "https://raw.githubusercontent.com/rsms/inter/v4.1/docs/font-files/InterVariable.woff2",
+      "release": "https://github.com/rsms/inter/releases/tag/v4.1",
+      "license": "Inter-OFL.txt",
+      "bytes": 352240,
+      "sha256": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3",
+      "modified": false,
+      "license_spdx": "OFL-1.1",
+      "license_source": "https://raw.githubusercontent.com/rsms/inter/v4.1/LICENSE.txt"
+    },
+    {
+      "file": "FiraCode-VF-6.2.woff2",
+      "family": "Fira Code",
+      "version": "6.2",
+      "source": "https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip",
+      "archive_member": "woff2/FiraCode-VF.woff2",
+      "release": "https://github.com/tonsky/FiraCode/releases/tag/6.2",
+      "license": "FiraCode-OFL.txt",
+      "bytes": 113088,
+      "sha256": "408e876a202f15ea6ee307a70a65cf40ceb222c589a0b17e0a3a371db96dd49f",
+      "modified": false,
+      "license_spdx": "OFL-1.1",
+      "license_source": "https://raw.githubusercontent.com/tonsky/FiraCode/6.2/LICENSE",
+      "archive_sha256": "0949915ba8eb24d89fd93d10a7ff623f42830d7c5ffc3ecbf960e4ecad3e3e79"
+    }
+  ]
+}

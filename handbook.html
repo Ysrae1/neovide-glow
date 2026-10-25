@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#07090d">
+  <meta name="description" content="Neovide Glow 完整快捷键手册：查询 296 项操作，按触发键、功能、场景、模式和平台筛选。">
+  <link rel="icon" href="assets/icon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/InterVariable-4.1.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/FiraCode-VF-6.2.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/GlowNotoSansSC-Site-2.004.woff2?v=20261024-4" as="font" type="font/woff2" crossorigin>
+  <link rel="canonical" href="https://ysrae1.github.io/neovide-glow/handbook.html">
+  <title>快捷键手册 — Neovide Glow</title>
+  <script>
+    (() => {
+      try { document.documentElement.dataset.theme = localStorage.getItem('glow-theme') === 'light' ? 'light' : 'dark'; } catch (_) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/handbook.css">
+  <link rel="stylesheet" href="assets/manual-page.css?v=20261025-skip-remove1">
+  <link rel="stylesheet" href="assets/brand-field.css?v=text-paint1">
+  <link rel="stylesheet" href="assets/continuous-corners.css?v=nav-icons1">
+  <link rel="stylesheet" href="assets/continuous-corners-fallback.css?v=20261024-safari-phase3">
+  <link rel="stylesheet" href="assets/typography.css?v=20261024-safari-font1">
+</head>
+<body data-manual-page>
+  <nav class="nav" aria-label="主导航">
+    <a class="brand" href="index.html?lang=zh" data-product-link aria-label="Neovide Glow 首页"><img src="assets/icon.png" alt="" width="24" height="24"><span>Neovide Glow</span></a>
+    <div class="nav-links"><a href="index.html?lang=zh" data-product-link>返回产品页</a><a href="#handbook" aria-current="page">快捷键手册</a></div>
+    <div class="nav-actions">
+      <button class="icon-button language-toggle" type="button" data-language-toggle aria-label="Switch to English" title="Switch to English"><span class="nav-adaptive-label" data-language-label>English</span><svg class="nav-adaptive-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="3.8" ry="8.5"/><path d="M3.5 12h17"/></svg></button>
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="切换浅色外观" title="切换浅色外观">
+        <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4A8.7 8.7 0 0 1 10.6 3.4 8.7 8.7 0 1 0 20.6 13.4Z"/></svg>
+        <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="icon-button manual-source" href="https://github.com/Ysrae1/neovide" aria-label="在 GitHub 查看源码" title="GitHub 源码"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.06c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.7.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15 1 1.7 2.61 1.2 3.25.92.1-.72.39-1.2.7-1.48-2.48-.28-5.08-1.24-5.08-5.53 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.1-2.96 0 0 .94-.3 3.05 1.14a10.7 10.7 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.12 2.96.71.78 1.14 1.78 1.14 3 0 4.3-2.6 5.25-5.1 5.53.4.35.75 1.02.75 2.06V22c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg></a>
+    </div>
+  </nav>
+  <main id="main" class="wrap">
+    <section id="handbook" aria-labelledby="handbook-title">
+      <header class="manual-heading">
+        <p class="section-kicker mono">THE SHORTCUT FIELD GUIDE</p>
+        <h1 id="handbook-title">不必一次记住，随用随查。</h1>
+        <p class="manual-lead">搜索功能、场景或按键。每一项都说明模式、前提和真正发生的动作。</p>
+        <span class="manual-version">配置冻结 · 2026.10.23 gm1</span>
+      </header>
+      <div class="manual-intro">
+        <p><kbd aria-label="空格">␣</kbd> 是 Leader，按序输入后续按键；<kbd>\</kbd> 是 LocalLeader。<kbd>⌃S</kbd> 表示同时按下，<kbd>␣ → t → f</kbd> 表示依次输入。终端、文件树和预览面板中的同一按键，可能有不同动作。</p>
+        <p>手册依据 10 月 23 日冻结配置盘点，包含全部 296 项操作。平台筛选表示配置入口适用范围；公开下载与实际验收状态请查看<a class="link" href="index.html?lang=zh#platforms" data-product-link>平台说明</a>。</p>
+      </div>
+      <div id="shortcut-handbook"><p class="manual-loading" role="status">正在载入快捷键清单…</p></div>
+      <noscript><p class="manual-loading">交互查询需要 JavaScript。<a class="link" href="assets/shortcuts.json">中文完整数据</a> · <a class="link" href="assets/shortcuts-en.json">Complete English data</a></p></noscript>
+    </section>
+  </main>
+  <footer class="manual-footer wrap">
+    <a class="link" href="index.html?lang=zh" data-product-link>返回产品页</a>
+    <a class="link" href="assets/shortcuts.json" data-shortcut-data-link>读取完整快捷键数据</a>
+    <a class="link" href="https://github.com/Ysrae1/neovide/blob/glow-preview/GLOW.md">查看实现说明与验收记录 ↗</a>
+  </footer>
+  <script defer src="assets/page-en.js?v=20261024-spacing1"></script>
+  <script defer src="assets/manual-page.js"></script>
+  <script defer src="assets/locale.js?v=nav-icons1"></script>
+  <script defer src="assets/shortcuts-data.js"></script>
+  <script defer src="assets/shortcuts-en.js"></script>
+  <script defer src="assets/handbook.js"></script>
+  <script src="assets/viewport-runtime.js?v=rebuild1"></script>
+  <script type="module" src="assets/brand-field.js?v=text-paint1"></script>
+  <script type="module" src="assets/glass-settings.js?v=20261024-glass6"></script>
+  <script defer src="assets/continuous-corners.js?v=rebuild1"></script>
+</body>
+</html>

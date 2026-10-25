@@ -1,0 +1,187 @@
+@property --legend-morph { syntax:"<number>";inherits:true;initial-value:1; }
+/* The slot retains both languages' full height while its one child changes
+   from ordinary flow to viewport positioning without reparenting. */
+.wf-legend-origin { height:24px;pointer-events:none; }
+.wf-legend-anchor {
+  position:relative;
+  top:0;
+  width:min(1160px,calc(100% - 32px));
+  min-height:40px;
+  margin:0 auto;
+  z-index:19;
+  pointer-events:none;
+}
+.wf-legend-slot { position:relative;pointer-events:none; }
+.wf-legend-anchor.is-viewport-floating {
+  position:fixed;
+  left:50%;
+  right:auto;
+  width:0;
+  height:0;
+  min-height:0;
+  margin:0;
+}
+/* Keep the painted panel's right edge unchanged throughout its width morph,
+   while the fixed owner itself has no wide border box. */
+.wf-legend-anchor.is-viewport-floating > .wf-legend.is-floating {
+  position:absolute;
+  top:0;
+  left:auto;
+  right:calc(var(--legend-bar-width,0px) / -2);
+  margin:0;
+}
+.wf-legend-anchor .wf-legend:not(.is-floating) {
+  position:relative;
+  display:block;
+  margin:0 auto;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:none;
+  box-shadow:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  overflow:visible;
+  color:var(--muted);
+  font:12px var(--sans);
+  text-align:center;
+  opacity:1;
+  transform:none;
+  pointer-events:auto;
+}
+.wf-legend:not(.is-floating) > .wf-legend-toggle {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  width:fit-content;
+  margin:0 auto 8px;
+  padding:0;
+  border:0;
+  background:none;
+  color:inherit;
+  font:inherit;
+  line-height:1.65;
+  cursor:default;
+}
+.wf-legend:not(.is-floating) > p {
+  max-width:740px;
+  margin:0 auto;
+  padding:0;
+  font:inherit;
+  line-height:1.65;
+  text-align:center;
+  overflow-wrap:anywhere;
+}
+.wf-legend:not(.is-floating) .legend-shortcut-bolt {
+  position:static;
+  order:-1;
+  width:14px;
+  height:14px;
+  opacity:1;
+}
+.wf-legend:not(.is-floating) .legend-collapse-mark,
+.wf-legend:not(.is-floating) .legend-expanded-bolt,
+.wf-legend:not(.is-floating) > .cc-paint { display:none!important; }
+.wf-legend:not(.is-floating) > .cc-content-clip { clip-path:none!important;-webkit-clip-path:none!important; }
+.wf-legend.is-floating .legend-inline-title { display:none; }
+.wf-legend-anchor .wf-legend.is-floating {
+  position:relative;
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:var(--legend-open-height,40px);
+  margin:0 0 0 auto;
+  padding:0;
+  border:1px solid var(--hairline);
+  border-radius:999px;
+  corner-shape:superellipse(calc(1 + .44 * var(--legend-morph)))!important;
+  background:var(--glass-strong);
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:blur(22px) saturate(160%);
+  -webkit-backdrop-filter:blur(22px) saturate(160%);
+  color:var(--muted);
+  font:12px var(--sans);
+  opacity:1;
+  transform:none;
+  overflow:hidden;
+  pointer-events:auto;
+}
+.wf-legend.is-floating > .wf-legend-toggle {
+  appearance:none;
+  -webkit-appearance:none;
+  position:absolute;
+  top:50%;
+  left:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:var(--legend-diameter,40px);
+  height:var(--legend-diameter,40px);
+  min-height:0;
+  margin:0;
+  padding:0;
+  border:0;
+  background:none;
+  color:var(--text);
+  font:inherit;
+  cursor:pointer;
+  transform:translateY(-50%);
+}
+.wf-legend-toggle:focus-visible { outline:2px solid var(--ink-ice);outline-offset:-5px; }
+.legend-shortcut-bolt,.legend-collapse-mark {
+  position:absolute;
+  display:block;
+  width:20px;
+  height:20px;
+  overflow:visible;
+  shape-rendering:geometricPrecision;
+}
+.legend-shortcut-bolt { opacity:calc(1 - var(--legend-morph)); }
+.legend-collapse-mark { opacity:var(--legend-morph); }
+.wf-legend.is-floating > p {
+  position:relative;
+  left:calc(var(--legend-diameter,40px) - 1px);
+  display:flex;
+  align-items:center;
+  justify-content:safe center;
+  width:calc(var(--legend-bar-width,100vw - 32px) - 2 * var(--legend-diameter,40px));
+  height:calc(var(--legend-open-height,40px) - 2px);
+  min-width:0;
+  margin:0;
+  padding:8px 0;
+  font:inherit;
+  line-height:1.65;
+  text-align:center;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  opacity:var(--legend-morph);
+}
+.legend-symbols-line { flex:0 1 auto;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere; }
+.wf-legend.is-floating > .legend-expanded-bolt {
+  position:absolute;
+  display:block;
+  top:50%;
+  right:calc((var(--legend-diameter,40px) - 17px) / 2);
+  width:17px;
+  height:20px;
+  overflow:visible;
+  transform:translateY(-50%);
+  opacity:var(--legend-morph);
+  pointer-events:none;
+}
+.legend-expanded-bolt > svg { display:block;width:100%;height:100%;overflow:visible; }
+.legend-measure {
+  position:fixed;
+  left:-100000px;
+  top:0;
+  visibility:hidden;
+  pointer-events:none;
+  contain:layout style paint;
+}
+.legend-measure > p { margin:0;padding:0;font:inherit;line-height:1.65;text-align:center;white-space:normal;overflow-wrap:anywhere; }
+
+/* Synchronous measurement must not inherit the reduced-motion global duration:
+   even a .01ms "all" transition returns the previous font/width in this read. */
+:root .legend-measure[data-story-measure],
+:root .legend-measure[data-story-measure] > p { transition:none!important; }

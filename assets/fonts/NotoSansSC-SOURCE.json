@@ -1,0 +1,37 @@
+{
+  "file": "GlowNotoSansSC-Site-2.004.woff2",
+  "family": "Glow Noto Sans SC",
+  "upstream_family": "Noto Sans SC",
+  "version": "2.004-H2",
+  "css_weight_range": [
+    100,
+    900
+  ],
+  "source": "https://raw.githubusercontent.com/google/fonts/a85815a42757630ce188fdad368c2dfc444d4773/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
+  "source_repository": "https://github.com/google/fonts",
+  "source_commit": "a85815a42757630ce188fdad368c2dfc444d4773",
+  "upstream_repository": "https://github.com/notofonts/noto-cjk",
+  "upstream_release": "https://github.com/notofonts/noto-cjk/releases/tag/Sans2.004",
+  "upstream_commit": "523d033d6cb47f4a80c58a35753646f5c3608a78",
+  "source_bytes": 17772300,
+  "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+  "bytes": 453692,
+  "sha256": "4490700022c62077af8e5b18b13b82adb9f92f90461eaa932c9f884557e57bea",
+  "modified": true,
+  "modifications": [
+    "Subset to every CJK character currently used by the product page, handbook, color-field UI and text data; retain complete available CJK punctuation/kana/halfwidth blocks, all previous site glyphs and cmatrix-gm's original 125-character alphabet.",
+    "WOFF2 compression; retain variable weights 100 through 900 and layout features.",
+    "Rename modified family to Glow Noto Sans SC; retain original copyright and OFL metadata.",
+    "Retain all 1,628 prior code points and add 颗 (U+9897) and 粒 (U+7C92) for grain intensity and size controls."
+  ],
+  "license": "NotoSansSC-OFL.txt",
+  "license_spdx": "OFL-1.1",
+  "license_source": "https://raw.githubusercontent.com/google/fonts/a85815a42757630ce188fdad368c2dfc444d4773/ofl/notosanssc/OFL.txt",
+  "license_sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+  "generated_with": {
+    "fonttools": "4.60.1",
+    "brotli": "1.2.1"
+  },
+  "coverage": "NotoSansSC-COVERAGE.json",
+  "asset_version": "20261024-4"
+}

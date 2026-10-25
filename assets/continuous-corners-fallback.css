@@ -1,0 +1,40 @@
+/* Capability fallback only. Paint and content share one exported SwiftUI path.
+   Keep host semantics/focus; never clip a host's outer shadow. */
+html.cc-fallback { --corner-radius-scale:1; }
+html.cc-fallback .cc-host {
+  background:none!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+  isolation:isolate;
+}
+html.cc-fallback .cc-host.cc-static { position:relative; }
+html.cc-fallback .cc-host.cc-unclip { overflow:visible!important; }
+html.cc-fallback .cc-measuring { transition:var(--cc-measure-transitions,none)!important; }
+html.cc-fallback .cc-paint {
+  position:absolute;
+  display:block;
+  z-index:-1;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  pointer-events:none!important;
+  overflow:visible!important;
+  border-radius:0!important;
+  color:inherit;
+}
+html.cc-fallback .cc-paint > .cc-fill,
+html.cc-fallback .cc-paint > .cc-vector {
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;height:100%;
+  margin:0;padding:0;border:0;
+  overflow:visible;
+  pointer-events:none;
+}
+html.cc-fallback .cc-paint > .cc-fill { z-index:1;transition:background-color var(--lg-duration,180ms) var(--lg-ease,ease); }
+html.cc-fallback .cc-paint > .cc-vector { z-index:2; }
+html.cc-fallback .cc-paint > .cc-outer-shadow { z-index:0; }
+html.cc-fallback .cc-content-clip:not(.cc-host):not(.cc-measuring) { border-radius:0!important; }
