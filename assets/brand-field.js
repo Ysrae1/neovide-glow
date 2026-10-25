@@ -1,10 +1,10 @@
 /* One WebGL field, one mirrored frame texture, one document coordinate system.
  * CSS keeps real text/shape masks; every opening samples the same decoded frame.
  */
-import { createColourField } from './field-renderer.js?v=20261025-hero-shadow1';
-import { FIELD_PRESET } from './field-preset.js?v=20261025-hero-shadow1';
+import { createColourField } from './field-renderer.js?v=shadow-final6';
+import { FIELD_PRESET } from './field-preset.js?v=shadow-final6';
 import { createPhaseFlatFill } from './phase-flat-fill.js?v=20261025-document-field1';
-import { createTextShadowContrast } from './text-shadow-contrast.js?v=shadow-20261026';
+import { createTextShadowContrast } from './text-shadow-contrast.js?v=shadow-final6';
 
 const root = document.documentElement;
 const updateTextShadowContrast = createTextShadowContrast();

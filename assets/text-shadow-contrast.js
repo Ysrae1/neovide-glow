@@ -1,6 +1,6 @@
-import { getAppliedShadowFormula } from './shadow-formula-settings.js?v=shadow-20261026';
-import { colorInputs, clampAlpha } from './shadow-formula.js?v=shadow-20261026';
-import { createHeroBeamSampler } from './hero-beam-sampler.js?v=shadow-20261026';
+import { getAppliedShadowFormula } from './shadow-formula-settings.js?v=shadow-final6';
+import { createShadowSampler } from './text-shadow-sampling.js?v=shadow-final6';
+import { createNativeTextShadow } from './text-shadow-native.js?v=shadow-final6';
 
 // Local base-colour estimate, not a screenshot/accessibility measurement.
 // Hero beams are composited from their live CSS geometry. Grain, antialiasing
@@ -26,20 +26,17 @@ export function shadowWeight(foreground, background) {
 // applied to a separate parent, never fed through SVG feImage/filter rebuilds.
 // Safari's live CSS canvas keeps its identity while alpha pixels change.
 export function createTextShadowContrast() {
+  const liveMaskSupported = typeof document.getCSSCanvasContext === 'function' &&
+    CSS.supports('-webkit-mask-image','-webkit-canvas(glow-shadow-probe)');
+  if(!liveMaskSupported)return createNativeTextShadow();
   const ns = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(ns, 'svg');
   svg.setAttribute('aria-hidden', 'true');
   svg.style.cssText = 'position:absolute;width:0;height:0;pointer-events:none';
   const defs = document.createElementNS(ns, 'defs');
   svg.append(defs); document.body.append(svg);
-  const sample = document.createElement('canvas');
-  const context = sample.getContext('2d', {willReadFrequently:true});
-  const paintBeams = createHeroBeamSampler();
+  const sampleFrame=createShadowSampler();
   const records = new WeakMap();
-  // Feature detection, not a browser-name branch. Keep the same alpha pixels
-  // and native glyph filter on both paths.
-  const liveMaskSupported = typeof document.getCSSCanvasContext === 'function' &&
-    CSS.supports('-webkit-mask-image','-webkit-canvas(glow-shadow-probe)');
   let nextId = 0;
   function primitive(parent, name, attrs) {
     const node = document.createElementNS(ns, name);
@@ -65,7 +62,7 @@ export function createTextShadowContrast() {
     return {filter,blur,layer,glyph,commits:0,maskName:id+'-alpha'};
   }
   return function update(el, decoded, field, box, veil) {
-    if (!context || !decoded || !box || !el.isConnected) return;
+    if (!decoded || !box || !el.isConnected) return;
     const parsed = parseFloat(document.documentElement.style.getPropertyValue('--glow-text-shadow-radius'));
     const radius = Number.isFinite(parsed) ? Math.max(0,parsed) : 1.7;
     let record = records.get(el);
@@ -93,28 +90,9 @@ export function createTextShadowContrast() {
     const now=performance.now();
     if (record.pending || (record.key===key && (record.frame===decoded || now-record.time<100))) return;
     try {
-      sample.width=Math.max(1,Math.ceil(width/3));sample.height=Math.max(1,Math.ceil(height/3));
-      const dx=sample.width/(width*sx),dy=sample.height/(height*sy);
-      const left=box.left-pad*sx,top=box.top-pad*sy;
-      const first=Math.floor((top-field.top)/field.frameHeight);
-      const last=Math.floor((top+height*sy-field.top)/field.frameHeight);
-      for(let tile=first;tile<=last;tile++) context.drawImage(decoded,
-        (field.left-left)*dx,(field.top+tile*field.frameHeight-top)*dy,
-        field.frameWidth*dx,field.frameHeight*dy);
-      const foreground=context.getImageData(0,0,sample.width,sample.height);
-      context.fillStyle=veil;context.fillRect(0,0,sample.width,sample.height);
-      paintBeams(context,{left,top,width:width*sx,height:height*sy});
-      const background=context.getImageData(0,0,sample.width,sample.height).data;
-      const pixels=foreground.data;
-      let min=1,max=0;
-      for(let i=0;i<pixels.length;i+=4) {
-        const {c,d}=colorInputs([pixels[i],pixels[i+1],pixels[i+2]],
-          [background[i],background[i+1],background[i+2]]);
-        const weight=clampAlpha(formula.compiled.evaluate(c,d));
-        min=Math.min(min,weight);max=Math.max(max,weight);
-        pixels[i]=pixels[i+1]=pixels[i+2]=255;pixels[i+3]=Math.round(255*weight);
-      }
-      context.putImageData(foreground,0,0);
+      const sampled=sampleFrame(decoded,field,box,pad,veil,formula);
+      if(!sampled)return;
+      const {canvas:sample,alpha:foreground,min,max}=sampled;
       if (liveMaskSupported) {
         if (!record.maskContext || record.maskWidth!==sample.width || record.maskHeight!==sample.height) {
           record.maskContext=document.getCSSCanvasContext('2d',record.maskName,sample.width,sample.height);
@@ -123,26 +101,12 @@ export function createTextShadowContrast() {
         }
         record.maskContext.putImageData(foreground,0,0);
         record.layer.dataset.maskMode='live';
+        el.dataset.shadowPipeline='native-layer-live';
         record.layer.dataset.shadowUpdates=String(++record.commits);
         el.dataset.shadowDistribution=`${min.toFixed(3)}–${max.toFixed(3)}`;
         Object.assign(record,{key,frame:decoded,time:now});
         return;
       }
-      record.layer.dataset.maskMode='png';
-      const url=sample.toDataURL('image/png'),image=new Image();
-      record.pending=true;image.src=url;
-      // Keep the previous complete mask until the next resource is decoded.
-      image.decode().then(() => {
-        if (!el.isConnected || el.textContent!==text || record.geometryKey!==geometryKey || getAppliedShadowFormula().revision!==formula.revision) return;
-        record.layer.style.setProperty('--shadow-mask',`url("${url}")`);
-        record.image=image;
-        record.layer.dataset.shadowUpdates=String(++record.commits);
-        el.dataset.shadowDistribution=`${min.toFixed(3)}–${max.toFixed(3)}`;
-        Object.assign(record,{key,frame:decoded,time:now});
-      }).catch(error => {
-        if (!record.reported) console.warn('Text shadow retained after mask decode failure',error);
-        record.reported=true;
-      }).finally(() => { record.pending=false; });
     } catch(error) {
       if (!record.reported) console.warn('Text shadow retained after sampling failure',error);
       record.reported=true;record.pending=false;

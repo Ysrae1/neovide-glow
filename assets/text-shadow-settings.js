@@ -1,5 +1,5 @@
 /* Independent text-shadow radius, shared between same-origin preview tabs. */
-import { FIELD_PRESET } from './field-preset.js?v=20261025-hero-shadow1';
+import { FIELD_PRESET } from './field-preset.js?v=shadow-final6';
 
 const key = 'glow-text-shadow-radius-v1';
 const defaultRadius = FIELD_PRESET.textShadowRadius;

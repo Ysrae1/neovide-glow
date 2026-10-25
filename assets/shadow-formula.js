@@ -1,5 +1,6 @@
 // User-editable shadow math. This module never executes JavaScript source.
-import { FIELD_PRESET } from './field-preset.js?v=shadow-20261026';
+import { FIELD_PRESET } from './field-preset.js?v=shadow-final6';
+export const ORIGINAL_FORMULA = '0.6 * (1 - smoothstep(1.2, 4.5, c))';
 export const DEFAULT_FORMULA = FIELD_PRESET.textShadowFormula;
 // Optional visual heuristic; d is chromatic OKLab distance, not a WCAG metric.
 export const COLOR_FORMULA = '0.6 * (1 - smoothstep(1.2, 4.5, c)) * (1 - smoothstep(0.03, 0.15, d))';

@@ -1,5 +1,5 @@
 /* Two existing colour-glow layers; independently saved from the black shadow. */
-import { FIELD_PRESET } from './field-preset.js?v=shadow-20261026';
+import { FIELD_PRESET } from './field-preset.js?v=shadow-final6';
 const storageKey = 'glow-text-glow-v1';
 const controls = [
   {name:'nearRadius', id:'text-glow-near-radius', css:'--glow-text-near-radius', value:FIELD_PRESET.textGlow.nearRadius, max:30, step:.5, unit:'px'},

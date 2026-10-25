@@ -1,4 +1,4 @@
-import { DEFAULT_FORMULA, COLOR_FORMULA, validateFormula, clampAlpha } from './shadow-formula.js?v=shadow-20261026';
+import { DEFAULT_FORMULA, ORIGINAL_FORMULA, COLOR_FORMULA, validateFormula, clampAlpha } from './shadow-formula.js?v=shadow-final6';
 
 const storageKey='glow-text-shadow-formula-v1';
 let applied={source:DEFAULT_FORMULA,compiled:validateFormula(DEFAULT_FORMULA),revision:0};
@@ -90,7 +90,7 @@ if(editor) {
       if(!saved)message.textContent='已应用到此页，但浏览器未能保存或同步公式。';
     } catch { renderDraft(); }
   });
-  for(const [id,source] of [['shadow-use-original',DEFAULT_FORMULA],['shadow-use-colour',COLOR_FORMULA]])
+  for(const [id,source] of [['shadow-use-original',ORIGINAL_FORMULA],['shadow-use-colour',COLOR_FORMULA]])
     document.getElementById(id).addEventListener('click',()=>{editor.value=source;renderDraft();});
   for(const axis of ['c','d']) {
     const slider=document.getElementById(`shadow-probe-${axis}`),number=document.getElementById(`shadow-probe-${axis}-number`);

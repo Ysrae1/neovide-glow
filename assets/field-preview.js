@@ -1,5 +1,5 @@
 /* Palette controls for the same colour field used by the product page. */
-import { createColourField } from './field-renderer.js?v=20261025-hero-shadow1';
+import { createColourField } from './field-renderer.js?v=shadow-final6';
 
 const canvas=document.querySelector('body > canvas[aria-label="Glow 品牌动态色场"]');
 if(canvas){
