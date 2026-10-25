@@ -39,8 +39,10 @@
   const title = document.createElement('span');
   title.className = 'legend-inline-title';
   summary.append(title);
-  summary.insertAdjacentHTML('beforeend', '<svg class="legend-shortcut-bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.83 2.92c.2-.25.6-.04.54.28l-1.09 6.04h4.92c.58 0 .86.69.45 1.09l-8.18 10.58c-.26.33-.78.1-.71-.32l1.18-7.06h-5.2c-.59 0-.88-.69-.47-1.1Z"/></svg><svg class="legend-collapse-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10.4 7.6q-.9-.6-.9.4v8q0 1 .9.4l5.8-3.8q.9-.6 0-1.2Z"/></svg>');
-  legend.insertAdjacentHTML('beforeend', '<span class="legend-expanded-bolt" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M13.83 2.92c.2-.25.6-.04.54.28l-1.09 6.04h4.92c.58 0 .86.69.45 1.09l-8.18 10.58c-.26.33-.78.1-.71-.32l1.18-7.06h-5.2c-.59 0-.88-.69-.47-1.1Z"/></svg></span>');
+  summary.insertAdjacentHTML('beforeend', '<svg class="legend-shortcut-bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.83 2.92c.2-.25.6-.04.54.28l-1.09 6.04h4.92c.58 0 .86.69.45 1.09l-8.18 10.58c-.26.33-.78.1-.71-.32l1.18-7.06h-5.2c-.59 0-.88-.69-.47-1.1Z"/></svg><svg class="legend-collapse-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>');
+  legend.insertAdjacentHTML('beforeend', '<button class="legend-expanded-bolt" type="button" aria-controls="shortcut-symbols-content" aria-expanded="false" aria-hidden="true" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M13.83 2.92c.2-.25.6-.04.54.28l-1.09 6.04h4.92c.58 0 .86.69.45 1.09l-8.18 10.58c-.26.33-.78.1-.71-.32l1.18-7.06h-5.2c-.59 0-.88-.69-.47-1.1Z"/></svg></button>');
+
+  const collapseButton = legend.querySelector('.legend-expanded-bolt');
 
   // These independent, inert text probes never acquire a glass/corner surface.
   // Both languages share the larger height, including after a language switch.
@@ -88,6 +90,9 @@
     const label = !floating ? title.textContent : en ? (open ? 'Collapse shortcut symbols' : 'Expand shortcut symbols') : (open ? '收起快捷键符号' : '展开快捷键符号');
     summary.setAttribute('aria-label', label);
     summary.title = label;
+    const collapseLabel = en ? 'Collapse shortcut symbols' : '收起快捷键符号';
+    collapseButton.setAttribute('aria-label', collapseLabel);
+    collapseButton.title = collapseLabel;
   }
   function measure(state) {
     const bar = nav?.getBoundingClientRect();
@@ -166,6 +171,10 @@
     attribute(summary, 'aria-disabled', String(!floating));
     attribute(summary, 'tabindex', floating ? '0' : '-1');
     attribute(content, 'aria-hidden', String(!expanded));
+    const canCollapse = floating && open;
+    if (collapseButton.disabled === canCollapse) collapseButton.disabled = !canCollapse;
+    attribute(collapseButton, 'aria-hidden', String(!canCollapse));
+    attribute(collapseButton, 'aria-expanded', String(canCollapse));
     const target = { width: expanded ? geometry.width : geometry.diameter,
       height: floating ? (open ? geometry.height : geometry.diameter) : geometry.inlineHeight, morph: expanded ? 1 : 0 };
     if (pendingToggle) {
@@ -203,12 +212,18 @@
     lastGeometry = geometry;
     if(layoutChanged)viewport.invalidate('legend-reservation');
   }
-  summary.addEventListener('click', () => {
-    if (!floating) return;
-    open = !open;
+  function setOpen(value) {
+    if (!floating || open === value) return;
+    open = value;
     localize();
     pendingToggle = true;
     viewport.request('legend-toggle');
+  }
+  summary.addEventListener('click', () => setOpen(!open));
+  collapseButton.addEventListener('click', () => {
+    if (!floating || !open) return;
+    if (document.activeElement === collapseButton) summary.focus({preventScroll:true});
+    setOpen(false);
   });
   document.addEventListener('glow:languagechange', () => { localize(); viewport.request('legend-language'); });
   document.fonts?.ready.then(() => { fontRevision++; viewport.invalidate('legend-fonts'); });
