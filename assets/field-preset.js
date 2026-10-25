@@ -1,7 +1,7 @@
-// User-selected baseline, captured from the approved preview on 2026-10-25.
+// User-approved fixed-weight/native-shadow baseline, captured on 2026-10-26.
 // Keep disabled colours in their chosen positions for later adjustments.
 export const FIELD_PRESET = Object.freeze({
-  id: 'glow-20261025-hero-shadow',
+  id: 'glow-20261026-native-shadow',
   colours: Object.freeze([
     '#ff6f9c', '#9a72ff', '#ffc6c2', '#5f93ff', '#70ffd4', '#3fc8ff',
     '#dac2ef', '#969af7', '#93c5f0', '#7ae4ff', '#90b4f0', '#d7e3ff',
@@ -20,6 +20,8 @@ export const FIELD_PRESET = Object.freeze({
   glassGrainSize: 1,
   glassGrainBrightness: 0.33,
   textShadowRadius: 1.7,
+  textShadowFormula: '0.6 * (1 - smoothstep(1.2, 4.5, c))',
+  textGlow: Object.freeze({nearRadius:7,nearStrength:85,farRadius:18,farStrength:60}),
   paused: false,
   collapsed: true,
 });

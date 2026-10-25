@@ -4,7 +4,7 @@
 import { createColourField } from './field-renderer.js?v=20261025-hero-shadow1';
 import { FIELD_PRESET } from './field-preset.js?v=20261025-hero-shadow1';
 import { createPhaseFlatFill } from './phase-flat-fill.js?v=20261025-document-field1';
-import { createTextShadowContrast } from './text-shadow-contrast.js?v=spatial1';
+import { createTextShadowContrast } from './text-shadow-contrast.js?v=shadow-20261026';
 
 const root = document.documentElement;
 const updateTextShadowContrast = createTextShadowContrast();

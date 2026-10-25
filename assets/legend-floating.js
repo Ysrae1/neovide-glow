@@ -59,7 +59,9 @@
   });
   document.body.append(probe);
 
-  let open = true;
+  // Only the floating preference starts collapsed; the inline explanation
+  // remains expanded independently and does not reset later user choices.
+  let open = false;
   let floating = false;
   let pendingToggle = false;
   let animation = null;

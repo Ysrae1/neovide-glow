@@ -5,17 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
   <meta name="robots" content="noindex">
-  <title>Glow · 色场预览</title>
-  <link rel="stylesheet" href="assets/brand-field.css?v=spatial-shadow1">
+  <title>Glow · 调色与阴影工作台</title>
+  <link rel="stylesheet" href="assets/brand-field.css?v=shadow-20261026">
   <link rel="stylesheet" href="assets/continuous-corners.css?v=nav-icons1">
   <link rel="stylesheet" href="assets/continuous-corners-fallback.css?v=20261024-scroll50">
   <link rel="stylesheet" href="assets/typography.css?v=20261024-safari-font1">
-  <link rel="stylesheet" href="assets/field-preview.css?v=text-shadow1">
+  <link rel="stylesheet" href="assets/field-preview.css?v=shadow-20261026">
   <script type="module" src="assets/glass-settings.js?v=20261025-hero-shadow1"></script>
   <script type="module" src="assets/field-preview.js?v=20261025-hero-shadow1"></script>
   <script type="module" src="assets/palette-controls.js?v=20261025-hero-shadow1"></script>
   <script type="module" src="assets/text-shadow-settings.js?v=spatial1"></script>
-  <script type="module" src="assets/text-glow-settings.js?v=spatial1"></script>
+  <script type="module" src="assets/text-glow-settings.js?v=shadow-20261026"></script>
+  <link rel="stylesheet" href="assets/vendor/katex-0.16.22/katex.min.css">
+  <script defer src="assets/vendor/katex-0.16.22/katex.min.js"></script>
+  <script type="module" src="assets/shadow-formula-settings.js?v=shadow-20261026"></script>
   <script defer src="assets/continuous-corners.js?v=rebuild1"></script>
 </head>
 <body>
@@ -46,7 +49,7 @@
       <div>
         <p class="palette-eyebrow">GLOW / COLOR FIELD</p>
         <h1 id="palette-heading">色场配色 <span id="palette-count">14 个颜色</span></h1>
-        <p class="palette-description">点按色块取色，拖动调整顺序。</p>
+        <p class="palette-description">按效果分组调整；同浏览器中的主页实时接收已应用设置。</p>
       </div>
       <div class="palette-actions">
         <button id="palette-add" class="glass-button" type="button">添加颜色</button>
@@ -55,15 +58,51 @@
         <button id="palette-copy" class="glass-button" type="button">复制配色</button>
       </div>
     </header>
-    <div id="palette-colours" class="palette-colours"></div>
-    <div class="field-blur-control field-text-shadow-control">
-      <label for="field-text-shadow-radius">文字黑色外阴影半径</label>
-      <input id="field-text-shadow-radius" type="range" min="0" max="4" step="0.1" value="1.7" aria-describedby="field-text-shadow-help">
-      <input id="field-text-shadow-number" type="number" min="0" max="4" step="0.1" value="1.7" aria-label="文字黑色外阴影半径数值">
-      <span>px</span>
+<div class="palette-sections"><details class="palette-section" open><summary><span>01 / 配色</span><small>选择颜色、启用与排序</small></summary><div class="palette-section-body">    <div id="palette-colours" class="palette-colours"></div>
+</div></details><details class="palette-section" ><summary><span>02 / 色场动态</span><small>流动速度、模糊与颗粒</small></summary><div class="palette-section-body">    <label class="field-blur-control" for="field-blur">
+      <span>模糊范围</span>
+      <input id="field-blur" type="range" min="2" max="12" step="1" value="8">
+      <output id="field-blur-value" for="field-blur">8</output>
+    </label>
+    <label class="field-blur-control" for="field-speed">
+      <span>流动速度</span>
+      <input id="field-speed" type="range" min="0.25" max="6" step="0.05" value="2.5">
+      <output id="field-speed-value" for="field-speed">2.50×</output>
+    </label>
+    <label class="field-blur-control" for="field-grain">
+      <span>色场颗粒强度</span>
+      <input id="field-grain" type="range" min="0" max="0.5" step="0.01" value="0.45">
+      <output id="field-grain-value" for="field-grain">45%</output>
+    </label>
+    <label class="field-blur-control" for="field-grain-size">
+      <span>色场颗粒大小</span>
+      <input id="field-grain-size" type="range" min="0.5" max="2" step="0.05" value="1">
+      <output id="field-grain-size-value" for="field-grain-size">1.0×</output>
+    </label>
+</div></details><details class="palette-section" ><summary><span>03 / 玻璃材质</span><small>透明度、明暗与表面颗粒</small></summary><div class="palette-section-body">    <div class="field-glass-controls">
+      <label class="field-blur-control field-glass-control" for="field-glass-transparency" title="值越大，流动色场越明显；此设置同步到主站玻璃。">
+        <span>玻璃透明度</span>
+        <input id="field-glass-transparency" type="range" min="0" max="100" step="0.5" value="20">
+        <output id="field-glass-transparency-value" for="field-glass-transparency">20%</output>
+      </label>
+      <button id="field-glass-theme" class="glass-button" type="button" aria-pressed="false">切换浅色玻璃</button>
     </div>
-    <p id="field-text-shadow-help" class="field-setting-help">同步主页的“柔光”和第一句介绍；0 可关闭。黑影浓度按色场与背景的明暗差连续分布，各处独立变化，半径单独调节。</p>
-    <div class="field-blur-control field-text-shadow-control">
+    <label class="field-blur-control" for="field-glass-grain" title="调整玻璃表面颗粒，不改变色场颗粒。">
+      <span>玻璃颗粒强度</span>
+      <input id="field-glass-grain" type="range" min="0" max="0.35" step="0.005" value="0.09">
+      <output id="field-glass-grain-value" for="field-glass-grain">9%</output>
+    </label>
+    <label class="field-blur-control" for="field-glass-grain-size" title="调整玻璃表面颗粒大小，不改变色场颗粒。">
+      <span>玻璃颗粒大小</span>
+      <input id="field-glass-grain-size" type="range" min="0.5" max="2" step="0.05" value="1">
+      <output id="field-glass-grain-size-value" for="field-glass-grain-size">1.00×</output>
+    </label>
+    <label class="field-blur-control" for="field-glass-grain-brightness" title="0%保留较暗的对比颗粒，100%增加亮颗粒；与强度、大小分开调整，整页统一生效。">
+      <span>玻璃颗粒亮度</span>
+      <input id="field-glass-grain-brightness" type="range" min="0" max="1" step="0.01" value="0.5">
+      <output id="field-glass-grain-brightness-value" for="field-glass-grain-brightness">50%</output>
+    </label>
+</div></details><details class="palette-section" ><summary><span>04 / 文字柔光</span><small>近层与远层的彩色光晕</small></summary><div class="palette-section-body">    <div class="field-blur-control field-text-shadow-control">
       <label for="text-glow-near-radius">近层发光半径</label>
       <input id="text-glow-near-radius" type="range" min="0" max="30" step="0.5" value="7" aria-describedby="field-text-glow-help">
       <input id="text-glow-near-radius-number" type="number" min="0" max="30" step="0.5" value="7" aria-label="近层发光半径数值">
@@ -88,49 +127,69 @@
       <span>%</span>
     </div>
     <p id="field-text-glow-help" class="field-setting-help">近层控制贴近文字的柔光，远层控制向外扩散的光晕；强度设为0可关闭该层。实时同步“柔光”和第一句介绍。</p>
-    <label class="field-blur-control" for="field-blur">
-      <span>模糊范围</span>
-      <input id="field-blur" type="range" min="2" max="12" step="1" value="8">
-      <output id="field-blur-value" for="field-blur">8</output>
-    </label>
-    <label class="field-blur-control" for="field-speed">
-      <span>流动速度</span>
-      <input id="field-speed" type="range" min="0.25" max="6" step="0.05" value="2.5">
-      <output id="field-speed-value" for="field-speed">2.50×</output>
-    </label>
-    <label class="field-blur-control" for="field-grain">
-      <span>色场颗粒强度</span>
-      <input id="field-grain" type="range" min="0" max="0.5" step="0.01" value="0.45">
-      <output id="field-grain-value" for="field-grain">45%</output>
-    </label>
-    <label class="field-blur-control" for="field-grain-size">
-      <span>色场颗粒大小</span>
-      <input id="field-grain-size" type="range" min="0.5" max="2" step="0.05" value="1">
-      <output id="field-grain-size-value" for="field-grain-size">1.0×</output>
-    </label>
-    <div class="field-glass-controls">
-      <label class="field-blur-control field-glass-control" for="field-glass-transparency" title="值越大，流动色场越明显；此设置同步到主站玻璃。">
-        <span>玻璃透明度</span>
-        <input id="field-glass-transparency" type="range" min="0" max="100" step="0.5" value="20">
-        <output id="field-glass-transparency-value" for="field-glass-transparency">20%</output>
-      </label>
-      <button id="field-glass-theme" class="glass-button" type="button" aria-pressed="false">切换浅色玻璃</button>
+</div></details>    <details class="palette-section palette-section-wide" id="shadow-function" open>
+      <summary><span>05 / 阴影函数</span><small>决定什么时候需要阴影，以及需要多重</small></summary>
+      <div class="palette-section-body">
+            <div class="field-blur-control field-text-shadow-control">
+      <label for="field-text-shadow-radius">文字外阴影半径</label>
+      <input id="field-text-shadow-radius" type="range" min="0" max="4" step="0.1" value="1.7" aria-describedby="field-text-shadow-help">
+      <input id="field-text-shadow-number" type="number" min="0" max="4" step="0.1" value="1.7" aria-label="文字外阴影半径数值">
+      <span>px</span>
     </div>
-    <label class="field-blur-control" for="field-glass-grain" title="调整玻璃表面颗粒，不改变色场颗粒。">
-      <span>玻璃颗粒强度</span>
-      <input id="field-glass-grain" type="range" min="0" max="0.35" step="0.005" value="0.09">
-      <output id="field-glass-grain-value" for="field-glass-grain">9%</output>
-    </label>
-    <label class="field-blur-control" for="field-glass-grain-size" title="调整玻璃表面颗粒大小，不改变色场颗粒。">
-      <span>玻璃颗粒大小</span>
-      <input id="field-glass-grain-size" type="range" min="0.5" max="2" step="0.05" value="1">
-      <output id="field-glass-grain-size-value" for="field-glass-grain-size">1.00×</output>
-    </label>
-    <label class="field-blur-control" for="field-glass-grain-brightness" title="0%保留较暗的对比颗粒，100%增加亮颗粒；与强度、大小分开调整，整页统一生效。">
-      <span>玻璃颗粒亮度</span>
-      <input id="field-glass-grain-brightness" type="range" min="0" max="1" step="0.01" value="0.5">
-      <output id="field-glass-grain-brightness-value" for="field-glass-grain-brightness">50%</output>
-    </label>
+    <p id="field-text-shadow-help" class="field-setting-help">同步主页的“柔光”和第一句介绍；0 可关闭。深浅色模式均使用黑色柔影。浓度由下方公式逐位置计算，可同时使用明暗差和色度差；半径单独调节。</p>
+
+        <div class="formula-intro">
+          <p><strong>c · 明暗对比度</strong>：1 表示同明暗，越大则明暗越容易分辨，范围 1–21。</p>
+          <p><strong>d · 色度差</strong>：0 表示色度相同；越大则色相或鲜艳程度差异越明显。采用 OKLab 的 a、b 距离，不重复计算明暗，也不是 hue 角度差。</p>
+          <p>表达式输出阴影透明度：0 是无阴影，0.6 是 60%，1 是最浓；超出范围会限制到 0–1。半径独立控制扩散宽度，设为 0 完全关闭阴影。</p>
+        </div>
+        <details class="formula-guide" open>
+          <summary>加上色彩的公式：每一项是什么意思？</summary>
+          <p>可以直接载入下面这条公式。它先按明暗差减轻阴影，再按色彩差减轻；两种区别越明显，需要的阴影越少。</p>
+          <code class="formula-copy">0.6 * (1 - smoothstep(1.2, 4.5, c)) * (1 - smoothstep(0.03, 0.15, d))</code>
+          <div id="shadow-colour-formula-math" class="formula-math"></div>
+          <table class="formula-table"><thead><tr><th>这一项</th><th>具体含义</th></tr></thead><tbody>
+            <tr><td><code>0.6</code></td><td>最大阴影透明度为60%；改成0.4，整条曲线的阴影都会更淡。</td></tr>
+            <tr><td><code>c</code></td><td>当前采样处文字与背景的明暗对比度，由页面计算；同明暗时为1。</td></tr>
+            <tr><td><code>1.2</code></td><td>明暗对比度超过1.2，阴影才开始变淡。调大它，会更晚开始淡化。</td></tr>
+            <tr><td><code>4.5</code></td><td>明暗对比度达到4.5，明暗这一项就让阴影降到0。调大它，淡化会延续到更大的对比度。</td></tr>
+            <tr><td><code>d</code></td><td>当前采样处的色度差，由页面计算；同时反映色相和鲜艳程度的差异，同明暗也可以有很大的d。</td></tr>
+            <tr><td><code>0.03</code></td><td>色度差不超过0.03，不因色差额外减轻阴影；超过后开始减轻。</td></tr>
+            <tr><td><code>0.15</code></td><td>色度差达到0.15，色彩这一项就让阴影降到0。调大它，需要更大的色差才会完全去掉阴影。</td></tr>
+            <tr><td><code>smoothstep(a,b,x)</code></td><td>x不超过a时为0，达到b时为1，中间平滑上升。这里表示淡化进度；起点a必须小于终点b。</td></tr>
+            <tr><td><code>1 - smoothstep(...)</code></td><td>把“已经淡化多少”转成“还保留多少”，从1平滑降到0。</td></tr>
+            <tr><td>三个因子相乘</td><td>最大浓度 × 明暗保留比例 × 色彩保留比例。任一保留比例为0，最终阴影就是0。</td></tr>
+          </tbody></table>
+          <p><strong>同明暗但有色差：</strong>c=1、d=0.09时，结果是60% × 100% × 50% = <strong>30%</strong>；若d达到0.15，结果为0。</p>
+          <p><strong>只有明暗差：</strong>d=0时，c≤1.2保持60%，c=2.85为30%，c≥4.5为0。这些数值是对比度阈值，不是屏幕坐标。</p>
+          <p>0.03和0.15是起始调节值，不是通用标准；载入后可按你的观感修改。当前原公式没有最后的色彩因子，因此不会根据d减轻阴影。</p>
+        </details>
+        <label class="formula-label" for="shadow-expression">透明度表达式</label>
+        <textarea id="shadow-expression" rows="3" spellcheck="false" autocapitalize="off" aria-describedby="shadow-formula-message shadow-syntax"></textarea>
+        <div id="shadow-formula-math" class="formula-math"></div>
+        <div class="formula-actions">
+          <button id="shadow-apply" class="glass-button formula-primary" type="button">应用到主页</button>
+          <button id="shadow-use-original" class="glass-button" type="button">载入原公式</button>
+          <button id="shadow-use-colour" class="glass-button" type="button">载入明暗＋色差示例</button>
+        </div>
+        <p id="shadow-formula-message" role="status" aria-live="polite"></p>
+        <p class="formula-current">主页当前使用：<code id="shadow-applied"></code></p>
+        <p id="shadow-syntax" class="field-setting-help">支持 c、d、+ − * / ^、括号，以及 min、max、pow、abs、sqrt、exp、log、clamp(x,下限,上限)、smoothstep(起点,终点,x)。smoothstep 从 0 平滑升到 1；前面加 1 − 就变成平滑下降。配色和玻璃设置会改变实际采样得到的 c、d。</p>
+        <div class="formula-preview-header"><h3>看懂它怎样改变阴影</h3><span>只预览，不改变主页的采样颜色</span></div>
+        <div class="formula-probes">
+          <div class="field-blur-control field-text-shadow-control"><label for="shadow-probe-c">预览明暗对比度 c</label><input id="shadow-probe-c" type="range" min="1" max="21" step="0.01" value="1.2"><input id="shadow-probe-c-number" type="number" min="1" max="21" step="0.01" value="1.2" aria-label="预览明暗对比度数值"></div>
+          <div class="field-blur-control field-text-shadow-control"><label for="shadow-probe-d">预览色度差 d</label><input id="shadow-probe-d" type="range" min="0" max="0.7" step="0.005" value="0"><input id="shadow-probe-d-number" type="number" min="0" max="0.7" step="0.005" value="0" aria-label="预览色度差数值"></div>
+        </div>
+        <output id="shadow-probe-result"></output>
+        <div class="formula-charts"><figure><figcaption>改变明暗对比度 c，固定 d</figcaption><svg id="shadow-curve-c" viewBox="0 0 480 190" role="img"><title>阴影函数曲线</title><path class="formula-grid" d="M42 20H468M42 89H468M42 158H468M42 20V158"/><text x="34" y="24" text-anchor="end">100%</text><text x="34" y="93" text-anchor="end">50%</text><text x="34" y="162" text-anchor="end">0%</text><text x="42" y="181">1</text><text x="468" y="181" text-anchor="end">21</text><path class="formula-curve"/><circle class="formula-point" r="4"/></svg></figure><figure><figcaption>改变色度差 d，固定 c</figcaption><svg id="shadow-curve-d" viewBox="0 0 480 190" role="img"><title>阴影函数曲线</title><path class="formula-grid" d="M42 20H468M42 89H468M42 158H468M42 20V158"/><text x="34" y="24" text-anchor="end">100%</text><text x="34" y="93" text-anchor="end">50%</text><text x="34" y="162" text-anchor="end">0%</text><text x="42" y="181">0</text><text x="468" y="181" text-anchor="end">0.7</text><path class="formula-curve"/><circle class="formula-point" r="4"/></svg></figure></div>
+        <p id="shadow-impact" class="formula-impact"></p>
+        <table class="formula-table"><thead><tr><th>对照情况</th><th>c / d</th><th>阴影浓度</th></tr></thead><tbody id="shadow-examples"></tbody></table>
+        <p class="field-setting-help">色差示例里的 0.03、0.15 是可编辑的视觉调节阈值，不是可读性标准。原公式只使用 c；乘上色差衰减项后，同明暗但颜色差异较大的位置也会减轻阴影。</p>
+      </div>
+    </details>
+
+
+</div>
     <footer class="palette-footer">
       <span id="active-pair">当前主色 01 + 02</span>
       <span id="palette-status" role="status">调整自动保存在此浏览器</span>

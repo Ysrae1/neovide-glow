@@ -1,10 +1,11 @@
 /* Two existing colour-glow layers; independently saved from the black shadow. */
+import { FIELD_PRESET } from './field-preset.js?v=shadow-20261026';
 const storageKey = 'glow-text-glow-v1';
 const controls = [
-  {name:'nearRadius', id:'text-glow-near-radius', css:'--glow-text-near-radius', value:7, max:30, step:.5, unit:'px'},
-  {name:'nearStrength', id:'text-glow-near-strength', css:'--glow-text-near-strength', value:85, max:100, step:1, unit:'%'},
-  {name:'farRadius', id:'text-glow-far-radius', css:'--glow-text-far-radius', value:18, max:60, step:.5, unit:'px'},
-  {name:'farStrength', id:'text-glow-far-strength', css:'--glow-text-far-strength', value:60, max:100, step:1, unit:'%'},
+  {name:'nearRadius', id:'text-glow-near-radius', css:'--glow-text-near-radius', value:FIELD_PRESET.textGlow.nearRadius, max:30, step:.5, unit:'px'},
+  {name:'nearStrength', id:'text-glow-near-strength', css:'--glow-text-near-strength', value:FIELD_PRESET.textGlow.nearStrength, max:100, step:1, unit:'%'},
+  {name:'farRadius', id:'text-glow-far-radius', css:'--glow-text-far-radius', value:FIELD_PRESET.textGlow.farRadius, max:60, step:.5, unit:'px'},
+  {name:'farStrength', id:'text-glow-far-strength', css:'--glow-text-far-strength', value:FIELD_PRESET.textGlow.farStrength, max:100, step:1, unit:'%'},
 ];
 let values = Object.fromEntries(controls.map(control => [control.name, control.value]));
 
