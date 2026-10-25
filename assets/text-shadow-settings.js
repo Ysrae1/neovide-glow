@@ -17,6 +17,7 @@ function apply(value) {
     slider.setAttribute('aria-valuetext', `${radius.toFixed(1)} px`);
   }
   if (number) number.value = String(radius);
+  dispatchEvent(new Event('glow:textpaintchange'));
 }
 
 function restore() {

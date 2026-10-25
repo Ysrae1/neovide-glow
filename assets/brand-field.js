@@ -4,8 +4,11 @@
 import { createColourField } from './field-renderer.js?v=20261025-hero-shadow1';
 import { FIELD_PRESET } from './field-preset.js?v=20261025-hero-shadow1';
 import { createPhaseFlatFill } from './phase-flat-fill.js?v=20261025-document-field1';
+import { createTextShadowContrast } from './text-shadow-contrast.js?v=spatial1';
 
 const root = document.documentElement;
+const updateTextShadowContrast = createTextShadowContrast();
+let shadowMaterialKey = '', shadowVeil = '';
 // The field belongs to document coordinates; scrolling never moves its host.
 const viewportController = window.GlowViewport;
 let viewportState = viewportController?.state || {x:scrollX,y:scrollY,width:innerWidth,height:innerHeight,visualHeight:innerHeight};
@@ -211,6 +214,11 @@ function bindSample(el) {
 }
 function measureGeometry(elements = visible) {
   geometryPasses++;
+  const materialKey = `${root.dataset.theme}/${root.dataset.glassTransparency}`;
+  if (materialKey !== shadowMaterialKey) {
+    shadowVeil = getComputedStyle(root).getPropertyValue('--brand-glass-veil').trim();
+    shadowMaterialKey = materialKey;
+  }
   const updates = [];
   // Read all geometry before writing only each visible sample's inline paint
   // variables. The corner observer ignores these variables, preserving its SVG.
@@ -263,12 +271,14 @@ function measureGeometry(elements = visible) {
         };
       }
     }
-    updates.push({ el, record, values, key, flatGeometry });
+    const shadowGeometry = el.matches(':is(.hero-line,.hero-copy) .soft') ?
+      {left:documentLeft, top:documentTop, width:rect.width, height:rect.height, scaleX:sx, scaleY:sy} : null;
+    updates.push({ el, record, values, key, flatGeometry, shadowGeometry });
   }
   return updates;
 }
 function commitGeometry(updates) {
-  for (const { el, record, values: v, key, flatGeometry, remove } of updates) {
+  for (const { el, record, values: v, key, flatGeometry, shadowGeometry, remove } of updates) {
     if(remove){removeSample(el,record);continue;}
     if (!v) { deactivateSample(el); continue; }
     if (record.last !== key) {
@@ -282,6 +292,7 @@ function commitGeometry(updates) {
     record.flatGeometry = flatGeometry;
     setSampleImage(record, publishedImage);
     paintPhaseFill(el, flatGeometry);
+    if (shadowGeometry) updateTextShadowContrast(el, decodedFrame, publishedViewport, shadowGeometry, shadowVeil);
   }
 }
 function updateGeometry(elements=visible) { commitGeometry(measureGeometry(elements)); }
@@ -402,6 +413,7 @@ addEventListener('pagehide', event => {
   if (!event.persisted) { for (const url of liveUrls) URL.revokeObjectURL(url); liveUrls.clear(); }
 });
 addEventListener('pageshow', () => { scheduleGeometry(300); });
+addEventListener('glow:textpaintchange', () => scheduleGeometry());
 
   // Colour hooks are refreshed only when markup or selection attributes change.
   // Private paint variables do not match this observer's attribute filter.

@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="dark light">
   <meta name="robots" content="noindex">
   <title>Glow · 色场预览</title>
-  <link rel="stylesheet" href="assets/brand-field.css?v=20261025-hero-shadow1">
+  <link rel="stylesheet" href="assets/brand-field.css?v=spatial-shadow1">
   <link rel="stylesheet" href="assets/continuous-corners.css?v=nav-icons1">
   <link rel="stylesheet" href="assets/continuous-corners-fallback.css?v=20261024-scroll50">
   <link rel="stylesheet" href="assets/typography.css?v=20261024-safari-font1">
@@ -14,7 +14,8 @@
   <script type="module" src="assets/glass-settings.js?v=20261025-hero-shadow1"></script>
   <script type="module" src="assets/field-preview.js?v=20261025-hero-shadow1"></script>
   <script type="module" src="assets/palette-controls.js?v=20261025-hero-shadow1"></script>
-  <script type="module" src="assets/text-shadow-settings.js?v=20261025-hero-shadow1"></script>
+  <script type="module" src="assets/text-shadow-settings.js?v=spatial1"></script>
+  <script type="module" src="assets/text-glow-settings.js?v=spatial1"></script>
   <script defer src="assets/continuous-corners.js?v=rebuild1"></script>
 </head>
 <body>
@@ -61,7 +62,32 @@
       <input id="field-text-shadow-number" type="number" min="0" max="4" step="0.1" value="1.7" aria-label="文字黑色外阴影半径数值">
       <span>px</span>
     </div>
-    <p id="field-text-shadow-help" class="field-setting-help">实时同步主页的“柔光”和第一句介绍；0 可关闭。</p>
+    <p id="field-text-shadow-help" class="field-setting-help">同步主页的“柔光”和第一句介绍；0 可关闭。黑影浓度按色场与背景的明暗差连续分布，各处独立变化，半径单独调节。</p>
+    <div class="field-blur-control field-text-shadow-control">
+      <label for="text-glow-near-radius">近层发光半径</label>
+      <input id="text-glow-near-radius" type="range" min="0" max="30" step="0.5" value="7" aria-describedby="field-text-glow-help">
+      <input id="text-glow-near-radius-number" type="number" min="0" max="30" step="0.5" value="7" aria-label="近层发光半径数值">
+      <span>px</span>
+    </div>
+    <div class="field-blur-control field-text-shadow-control">
+      <label for="text-glow-near-strength">近层发光强度</label>
+      <input id="text-glow-near-strength" type="range" min="0" max="100" step="1" value="85" aria-describedby="field-text-glow-help">
+      <input id="text-glow-near-strength-number" type="number" min="0" max="100" step="1" value="85" aria-label="近层发光强度数值">
+      <span>%</span>
+    </div>
+    <div class="field-blur-control field-text-shadow-control">
+      <label for="text-glow-far-radius">远层发光半径</label>
+      <input id="text-glow-far-radius" type="range" min="0" max="60" step="0.5" value="18" aria-describedby="field-text-glow-help">
+      <input id="text-glow-far-radius-number" type="number" min="0" max="60" step="0.5" value="18" aria-label="远层发光半径数值">
+      <span>px</span>
+    </div>
+    <div class="field-blur-control field-text-shadow-control">
+      <label for="text-glow-far-strength">远层发光强度</label>
+      <input id="text-glow-far-strength" type="range" min="0" max="100" step="1" value="60" aria-describedby="field-text-glow-help">
+      <input id="text-glow-far-strength-number" type="number" min="0" max="100" step="1" value="60" aria-label="远层发光强度数值">
+      <span>%</span>
+    </div>
+    <p id="field-text-glow-help" class="field-setting-help">近层控制贴近文字的柔光，远层控制向外扩散的光晕；强度设为0可关闭该层。实时同步“柔光”和第一句介绍。</p>
     <label class="field-blur-control" for="field-blur">
       <span>模糊范围</span>
       <input id="field-blur" type="range" min="2" max="12" step="1" value="8">

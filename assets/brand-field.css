@@ -159,7 +159,7 @@ a.link.brand-field-text,.wf-source a.brand-field-text {
   position:relative;isolation:isolate;
   display:inline-block;padding-inline:.08em;margin-inline:-.08em;
   vertical-align:baseline;overflow:visible;
-  filter:drop-shadow(0 0 var(--glow-text-shadow-radius,1.7px) rgba(0,0,0,var(--glow-text-shadow-alpha,.6)));
+  filter:var(--glow-text-spatial-filter,drop-shadow(0 0 var(--glow-text-shadow-radius,1.7px) rgba(0,0,0,var(--glow-text-shadow-alpha,.6))));
 }
 .hero-copy > .soft.brand-field-text { display:block;font-weight:500;letter-spacing:-.02em; }
 .hero-copy-detail { display:block;margin-top:6px; }
@@ -180,8 +180,8 @@ a.link.brand-field-text,.wf-source a.brand-field-text {
   -webkit-background-clip:text;background-clip:text;
   color:transparent;-webkit-text-fill-color:transparent;
 }
-:is(.hero-line,.hero-copy) .soft.brand-field-text::before { filter:blur(7px);opacity:.85; }
-:is(.hero-line,.hero-copy) .soft.brand-field-text::after { filter:blur(18px);opacity:.6; }
+:is(.hero-line,.hero-copy) .soft.brand-field-text::before { filter:blur(var(--glow-text-near-radius,7px));opacity:var(--glow-text-near-strength,.85); }
+:is(.hero-line,.hero-copy) .soft.brand-field-text::after { filter:blur(var(--glow-text-far-radius,18px));opacity:var(--glow-text-far-strength,.6); }
 .platform-symbol.platform-logo.brand-field-text {
   -webkit-background-clip:border-box;background-clip:border-box;
 }
