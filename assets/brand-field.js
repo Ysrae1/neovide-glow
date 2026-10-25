@@ -1,8 +1,8 @@
 /* One WebGL field, one mirrored frame texture, one document coordinate system.
  * CSS keeps real text/shape masks; every opening samples the same decoded frame.
  */
-import { createColourField } from './field-renderer.js?v=20261025-document-field1';
-import { FIELD_PRESET } from './field-preset.js?v=20261024-5';
+import { createColourField } from './field-renderer.js?v=20261025-hero-shadow1';
+import { FIELD_PRESET } from './field-preset.js?v=20261025-hero-shadow1';
 import { createPhaseFlatFill } from './phase-flat-fill.js?v=20261025-document-field1';
 
 const root = document.documentElement;
@@ -435,7 +435,7 @@ addEventListener('pageshow', () => { scheduleGeometry(300); });
   }
   function syncElement(el) {
     if (!(el instanceof Element) || el.closest('.cc-paint,[data-story-measure]')) return;
-    if (el.matches('.hero-line .soft') && el.dataset.brandGlow !== el.textContent) {
+    if (el.matches(':is(.hero-line,.hero-copy) .soft') && el.dataset.brandGlow !== el.textContent) {
       el.dataset.brandGlow = el.textContent;
     }
     const fill = el.matches(fillSelector);
@@ -461,6 +461,10 @@ addEventListener('pageshow', () => { scheduleGeometry(300); });
   }
   function bindColourHooks() {
     syncTree(document.body);
+    document.addEventListener('glow:languagechange', () => {
+      document.querySelectorAll(':is(.hero-line,.hero-copy) .soft').forEach(syncElement);
+      scheduleGeometry(800);
+    });
     updateGeometry(pendingSamples);
     pendingSamples.clear();
     const colourObserver = new MutationObserver(records => {

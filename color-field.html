@@ -6,14 +6,15 @@
   <meta name="color-scheme" content="dark light">
   <meta name="robots" content="noindex">
   <title>Glow · 色场预览</title>
-  <link rel="stylesheet" href="assets/brand-field.css?v=text-paint1">
+  <link rel="stylesheet" href="assets/brand-field.css?v=20261025-hero-shadow1">
   <link rel="stylesheet" href="assets/continuous-corners.css?v=nav-icons1">
   <link rel="stylesheet" href="assets/continuous-corners-fallback.css?v=20261024-scroll50">
   <link rel="stylesheet" href="assets/typography.css?v=20261024-safari-font1">
-  <link rel="stylesheet" href="assets/field-preview.css?v=20261024-field15">
-  <script type="module" src="assets/glass-settings.js?v=20261024-glass6"></script>
-  <script type="module" src="assets/field-preview.js?v=20261025-overscan1"></script>
-  <script type="module" src="assets/palette-controls.js?v=20261024-field13"></script>
+  <link rel="stylesheet" href="assets/field-preview.css?v=text-shadow1">
+  <script type="module" src="assets/glass-settings.js?v=20261025-hero-shadow1"></script>
+  <script type="module" src="assets/field-preview.js?v=20261025-hero-shadow1"></script>
+  <script type="module" src="assets/palette-controls.js?v=20261025-hero-shadow1"></script>
+  <script type="module" src="assets/text-shadow-settings.js?v=20261025-hero-shadow1"></script>
   <script defer src="assets/continuous-corners.js?v=rebuild1"></script>
 </head>
 <body>
@@ -54,6 +55,13 @@
       </div>
     </header>
     <div id="palette-colours" class="palette-colours"></div>
+    <div class="field-blur-control field-text-shadow-control">
+      <label for="field-text-shadow-radius">文字黑色外阴影半径</label>
+      <input id="field-text-shadow-radius" type="range" min="0" max="4" step="0.1" value="1.7" aria-describedby="field-text-shadow-help">
+      <input id="field-text-shadow-number" type="number" min="0" max="4" step="0.1" value="1.7" aria-label="文字黑色外阴影半径数值">
+      <span>px</span>
+    </div>
+    <p id="field-text-shadow-help" class="field-setting-help">实时同步主页的“柔光”和第一句介绍；0 可关闭。</p>
     <label class="field-blur-control" for="field-blur">
       <span>模糊范围</span>
       <input id="field-blur" type="range" min="2" max="12" step="1" value="8">

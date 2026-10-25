@@ -1,5 +1,5 @@
 /* Shared glass material; colour-field and animation settings have their own store. */
-import { FIELD_PRESET } from './field-preset.js?v=20261024-5';
+import { FIELD_PRESET } from './field-preset.js?v=20261025-hero-shadow1';
 
 const STORAGE_KEY = 'glow-field-glass-v1';
 const DEFAULT_TRANSPARENCY = FIELD_PRESET.glassTransparency;

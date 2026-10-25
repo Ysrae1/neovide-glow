@@ -1,4 +1,4 @@
-import { FIELD_PRESET } from './field-preset.js?v=20261024-5';
+import { FIELD_PRESET } from './field-preset.js?v=20261025-hero-shadow1';
 
 const ORIGINAL_COLOURS = FIELD_PRESET.colours;
 const STORAGE_KEY = 'glow-field-palette-hero-v1';

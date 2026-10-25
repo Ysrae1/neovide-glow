@@ -4,7 +4,7 @@
  * canRender runs before source/GPU work; false retains one latest pending update.
  */
 import { Kawarp } from './vendor/kawarp-1.3.1.js?v=20261025-overscan1';
-import { FIELD_PRESET } from './field-preset.js?v=20261024-5';
+import { FIELD_PRESET } from './field-preset.js?v=20261025-hero-shadow1';
 
 export function createColourField({
   canvas,settings=FIELD_PRESET,reduced=()=>false,

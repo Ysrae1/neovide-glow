@@ -154,16 +154,19 @@ a.link.brand-field-text,.wf-source a.brand-field-text {
 :root.brand-field-integrated[data-theme="light"] .hero-line {
   filter:drop-shadow(0 2px 3px rgba(23,24,40,.14));
 }
-.hero-line .soft.brand-field-text {
+:is(.hero-line,.hero-copy) .soft.brand-field-text {
   --brand-field-local-veil:linear-gradient(transparent,transparent);
   position:relative;isolation:isolate;
   display:inline-block;padding-inline:.08em;margin-inline:-.08em;
   vertical-align:baseline;overflow:visible;
+  filter:drop-shadow(0 0 var(--glow-text-shadow-radius,1.7px) rgba(0,0,0,var(--glow-text-shadow-alpha,.6)));
 }
+.hero-copy > .soft.brand-field-text { display:block;font-weight:500;letter-spacing:-.02em; }
+.hero-copy-detail { display:block;margin-top:6px; }
 /* Glow is the same glyph-shaped field sample, softened locally. It has no
  * separate palette or animation clock, and never changes the text's layout. */
-.hero-line .soft.brand-field-text::before,
-.hero-line .soft.brand-field-text::after {
+:is(.hero-line,.hero-copy) .soft.brand-field-text::before,
+:is(.hero-line,.hero-copy) .soft.brand-field-text::after {
   content:attr(data-brand-glow) / "";position:absolute;inset:0;z-index:-1;
   padding:inherit;box-sizing:border-box;pointer-events:none;
   --brand-field-local-veil:linear-gradient(transparent,transparent);
@@ -177,8 +180,8 @@ a.link.brand-field-text,.wf-source a.brand-field-text {
   -webkit-background-clip:text;background-clip:text;
   color:transparent;-webkit-text-fill-color:transparent;
 }
-.hero-line .soft.brand-field-text::before { filter:blur(7px);opacity:.85; }
-.hero-line .soft.brand-field-text::after { filter:blur(18px);opacity:.6; }
+:is(.hero-line,.hero-copy) .soft.brand-field-text::before { filter:blur(7px);opacity:.85; }
+:is(.hero-line,.hero-copy) .soft.brand-field-text::after { filter:blur(18px);opacity:.6; }
 .platform-symbol.platform-logo.brand-field-text {
   -webkit-background-clip:border-box;background-clip:border-box;
 }
