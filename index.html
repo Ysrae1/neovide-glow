@@ -135,7 +135,7 @@
       <div class="section-head" data-reveal>
         <div>
           <h2 id="download-title"><span>选好平台，</span><span>开始使用</span></h2>
-          <p><span class="mono">v1.0</span> · macOS <span class="mono">2026.10.21</span> · Windows Core <span class="mono">2026.10.23.6</span></p>
+          <p>macOS <span class="mono">2026.10.21 · v1.0</span> · Windows Core <span class="mono">2026.10.27.1</span></p>
         </div>
         <a class="release-link" href="https://github.com/Ysrae1/neovide/releases/tag/v1.0">v1.0 发布说明 <span aria-hidden="true">↗</span></a>
       </div>
@@ -159,18 +159,20 @@
             <p>按系统架构选择安装器，无需 WSL 或自行编译。核心环境随包提供，可选依赖由安装后的 Setup 向导检测与补齐。</p>
             <div class="windows-packages">
               <div>
-                <div class="card-actions"><a class="key" href="https://github.com/Ysrae1/neovide/releases/download/v1.0/Neovide-Glow-2026.10.23.6-Windows-x64-Core-Setup.exe">下载 <span class="mono">Windows x64</span> <span aria-hidden="true">↓</span></a><span class="mono">97.0 MB</span></div>
-                <p>Intel / AMD · Windows 10 2004（19041）或更新版本 · 中英文引导 · 图标与 PDF 预览修复</p>
+                <div class="card-actions"><a class="key" href="https://github.com/Ysrae1/neovide/releases/download/glow-windows-core-20261027-preview1/Neovide-Glow-2026.10.27.1-Windows-x64-Core-Setup.exe">下载 <span class="mono">Windows x64</span> <span aria-hidden="true">↓</span></a><span class="mono">97.0 MB</span></div>
+                <p>Intel / AMD · Windows 10 2004（19041）或更新版本 · 中英文引导 · TeX 路径与 Notebook 下载改进</p>
               </div>
               <div>
-                <div class="card-actions"><a class="key" href="https://github.com/Ysrae1/neovide/releases/download/v1.0/Neovide-Glow-2026.10.23.6-Windows-arm64-Core-Setup.exe">下载 <span class="mono">Windows ARM64</span> <span aria-hidden="true">↓</span></a><span class="mono">95.2 MB</span></div>
-                <p>ARM 设备 · Windows 11 22H2（22621）或更新版本 · 中英文引导 · 图标与 PDF 预览修复</p>
+                <div class="card-actions"><a class="key" href="https://github.com/Ysrae1/neovide/releases/download/glow-windows-core-20261027-preview1/Neovide-Glow-2026.10.27.1-Windows-arm64-Core-Setup.exe">下载 <span class="mono">Windows ARM64</span> <span aria-hidden="true">↓</span></a><span class="mono">95.2 MB</span></div>
+                <p>ARM 设备 · Windows 11 22H2（22621）或更新版本 · 中英文引导 · TeX 路径与 Notebook 下载改进</p>
               </div>
             </div>
             <div class="card-actions">
-              <a class="link" href="https://github.com/Ysrae1/neovide/releases/download/v1.0/Windows-INSTALL.md">安装指南 ↗</a>
-              <a class="link" href="https://github.com/Ysrae1/neovide/releases/tag/v1.0">发布说明 ↗</a>
-              <a class="link mono" href="https://github.com/Ysrae1/neovide/releases/download/v1.0/Windows-SHA256SUMS.txt">SHA256</a>
+              <a class="link" href="https://github.com/Ysrae1/neovide/releases/download/glow-windows-core-20261027-preview1/Windows-INSTALL.md">安装指南 ↗</a>
+              <a class="link" href="https://github.com/Ysrae1/neovide/releases/tag/glow-windows-core-20261027-preview1">发布说明 ↗</a>
+              <a class="link mono" href="https://github.com/Ysrae1/neovide/releases/download/glow-windows-core-20261027-preview1/Windows-SHA256SUMS.txt">SHA256</a>
+              <a class="link" href="https://github.com/Ysrae1/neovide/releases/download/glow-windows-core-20261027-preview1/Neovide-Glow-2026.10.27.1-Windows-x64-Installer-Source.zip">x64 安装器源码</a>
+              <a class="link" href="https://github.com/Ysrae1/neovide/releases/download/glow-windows-core-20261027-preview1/Neovide-Glow-2026.10.27.1-Windows-arm64-Installer-Source.zip">ARM64 安装器源码</a>
             </div>
           </div>
         </article>
@@ -183,9 +185,9 @@
             <li><strong>选对架构。</strong>在 Windows「设置 → 系统 → 关于」查看系统类型：Intel / AMD 选 x64，ARM 设备选 ARM64。</li>
             <li><strong>安装或更新。</strong>两个架构均可选择简体中文；已有 Core 用户可保存文档、退出 Glow 后安装到原目录更新应用文件，无需卸载。首次体验也可使用独立目录。</li>
             <li><strong>选择配置。</strong>首次启动选择独立的默认配置，即可测试全新环境；已有个人配置会保留，也可按引导选择沿用。</li>
-            <li><strong>按需补齐依赖。</strong>打开 Setup，先检查并查看计划，再点“安装所选依赖”（Install selected）；LaTeX 可选自动、清华或中国科大等软件源。也可“稍后完成”（Finish later），之后继续。</li>
+            <li><strong>按需补齐依赖。</strong>打开 Setup，先检查并查看计划，再点“安装所选依赖”（Install selected）。Notebook 和 LaTeX 可分别选择软件源，TeX 还可指定安装目录；下载情况可通过“打开日志”查看。也可“稍后完成”（Finish later），之后继续。</li>
           </ol>
-          <p>预览验收范围：Windows 11 ARM64（Parallels Desktop）中的安装、配置选择、依赖向导和卸载保留数据；x64 通过兼容模式运行，ARM64 原生运行。Windows 10、实体 x64／ARM64 的 D3D 显示、完整可选依赖安装及剪贴板仍待验收；各版本结果详见<a class="link" href="https://github.com/Ysrae1/neovide/releases/download/v1.0/Windows-INSTALL.md">安装指南</a>。</p>
+          <p>此前预览已在 Windows 11 ARM64（Parallels Desktop）中检查安装、配置选择、依赖向导和卸载保留数据；x64 通过兼容模式运行，ARM64 原生运行。本次更新通过原生向导检查和 Notebook 清华源预检，未重跑完整安装。Windows 10、实体设备的 D3D 显示、完整可选依赖安装及剪贴板仍待验收；各版本结果详见<a class="link" href="https://github.com/Ysrae1/neovide/releases/download/glow-windows-core-20261027-preview1/Windows-INSTALL.md">安装指南</a>。</p>
         </div>
       </article>
       <p class="requirements" data-reveal>本轮 macOS 包已完成原生菜单、PDF 与安装盘检查，未做 Apple 公证；Linux 开发暂缓。macOS 请先阅读<a class="link" href="https://github.com/Ysrae1/neovide/releases/download/v1.0/DEPLOY.md">部署说明</a>中的前置要求。项目编译器与完整 TeX 环境需自行准备，Avante 的 Codex 功能需使用者自行登录。</p>
@@ -218,7 +220,7 @@
   <script defer src="assets/native-states-en.js?v=20261024-responsive1"></script>
   <script defer src="assets/native-states-dark.js?v=20261024-responsive1"></script>
   <script defer src="assets/native-states-en-dark.js?v=20261024-responsive1"></script>
-  <script defer src="assets/page-en.js?v=hero-copy-shadow1"></script>
+  <script defer src="assets/page-en.js?v=windows-20261027"></script>
   <script defer src="assets/locale.js?v=shadow-20261026"></script>
   <script defer src="assets/native-story-phases.js?v=20261025-phase-fit1"></script>
   <script defer src="assets/scroll-playback.js?v=20261024-scroll50"></script>
